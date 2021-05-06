@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, HashRouter, Redirect } from "react-router-dom";
 import NavBar from './components/NavBar';
+import LandingPage from './pages/LandingPage';
 
 class Navigate extends Component {
 
@@ -23,9 +24,9 @@ class Navigate extends Component {
             <HashRouter basename="/">
                 <NavBar />
                 <Switch>
-                    {/* <Route exact path="/home">
-                        <LandingPage interaction_list={this.state.data} />
-                    </Route> */}
+                    <Route exact path="/introduction">
+                        <LandingPage />
+                    </Route>
                     {/* <Route path="/interactions">
                         <InteractionsPage interaction_list={this.state.data} />
                     </Route>
@@ -33,7 +34,7 @@ class Navigate extends Component {
                         <ContactUs interaction_list={this.state.data} />
                     </Route> */}
                     <Route exact path="/">
-                        <Redirect to="/home" />
+                        <Redirect to="/introduction" />
                     </Route>
                 </Switch>
                 {/* <Footer /> */}

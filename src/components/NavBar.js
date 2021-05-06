@@ -16,14 +16,14 @@ class NavBar extends Component {
 
         return (
 
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand className="text-info" href="#introduction"><h3>QF - PCR</h3></Navbar.Brand>
+            <Navbar style={{backgroundColor: 'rgb(248,249,345,1)'}} expand="lg">
+                <Navbar.Brand style={{color: '#043E6B'}} href="#introduction"><h3>QF - PCR</h3></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse >
-                    <Nav className="ml-auto ">
-                        <Nav.Link href="#introduction" className={this.props.history.location.pathname === '/introduction' ? "active" : null}>Introduction</Nav.Link>
-                        <Nav.Link href="#background" className={this.props.history.location.pathname === '/background' ? "active" : null}>Background</Nav.Link>
-                        <Nav.Link href="#quiz" className={this.props.history.location.pathname === '/quiz' ? "active" : null}>Quiz</Nav.Link>
+                    <Nav className="ml-auto text-monospace ">
+                        <Nav.Link href="#introduction" className={this.props.history.location.pathname === '/introduction' ? "active border-bottom border-secondary" : null}>Introduction</Nav.Link>
+                        <Nav.Link href="#background" className={this.props.history.location.pathname === '/background' ? "active border-bottom border-secondary" : null}>Background</Nav.Link>
+                        <Nav.Link href="#quiz" className={this.props.history.location.pathname === '/quiz' ? "active border-bottom border-secondary" : null}>Quiz</Nav.Link>
                         
                         
                     </Nav>
