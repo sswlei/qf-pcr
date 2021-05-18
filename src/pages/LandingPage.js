@@ -23,9 +23,9 @@ class LandingPage extends Component {
                         <p className="mt-4">Overview and data analysis</p>
                         <Image src={Logo} width="90%" className="mb-4" />
                         <Row className="text-start mt-4 d-flex flex-column align-items-center">
-                            <Link to="/">
-                                <Button variant="outline-success">START </Button>
-                            </Link>
+                           
+                                <Button href="#/introduction"  variant="success">START </Button>
+                           
                         </Row>
 
                     </div>
