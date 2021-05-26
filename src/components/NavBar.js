@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, NavDropdown, Button } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faCopyright, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 class NavBar extends Component {
 
@@ -23,11 +25,14 @@ class NavBar extends Component {
                     <Nav className="ml-auto text-monospace ">
                         <Nav.Link href="#introduction" className={this.props.history.location.pathname === '/introduction' ? "active border-bottom border-secondary" : null}>Introduction</Nav.Link>
                         <Nav.Link href="#background" className={this.props.history.location.pathname === '/background' ? "active border-bottom border-secondary" : null}>Background</Nav.Link>
+                        <Nav.Link href="#practice" className={this.props.history.location.pathname === '/practice' ? "active border-bottom border-secondary" : null}>Guided Practice</Nav.Link>
                         <Nav.Link href="#quiz" className={this.props.history.location.pathname === '/quiz' ? "active border-bottom border-secondary" : null}>Quiz</Nav.Link>
-                        
+                       
+
                         
                     </Nav>
                 </Navbar.Collapse>
+                <Button href="#/" className="ml-2" variant="outline-info"> <FontAwesomeIcon rotation={180} size={'1x'} icon={faSignOutAlt} /></Button>
             </Navbar>
 
         )
