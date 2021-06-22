@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Row, Image, Accordion, Card } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Button, Row, Image, Accordion, Card, ListGroup } from 'react-bootstrap';
+import PopOver from '../components/PopOver';
 
 
 class BackgroundPage extends Component {
@@ -12,7 +12,7 @@ class BackgroundPage extends Component {
             data: [
                 {
                     'title': "What is PCR ?", "text": [
-                        " In 1983 Dr. Kary Mullis was inspired to develop a method for in vitro (“in glass” i.e. outside of the living cell) DNA amplification, when he realized that short oligonucleotide “primers” could be designed to target specific sequences. PCR is an amplification method where the amount of target DNA is doubled at each step during the early, exponential phase of the reaction (replication slows during later stages as reagents run out and become rate-limiting). Two years later the first paper describing the practical application of PCR, as a method to amplify the gene for betaglobin as a diagnosis method for sickle cell anemia, was published. Mullis called this technique a polymerase-catalyzed chain reaction because the key enzyme is DNA polymerase and the copies of the template that are created act as more targets for the polymerase, causing exponential amplification.",
+                        `In 1983 Dr. Kary Mullis was inspired${ <PopOver/>} to develop a method for in vitro (“in glass” i.e. outside of the living cell) DNA amplification, when he realized that short oligonucleotide “primers” could be designed to target specific sequences. PCR is an amplification method where the amount of target DNA is doubled at each step during the early, exponential phase of the reaction (replication slows during later stages as reagents run out and become rate-limiting). Two years later the first paper describing the practical application of PCR, as a method to amplify the gene for betaglobin as a diagnosis method for sickle cell anemia, was published. Mullis called this technique a polymerase-catalyzed chain reaction because the key enzyme is DNA polymerase and the copies of the template that are created act as more targets for the polymerase, causing exponential amplification.`,
                         "*an enzyme that creates polymers of nucleotides by nucleotide addition to a growing chain*",
                         "This technique uses the same components and enzyme from DNA replication within cells, but it has been adapted for lab use. Over the years the original PCR protocol has been optimized by utilizing a temperature-resistant polymerase (so the polymerase does not need to be replaced each cycle) and fluorescent labels (allowing for automated product detection). In summary, PCR is a method to target a specific portion of the genome in order to increase its abundance. Key components in the PCR reaction include (in addition to the previously mentioned polymerase), 2 short oligonucleotide “primers” to initiate the amplification at a specific location and all four nucleotide building blocks for DNA. The PCR reaction occurs in a device called a thermocycler, which allows for precise temperature and reaction length control. Each PCR cycle consists of 3 reactions, illustrated below:",
                         "Annealing (50-70C: a critical step for reaction specificity, dependent on the GC content of the primers), to allow the primers to find the complementary sequence in the genome and hybridize to form a double stranded region. The primer sequences need to be carefully designed to only match the region surrounding the area of interest (one primer on each side) in the genome to ensure that only the ROI is amplified. The annealing temperature setting on the thermocycler is based on the melting temperature (the temperature at which 1/2 of the primers have dissociated from the template) of the primers.",
@@ -81,22 +81,53 @@ class BackgroundPage extends Component {
                         "The early cycles feature exponential amplification: every cycle doubles the amount of DNA, with the rate of amplification eventually decreasing in later stages as reagent are exhausted."
                     ]
                 }
-            ]
-
+            ],
+            currentIndex: 0
         }
+    }
+
+    componentDidMount() {
+        this.setState({ current: this.state.data[0] });
     }
 
     render() {
 
 
         return (
-            <div style={{ height: '100%', minHeight: '100vh' }} className="col-11 mx-auto d-flex flex-column justify-content-start mt-4 align-items-start h-100 text-dark">
- 
-                <Accordion className="col-12" defaultActiveKey={1}>
+            <div style={{ height: '100%', minHeight: '100vh' }} className="col-12 bg-secondary mx-auto d-flex text-dark">
+               
+                <span className="mt-4 col-12 bg-secondary mx-auto d-flex flex-row justify-content-around align-items-start h-100 text-dark">
+                    <Card className="col-3 mr-3" style={{ width: '18rem' }}>
+                        <ListGroup variant="flush">
+                            {this.state.data.map((i, index) =>
+                                <ListGroup.Item> 
+                                    <Card.Link className={index === this.state.currentIndex ? "text-dark border-bottom ml-4 border-dark" : null} onClick={() => this.setState({currentIndex: index})}>{i.title}
+                                    </Card.Link>
+                                </ListGroup.Item>
+                            )}
+
+                        </ListGroup>
+                    </Card>
+
+                    <Card className="col-9 mb-3">
+                   
+                        <Card.Header className="col-12 mt-3 bg-info text-white" as="h5">{this.state.data[this.state.currentIndex].title}</Card.Header>
+                        <Card.Body>
+                            {/* <Card.Title>{this.state.current.title}</Card.Title> */}
+                           
+                            <Card.Text>
+                            <PopOver/>
+                                { this.state.data[this.state.currentIndex].text.map((x) => <p dangerouslySetInnerHTML={{ __html: x}} style={{fontSize:'1.2em'}} className="mt-2"></p>)}
+                            </Card.Text>
+                            <Button size="sm" onClick={() => this.setState({currentIndex: this.state.currentIndex === this.state.data.length ? 0 : this.state.currentIndex + 1})} variant="primary">NEXT</Button>
+                        </Card.Body>
+                    </Card>
+                </span>
+                {/* <Accordion className="col-7 m-3" defaultActiveKey={1}>
 
                     {this.state.data.map((i, index) =>
                         <Card>
-                            <Card.Header className="bg-dark">
+                            <Card.Header className="bg-info">
                                 <Accordion.Toggle as={Button} variant="link" eventKey={index + 1}>
                                     <h5 className="text-white text-monospace" style={{ letterSpacing: .5 }}>{i.title}</h5>
                                 </Accordion.Toggle>
@@ -111,7 +142,7 @@ class BackgroundPage extends Component {
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>)}
-                </Accordion>
+                </Accordion> */}
             </div>
         )
     }
