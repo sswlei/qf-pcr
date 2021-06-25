@@ -149,62 +149,62 @@
         {
             "title": "Livebirth aneuploidies for autosome chromosomes are all trisomies",
             "type": "tf",
-            "answer": true
+            "answer": "true"
         },
         {
             "title": "PCR is based on viral replication",
             "type": "tf",
-            "answer": false
+            "answer": "false"
         },
         {
             "title": "PCR uses magnesium as an enzyme cofactor",
             "type": "tf",
-            "answer": true
+            "answer": "true"
         },
         {
             "title": "Chromosome 21 is assessed for prenatal and pregnancy loss cases",
             "type": "tf",
-            "answer": true
+            "answer": "true"
         },
         {
             "title": "If one QF-PCR marker shows evidence of trisomy, that is sufficient evidence to conclude that a trisomy is present",
             "type": "tf",
-            "answer": false
+            "answer": "false"
         },
         {
             "title": "The first step in PCR is the separation of DNA into single strands",
             "type": "tf",
-            "answer": true
+            "answer": "true"
         },
         {
             "title": "If all Chromosome X markers have one peak, the patient must be a biological male",
             "type": "tf",
-            "answer": false
+            "answer": "false"
         },
         {
             "title": "TAF9L amplifies loci on Chromosome 3 and Chromosome X ",
             "type": "tf",
-            "answer": true
+            "answer": "true"
         },
         {
             "title": "The ratio calculation for QF-PCR is based on peak height",
             "type": "tf",
-            "answer": false
+            "answer": "false"
         },
         {
             "title": "Patau syndrome is associated with trisomy of chromosome 18",
             "type": "tf",
-            "answer": false
+            "answer": "false"
         },
         {
             "title": "Klinefelter syndrome is a syndrome associated with sex chromosome aneuploidy",
             "type": "tf",
-            "answer": true
+            "answer": "true"
         },
         {
             "title": "All chromosome trisomies can be detected by the current QF-PCR kits",
             "type": "tf",
-            "answer": false
+            "answer": "false"
         }
     ]
 }

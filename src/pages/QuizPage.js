@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Row, Form, ListGroupItem, Card, ListGroup } from 'react-bootstrap';
+import { Button, Alert, Form, ListGroupItem, Card, ListGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-
+import QuestionList from '../assets/questions.json';
 
 class QuizPage extends Component {
 
@@ -23,12 +23,63 @@ class QuizPage extends Component {
                     "feedback": "Correct: by labelling the primers, different labels can be used, allowing for multiplexing"
                 }
 
-            ]
+            ],
+            user_input: false,
+            showFeedback: false
         }
     }
 
     componentDidMount() {
-        this.setState({ current: this.state.data[0] });
+        this.getRandomQuestions();
+    }
+
+    getRandomQuestions() {
+        console.log(QuestionList);
+        let list = [];
+        let mcq_s = QuestionList.mcq_questions;
+        let tf_s = QuestionList.tf_questions;
+
+
+
+        for (let i = 0; i < 4; i++) {
+            const random = Math.floor(Math.random() * mcq_s.length);
+            if (list.indexOf(mcq_s[random]) !== -1) {
+                continue;
+            };
+            list.push(mcq_s[random]);
+
+        }
+
+        for (let i = 0; i < 4; i++) {
+            const random = Math.floor(Math.random() * tf_s.length);
+            if (list.indexOf(tf_s[random]) !== -1) {
+                continue;
+            };
+            list.push(tf_s[random]);
+
+        }
+
+        console.log(list);
+        this.setState({ data: list, user_input: false, showFeedback: false });
+    }
+
+    answerQuestions(index, input) {
+        this.setState({ ...this.state.data, })
+
+        let questions = [...this.state.data];
+        console.log(questions);
+        questions[index] = { ...questions[index], user_input: input, 
+            
+            
+            correct: questions[index].type == "mcq" ? input == questions[index].choices[questions[index].answer] :
+        
+            input == questions[index].answer
+        };
+
+        let userInputRec = questions.filter((i) => i.user_input);
+
+        console.log(userInputRec);
+        this.setState({ data: questions, user_input: userInputRec.length === questions.length });
     }
 
     render() {
@@ -39,64 +90,82 @@ class QuizPage extends Component {
 
                 <Card className="col-9" >
                     <Card.Header className="m-3" as="h5">Quiz</Card.Header>
-                  
-                        <ol>
+
+                    <ol>
                         {this.state.data.map((i, index) => <li> <Card.Body>
-                        <Card.Title>{i.title}</Card.Title>
-                        <Card.Text>
-                            <div onChange={(i) => console.log(i.target.value)} key={`inline-radio`} className="mb-3">
+                            <Card.Title>{i.title}</Card.Title>
+                            <Card.Text>
+                                <div onChange={(i) => this.answerQuestions(index, i.target.value)} key={`inline-radio`} className="mb-3">
 
-                                {i.type == 'mcq' ?
+                                    {i.type == 'mcq' ?
+                                        <ol type="a">
+                                            {i.choices.map((q) =>
+                                                <li><Form.Check
+                                                    inline
+                                                    label={q}
+                                                    value={q}
+                                                    name={`group${index}`}
+                                                    type={'radio'}
 
-                                    i.choices.map((q) =>
-                                        <Form.Check
-                                            inline
-                                            label={q}
-                                            value={q}
-                                            name={`group${index}`}
-                                            type={'radio'}
+                                                /></li>)}
 
-                                        />)
+                                        </ol>
+                                        :
+                                        <span>
+                                            <Form.Check
+                                                inline
+                                                label="True"
+                                                value={true}
+                                                name={`group${index}`}
+                                                type={'radio'}
 
+                                            />
+                                            <Form.Check
+                                                inline
+                                                label="False"
+                                                value={false}
+                                                name={`group${index}`}
+                                                type={'radio'}
 
-                                    :
-                                    <span>
-                                        <Form.Check
-                                            inline
-                                            label="True"
-                                            value="111"
-                                            name={`group${index}`}
-                                            type={'radio'}
-
-                                        />
-                                        <Form.Check
-                                            inline
-                                            label="False"
-                                            name={`group${index}`}
-                                            type={'radio'}
-
-                                        />
-                                    </span>
+                                            />
+                                        </span>
 
 
-                                }
+                                    }
+                                    {this.state.showFeedback ? 
+                                    <Alert className="m-1" variant={i.correct ? "success" : "danger"} >
+                                    <Alert.Heading>{i.correct ? 'Correct' : 'Incorrect' }</Alert.Heading>
+                                   {i.correct ?    
+                                   <p>
+                                       {i.feedback}
+                                   </p>             :
+                                    <p>
+                                        Correct Answer: {i.type === 'tf' ? i.answer : i.choices[i.answer]}
+                                    </p>}
+                                </Alert> : null}
+                                    
+                                </div>
+                            </Card.Text>
 
-                            </div>
-                        </Card.Text>
+                        </Card.Body></li>)}
 
-                    </Card.Body></li>)}
+                    </ol>
 
-                        </ol>
-                   
-                   
-                   
+
+                    { this.state.showFeedback ? <Card.Footer className=""> Score: { this.state.data.filter((i) => i.correct).length + ' / ' + this.state.data.length }</Card.Footer> : null}
                     <ListGroup className="list-group-flush">
-                        <ListGroupItem className="d-flex justify-content-between">
-                            <Button size="sm" variant="primary">check</Button>
-                            <Button size="sm" variant="primary">Next</Button>
+                        <ListGroupItem className="d-flex justify-content-end">
+                            <Button 
+                            onClick={() => !this.state.showFeedback ? this.setState({showFeedback: true}) : window.location.reload()} 
+                            disabled={!this.state.user_input} 
+                            size="sm" 
+                            variant="primary">{!this.state.showFeedback ? 'Check' : 'Reset'}
+                            </Button>
+
                         </ListGroupItem>
 
                     </ListGroup>
+
                 </Card>
             </div>
         )
