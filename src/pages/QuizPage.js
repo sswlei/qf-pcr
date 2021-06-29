@@ -59,7 +59,7 @@ class QuizPage extends Component {
 
         }
 
-        console.log(list);
+
         this.setState({ data: list, user_input: false, showFeedback: false });
     }
 
@@ -78,7 +78,6 @@ class QuizPage extends Component {
 
         let userInputRec = questions.filter((i) => i.user_input);
 
-        console.log(userInputRec);
         this.setState({ data: questions, user_input: userInputRec.length === questions.length });
     }
 
@@ -88,7 +87,7 @@ class QuizPage extends Component {
         return (
             <div style={{ height: '100%' }} className=" mx-auto d-flex flex-column align-items-center mt-5 col-12">
 
-                <Card className="col-9" >
+                <Card className="col-sm-11 col-md-9" >
                     <Card.Header className="m-3" as="h5">Quiz</Card.Header>
 
                     <ol>
@@ -101,6 +100,7 @@ class QuizPage extends Component {
                                         <ol type="a">
                                             {i.choices.map((q) =>
                                                 <li><Form.Check
+                                                    key={q}
                                                     inline
                                                     label={q}
                                                     value={q}
