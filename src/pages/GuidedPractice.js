@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Row, Tabs, Tab, Card, Alert, Image, InputGroup, FormControl, Accordion } from 'react-bootstrap';
+import { Button, Row, Tabs, Tab, Card, Alert, Image, InputGroup, FormControl, Accordion, Form } from 'react-bootstrap';
 import Table from '../assets/genotypeTable.xlsx';
 import { Download } from 'react-bootstrap-icons';
 import PeakReview from '../assets/peakReview.png';
 import Viewer from 'react-viewer';
-import NormalMale from '../assets/normalMale.JPG'
+import NormalMale from '../assets/normalMale.JPG';
+import AnswerKey from '../assets/answerKey.jpg';
 import ReactImageMagnify from 'react-image-magnify';
 
 class GuidedPractice extends Component {
@@ -28,7 +29,8 @@ class GuidedPractice extends Component {
                 { title: 'dark', keys: ['D13S800', 'D13S628', 'D18S978', 'D18S390'] },
                 { title: 'danger', keys: ['D13S252', 'D18S819', 'D21S1409', 'D21S1442'] }
             ],
-            currentStep: null
+            currentStep: null,
+            showAnswerKey: false
         }
     }
 
@@ -107,6 +109,12 @@ class GuidedPractice extends Component {
                                         <p>Do not proceed with analysis unless all review questions answered with YES </p>
                                         <p> NO answer = repeat PCR</p>
                                         <hr />
+                                        <Form.Check
+                                            onClick={(e) => this.setState({showAnswerKey: !this.state.showAnswerKey})}
+                                            type="checkbox"
+                                            className="m-2"
+                                            label="Show Answer Key"
+                                        />
                                         <Row className="col-12 d-flex flex-row">
                                             <ReactImageMagnify
                                                 className="col-7"
@@ -114,51 +122,46 @@ class GuidedPractice extends Component {
                                                 smallImage={{
                                                     alt: 'Normal Male',
                                                     isFluidWidth: true,
-                                                    src: NormalMale
+                                                    src: this.state.showAnswerKey ? AnswerKey : NormalMale
                                                 }}
                                                 largeImage={{
-                                                    src: NormalMale,
+                                                    src: this.state.showAnswerKey ? AnswerKey : NormalMale,
                                                     width: 2000,
                                                     height: 800
                                                 }}
                                             />
-                                            {this.state.currentStep >= 0 ?
+                                            {this.state.currentStep >= 1 ?
                                                 <Accordion className="col-5" defaultActiveKey={1}>
                                                     {this.state.markers.map((i, index) =>
                                                         <Card>
                                                             <Accordion.Toggle className={`bg-${i.title}`} as={Card.Header} eventKey={index + 1}>
-                                                              
+
                                                             </Accordion.Toggle>
                                                             <Accordion.Collapse eventKey={index + 1}>
-                                                            <Card.Body>
-                                                            {i.keys.map((x) =>
-                                                                <span>
-                                                                    <InputGroup size="sm" className="m-3">
-                                                                        <InputGroup.Prepend>
-                                                                            <InputGroup.Text id="inputGroup-sizing-sm">{x}</InputGroup.Text>
-                                                                        </InputGroup.Prepend>
-                                                                        <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-                                                                    </InputGroup> </span>)}
-                                                            </Card.Body>
-                                                                
+                                                                <Card.Body>
+                                                                    {i.keys.map((x) =>
+                                                                        <span>
+                                                                            <InputGroup size="sm" className="m-3">
+                                                                                <InputGroup.Prepend>
+                                                                                    <InputGroup.Text >{x}</InputGroup.Text>
+                                                                                </InputGroup.Prepend>
+                                                                                <FormControl />
+                                                                            </InputGroup> </span>)}
+                                                                </Card.Body>
+
 
                                                             </Accordion.Collapse>
+
                                                         </Card>
                                                     )}
 
-                                                    
+
                                                 </Accordion>
                                                 :
                                                 <Image src={PeakReview} width="60%" className="mb-4 col-5" />
                                             }
 
                                         </Row>
-
-                                        <div className="d-flex justify-content-end mt-3">
-                                            <Button variant="outline-danger">
-                                                Cancel
-                                            </Button>
-                                        </div>
                                     </Alert>
 
                                     : <Tabs
@@ -179,25 +182,24 @@ class GuidedPractice extends Component {
                                             <p>these results not presented as part of this online practice module, but you should assume all controls behaved as expected</p>
 
                                         </Tab>
-                                        <Tab eventKey="contact" title="Contact" disabled>
-
-                                        </Tab>
 
                                     </Tabs>}
+                                <div className="d-flex justify-content-between mt-3">
 
-                                {this.state.currentStep !== null ?
+                                    {this.state.currentStep !== null ?
 
-                                    <Button
-                                        onClick={() => this.setState({ currentStep: this.state.currentStep + 1 })}
-                                        variant="outline-info">Next</Button> :
-                                    <Button
-                                        onClick={() => this.setState({ currentStep: 0 })}
-                                        variant="info">Begin</Button>}
+                                        <Button
+                                            onClick={() => this.setState({ currentStep: this.state.currentStep + 1 })}
+                                            variant="outline-info">Next</Button> :
+                                        <Button
+                                            onClick={() => this.setState({ currentStep: 0 })}
+                                            variant="info">Begin</Button>}
+                                    <Button onClick={() => this.setState({ selected: null, currentStep: null })} variant="outline-danger">
+                                        Cancel
+                                    </Button>
+                                </div>
 
-                            </Card.Body>
 
-                            <Card.Body>
-                                {/* <Button onClick={() => this.setState({ selected: 'Prenatal Rapid Aneuploidy Detection' })} variant="outline-primary">Start</Button> */}
                             </Card.Body>
                         </Card>
 
