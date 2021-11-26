@@ -14,7 +14,9 @@ class PopOver extends Component {
             { title: 'diploid', define: 'while haploid (n) = one complete set of chromosomes of a species. Diploid (2n) = 2 complete sets, which is 46 in the case of humans' },
             { title: 'nondisjunction', define: 'nondisjunction is the incorrect separation of chromosomes during anaphase, resulting in one daughter cell having an extra chromosome, and one cell missing a chromosome' },
             { title: 'monosomy', define: 'Monosomy: one copy of a chromosome. Not tolerated for autosomes' },
-            { title: 'trisomy', define: 'Trisomy: 3 copies of a chromosome. Most autosomal trisomies are not compatible with life' }
+            { title: 'trisomy', define: 'Trisomy: 3 copies of a chromosome. Most autosomal trisomies are not compatible with life' },
+            { title: 'mosaics', define: '2 or more genetically distinct populations arising from 1 zygote' },
+            { title:"screens", define: "identifies possible future problem i.e. identifies individuals at risk for future issues"}
             ]
         }
     }

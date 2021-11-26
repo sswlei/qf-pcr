@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Button, Row, Tab, Col, Nav, Image, Accordion, Card, ListGroup } from 'react-bootstrap';
 import PopOver from '../components/PopOver';
 import PCRPhoto from '../assets/pcr_photo.png';
+
+import trisomy13 from '../assets/trisomy_13.png';
+import trisomy18 from '../assets/trisomy_18.png';
+import trisomy21 from '../assets/trisomy_21.png';
+import klinefelter_47XXY from '../assets/klinefelter_47-XXY.png';
+import turner from '../assets/turner.png';
 class BackgroundPage extends Component {
 
     constructor() {
@@ -24,7 +30,7 @@ class BackgroundPage extends Component {
                 <br></br>                                                
                 <br></br>
                 This technique uses the same components and enzyme from DNA replication within cells, but it has been adapted for lab use. Over the years the original PCR protocol has been optimized by utilizing a temperature-resistant polymerase (so the polymerase does not need to be replaced each cycle) and fluorescent labels (allowing for automated product detection). In summary, PCR is a method to target a specific portion of the genome in order to increase its abundance. Key components in the PCR reaction include (in addition to the previously mentioned polymerase), 2 short oligonucleotide “primers” to initiate the amplification at a specific location and all four nucleotide building blocks for DNA. The PCR reaction occurs in a device called a thermocycler, which allows for precise temperature and reaction length control. Each PCR cycle consists of 3 reactions, illustrated below:
-                ${<Image src={PCRPhoto} fluid></Image>}
+                {<Image src={PCRPhoto} fluid></Image>}
                 <br></br>
                 <br></br>
                 Annealing (50-70C: a critical step for reaction specificity, dependent on the GC content of the primers), to allow the primers to find the complementary sequence in the genome and hybridize to form a double stranded region. The primer sequences need to be carefully designed to only match the region surrounding the area of interest (one primer on each side) in the genome to ensure that only the ROI is amplified. The annealing temperature setting on the thermocycler is based on the melting temperature (the temperature at which 1/2 of the primers have dissociated from the template) of the primers.
@@ -86,6 +92,81 @@ class BackgroundPage extends Component {
                 </div>
             },
             {
+                id:"prenatal-pcr",
+                title:"Prenatal QF-PCR",content: <div>
+                   These are the conditions that are assessed when performing prenatal QF-PCR:
+                   <table>
+                        <tr>
+                            <th>Condition</th><th>Frequency</th><th>Characteristics</th>
+                        </tr>
+                        <tr>
+                            <th>Down syndrome: extra Chr 21</th><td>1/700 live births</td><td>flat facial profile, mental retardation, cardiac issues, abnormal immune system, eventual neuropathological disorder; increased risk of acute leukemia</td>
+                        </tr>
+                        <tr>
+                            <th>Edwards syndrome: extra Chr 18</th><td>1/3000 live births</td><td>clenched fist, survival &lt;1 yr</td>
+                        </tr>
+                        <tr>
+                            <th>Patau syndrome: extra chr 13</th><td>1/21700 live births</td><td>cleft palate, heart damage, mental retardation, survival &lt;6 mon</td>
+                        </tr>
+                        <tr>
+                            <th>Klinefelter syndrome: varies, but most often 47,XXY</th><td>1/500-650 live births</td><td>male hypogonadism, long legs, gynecomastia, low testosterone</td>
+                        </tr>
+                        <tr>
+                            <th>XYY syndrome: 47,XYY </th><td>1/1000 live births</td><td>excessive height, acne 1%-2% behavioral disorders</td>
+                        </tr>
+                        <tr>
+                            <th>Multi X: 47,XXX or 48,XXXX</th><td>1/1200 live births</td><td>Mental retardation increases with increasing X</td>
+                        </tr>
+                        <tr>
+                            <th>Turner syndrome: varies but most often 45,X</th><td>1/2000 – 1/5000 live births</td><td>bilateral neck webbing, heart disease, failure to develop secondary sex characteristics hypothyroidism</td>
+                        </tr>
+                   </table>
+                   <br></br>
+                   <br></br>
+                   Some of these conditions are present as {<PopOver text={'mosaics'}/>}, which can make diagnosis more challenging as some are not detected by this diagnostic test.
+                   <br></br>
+                   <br></br>
+                   Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as the Integrated Prenatal Screen (early screen during pregnancy (10-13.5 weeks) to test for PAPP-A (pregnancy associated plasma protein-A) or beta human chorionic gonadotrophin (hCG) and can include fetal ultrasound). Advanced maternal age (&gt;40yrs at time of delivery) is another risk factor that may prompt QF-PCR to assess for trisomies.
+                   <br></br>
+                   <br></br>
+                   Note that for followup diagnostic testing, such as QF-PCR, a positive result does not confirm that the fetus is affected, just as a negative result does not eliminate the possibility the fetus is affected. However, a negative result can exclude the tested aneuploidies as a diagnosis.
+                   <br></br>
+                   <br></br>
+                   QF-PCR will detect whole chromosomal aneuploidy, but not balanced structural rearrangements, such as translocations or inversions. The underlying cause of the aneuploidy (i.e. nondisjunction or unbalanced structural rearrangement) is also not determined. Complications such as maternal cell contamination (MCC) and confined placental mosaicism (CPM) may result in discrepancies between QF-PCR and karyotype results.
+                   <br></br>
+                   <br></br>
+                   Examples of karyotypes showing chromosomal aneuploidy:
+                   <br></br>
+                   <br></br>
+                   Trisomy 21
+                   <br></br>
+                   {<Image src={trisomy21} fluid></Image>}
+                   <br></br>
+                   <br></br>
+                   Trisomy 18
+                   <br></br>
+                   {<Image src={trisomy18} fluid></Image>}
+                   <br></br>
+                   <br></br>
+                   Trisomy 13
+                   <br></br>
+                   {<Image src={trisomy13} fluid></Image>}
+                   <br></br>
+                   <br></br>
+                   Klinefelter (47,XXY)
+                   <br></br>
+                   {<Image src={klinefelter_47XXY} fluid></Image>}
+                   <br></br>
+                   <br></br>
+                   Turner
+                   <br></br>
+                   {<Image src={turner} fluid></Image>}
+
+
+
+                </div>
+            },
+            {
                 id:"pcr-pregnancy-loss",
                 title:"QF-PCR for Pregnancy Loss",content: <div>
                     <ul>
@@ -123,7 +204,6 @@ class BackgroundPage extends Component {
     }
 
     render() {
-        console.log(this.background_data);
         return (
             <div style={{ height: '100%', minHeight: '100vh' }} className="col-12 bg-secondary mx-auto d-flex text-dark">
                <Tab.Container id="background-tabs" defaultActiveKey="what-is-pcr">
