@@ -37,6 +37,83 @@ class BackgroundPage extends Component {
                 <br></br>
                 <br></br>
                 The early cycles feature exponential amplification: every cycle doubles the amount of DNA, with the rate of amplification eventually decreasing in later stages as reagent are exhausted.</div>
+            },
+            {
+                id:"what-is-aneuploidy",
+                title:"What is aneuploidy?",content: <div>What is {<PopOver text={'aneuploidy'}/>}, and why is it important in laboratory diagnosis of genetic disorders? 
+                <br></br>                                                
+                <br></br>
+                The normal number of {<PopOver text={'chromosomes'}/>} in human cells is 46, grouped as 23 pairs. Since these chromosomes are paired, this means that the number of chromosomes in one complete set is 23, and human cells are {<PopOver text={'diploid'}/>}
+                <br></br>                                                
+                <br></br>
+                In practical terms, this usually means a gain or loss of one chromosome. Most aneuploids are not compatible with life, as the extra genomic material creates an imbalance in the genetic material. Aneuploidy is typically due to chromosome {<PopOver text={'nondisjunction'}/>} during gamete formation.
+                <br></br>                                                
+                <br></br>
+                In the diagnostic laboratory, aneuploidy occurs with 0.5% frequency in pregnancies carried to term, and 50% in spontaneous fetal loss. The most common types of aneuploidy are {<PopOver text={'monosomy'}/>} and {<PopOver text={'trisomy'}/>}.
+                </div>
+            },
+            {
+                id:"why-test-aneuploidy",
+                title:"Why test for aneuploidy?",content: <div>Two main reasons for aneuploidy detection in clinical lab:
+                    <br></br>
+                    <br></br>
+                    <ul>
+                        <li>
+                            Follow up to prenatal blood or ultrasound screening test, or other risk factors
+                            <ul>
+                                <li>Test needs to be rapid so results can be used for pregnancy management, in consultation with genetic counsellor</li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            Assessment of fetal loss
+                            <ul>
+                                <li>10-15% clinically recognized pregnancy end in spontaneous miscarriage (PL)</li>
+                                <li>86% of first trimester spontaneous miscarriage with genetic cause are due to chromosome numerical abnormality, such as aneuploidy or polyploidy</li>
+                                <li>Test can provide information about recurrence risk in future pregnancies </li>
+                                <li>Alternative to conventional cytogenetic testing
+                                    <ul>
+                                        <li>Tissue culture for karyotyping of PL samples has high failure rate</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    This online module will provide practice for both of these types of cases.
+
+                </div>
+            },
+            {
+                id:"pcr-pregnancy-loss",
+                title:"QF-PCR for Pregnancy Loss",content: <div>
+                    <ul>
+                        <li>Spontaneous miscarriage occurs in 10-15% of all clinically recognized pregnancies </li>
+                        <li>Major cause of PL are chromosomal abnormalities</li>
+                        <li>Trisomies possible for all autosomal chromosomes in PL</li>
+                        <li>QF-PCR for PL looks for most common chromosomal trisomies associated with early fetal loss: Chromosomes 15, 16, 21, and 22</li>
+                        <li>Also checks for trisomy in same chromosomes as prenatal RAD (i.e. 13, 18: can occur in PL later in pregnancy)</li>
+                        <li>Autosomal monosomies rare</li>
+                        <li>Identifying cause of PL can provide information about chance PL can occur in future pregnancies</li>
+                        <li>Possible reasons for performing PL QF-PCR:
+                            <ul>
+                                <li>Spontaneous fetal loss</li>
+                                <li>Assessment after voluntary termination due to abnormal prenatal screen</li>
+                                <li>Intrauterine death or stillbirth</li>
+                                <li>Recurrent pregnancy loss</li>
+                            </ul>
+                        </li>
+                        <li>QF-PCR does not require culturing of cells (10-40% of culture attempts fail): QF-PCR analyzes genomic DNA</li>
+                        <li>As for prenatal RAD, only informative markers (must have at least 2 peaks) are analyzed</li>
+                        <li>Normal: one peak or 2 peaks with similar peak areas</li>
+                        <li>Abnormal: 2 peaks with 1:2 or 2:1 ratio, or 2 peaks (with 1:1:1) ratio</li>
+                        <li>Most common cause of abnormality: chromosome non-disjunction</li>
+                        <li>Maternal cell contamination or mosaicism can complicate diagnosis</li>
+
+
+                    </ul>
+                </div>
             }
         ];
 
