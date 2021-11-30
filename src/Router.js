@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, HashRouter, Redirect } from "react-router-dom";
 import NavBar from './components/NavBar';
 import BackgroundPage from './pages/BackgroundPage';
-import BackgroundPage2 from './pages/BackgroundPage2';
-
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizPage from './pages/QuizPage';
@@ -20,8 +18,7 @@ class Navigate extends Component {
 
     componentDidMount() {
     }
-
-
+    
     render() {
         return (
 
@@ -40,9 +37,6 @@ class Navigate extends Component {
                         <Route path="/background">
                             <BackgroundPage />
                         </Route>                        
-                        <Route path="/background2">
-                            <BackgroundPage2 />
-                        </Route>
                         <Route path="/quiz">
                             <QuizPage />
                         </Route>
