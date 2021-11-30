@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
-
+import './css/PopOver.css';
 class PopOver extends Component {
 
     constructor(props) {
@@ -29,7 +29,7 @@ class PopOver extends Component {
                 key={0}
                 placement={'top'}
                 overlay={
-                    <Tooltip>
+                    <Tooltip className="vocab-tooltip">
                         {this.state.defination_list.find((i) => i.title === this.props.text).define}
                     </Tooltip>
                 }

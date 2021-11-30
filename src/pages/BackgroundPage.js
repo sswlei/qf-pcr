@@ -243,7 +243,7 @@ class BackgroundPage extends Component {
                         <Tab.Container id="background-tabs"  activeKey={this.background_data[this.state.currentTab].id}>
                             <Row>
                                 <Col sm={4}>
-                                    <Card className="border-0">
+                                    <Card className="border-0 mb-3">
                                         <ListGroup variant="flush" >
                                             {this.background_data.map(function(x,index) {
                                                 return (
