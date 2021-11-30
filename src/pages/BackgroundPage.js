@@ -243,12 +243,12 @@ class BackgroundPage extends Component {
                         <Tab.Container id="background-tabs"  activeKey={this.background_data[this.state.currentTab].id}>
                             <Row>
                                 <Col sm={4}>
-                                    <Card>
-                                        <ListGroup variant="flush">
+                                    <Card className="border-0">
+                                        <ListGroup variant="flush" >
                                             {this.background_data.map(function(x,index) {
                                                 return (
-                                                    <ListGroup.Item key={x.id}> 
-                                                        <Nav.Link onClick={()=>this.setState({currentTab:index})}>{x.title}</Nav.Link>
+                                                    <ListGroup.Item onClick={()=>this.setState({currentTab:index})} key={x.id} className={this.state.currentTab==index?'bg-info text-white':''} style={{cursor:"pointer"}}> 
+                                                        {x.title}
                                                     </ListGroup.Item>
                                                 )
                                             }, this)}
