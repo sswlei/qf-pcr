@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Row, Tabs, Tab, Card, Alert, Image, InputGroup, FormControl, Accordion, Form } from 'react-bootstrap';
-import Table from '../assets/genotypeTable.xlsx';
 import { Download } from 'react-bootstrap-icons';
 import PeakReview from '../assets/peakReview.png';
 import Viewer from 'react-viewer';
@@ -56,7 +55,7 @@ class GuidedPractice extends Component {
                             </Card.Body>
 
                             <Card.Body>
-                                <Button onClick={() => this.setState({ selected: 'Prenatal Rapid Aneuploidy Detection' })} variant="primary">Start</Button>
+                                <Button onClick={() => window.location.href="#/practice/prenatalrad"} variant="primary">Start</Button>
                             </Card.Body>
                         </Card>
                         <Card className="col-md-5 col-sm-8 m-2" >
@@ -80,13 +79,6 @@ class GuidedPractice extends Component {
                         <Card className="col-12 m-2" >
                             <Card.Body>
                                 <Card.Title className="d-flex">{this.state.selected}
-
-                                    <p className="ml-auto">
-                                        <a
-                                            href={Table}
-                                            download="genotypetable.xlsx">Genotype Table <Download className="m-1" size="18" /></a></p>
-                                    {/* <a href="../assets/landingPage.png" download>   </a> */}
-
                                 </Card.Title>
                                 <hr />
                                 <Card.Text >

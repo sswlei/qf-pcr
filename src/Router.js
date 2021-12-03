@@ -6,6 +6,7 @@ import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizPage from './pages/QuizPage';
 import GuidedPractice from './pages/GuidedPractice';
+import PrenatalRadDemo from './pages/GuidedPractice/PrenatalRadDemo';
 
 class Navigate extends Component {
 
@@ -46,7 +47,9 @@ class Navigate extends Component {
                         <Route exact path="/practice">
                             <GuidedPractice />
                         </Route>
-
+                        <Route exact path="/practice/prenatalrad">
+                            <PrenatalRadDemo />
+                        </Route>
                     </Route>
 
 
