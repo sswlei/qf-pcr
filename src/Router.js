@@ -18,8 +18,7 @@ class Navigate extends Component {
 
     componentDidMount() {
     }
-
-
+    
     render() {
         return (
 
@@ -37,7 +36,7 @@ class Navigate extends Component {
                         </Route>
                         <Route path="/background">
                             <BackgroundPage />
-                        </Route>
+                        </Route>                        
                         <Route path="/quiz">
                             <QuizPage />
                         </Route>
