@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NormalMale from '../../assets/normalMale.JPG';
 import ReactImageMagnify from 'react-image-magnify';
-import { Accordion,Card,Row } from 'react-bootstrap';
+import { Accordion, Card, Row, Container } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 class PrenatalRadDemo extends Component {
@@ -14,7 +14,7 @@ class PrenatalRadDemo extends Component {
 
 
         return (
-            <div style={{ height: '100%', minHeight: '100vh' }} className="text-dark">
+            <Container>
                 {/* <ReactImageMagnify
                     className="col-8"
                     smallImage={{
@@ -34,8 +34,8 @@ class PrenatalRadDemo extends Component {
                 <Row>
                 <Card className="col-8">
                     <Card.Body>
-                        <TransformWrapper>
-                            <TransformComponent wrapperStyle={{width:"100%",height:400}}>
+                        <TransformWrapper initialScale={0.4} minScale={0.4} maxScale={2} centerOnInit={true}>
+                            <TransformComponent wrapperStyle={{width:"100%",height:500}}>
                                 <img src={NormalMale} alt="Normal Male" />
                             </TransformComponent>
                         </TransformWrapper>
@@ -53,7 +53,7 @@ class PrenatalRadDemo extends Component {
 
                 </Card>
 </Row>
-            </div>
+            </Container>
         )
     }
 }
