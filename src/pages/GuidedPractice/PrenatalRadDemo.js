@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NormalMale from '../../assets/normalMale.JPG';
 import ReactImageMagnify from 'react-image-magnify';
-import { Accordion, Card, Row, Container } from 'react-bootstrap';
+import { SplitButton, Dropdown, Button, ButtonGroup, Card, Row, Container } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 class PrenatalRadDemo extends Component {
@@ -32,7 +32,7 @@ class PrenatalRadDemo extends Component {
                     
                 /> */}
                 <Row>
-                <Card className="col-8">
+                <Card className="col-9">
                     <Card.Body>
                         <TransformWrapper initialScale={0.4} minScale={0.4} maxScale={2} centerOnInit={true}>
                             <TransformComponent wrapperStyle={{width:"100%",height:500}}>
@@ -41,14 +41,24 @@ class PrenatalRadDemo extends Component {
                         </TransformWrapper>
                     </Card.Body>
                 </Card>
-                <Card  className="col-4">
+                <Card  className="col-3">
                     <Card.Body>
-                        <Accordion>
-                            <Card>
-                                DXS6803
-
-                            </Card>
-                        </Accordion>
+                    <SplitButton menuAlign="start" bsStyle="info" bsSize="large" title="Main List">
+                    <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+                                <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+</SplitButton>
+                        <Dropdown as={ButtonGroup}>
+                            <Button variant="secondary">DXS6803</Button>
+                            <label className="px-3">Selected</label>
+                            <Dropdown.Toggle id="" />
+                            <Dropdown.Menu align="start">
+                                <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+                                <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+                                <Dropdown.Item eventKey="3" active>
+                                    Active Item
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Card.Body>
 
                 </Card>
