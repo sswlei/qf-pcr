@@ -3,7 +3,7 @@ import NormalMale from '../../assets/normalMale.JPG';
 import ReactImageMagnify from 'react-image-magnify';
 import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Container } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { Chromosome, Allele, SelectionType } from "../../constants/GuidedPracticeConstants"
+import { Chromosome, Allele, AMEL, TAF9L, SelectionType } from "../../constants/GuidedPracticeConstants"
 class PrenatalRadDemo extends Component {
 
     constructor(props) {
@@ -19,31 +19,41 @@ class PrenatalRadDemo extends Component {
                 "id":"D21S1435",
                 "type":SelectionType.chromAndAllele,
                 "chrom_answer":Chromosome.ch21.value,
-                "allele_answer":Allele.diallelic
+                "allele_answer":Allele.diallelic.value
             },
             {
                 "id":"D21S11",
                 "type":SelectionType.chromAndAllele,
                 "chrom_answer":Chromosome.ch21.value,
-                "allele_answer":Allele.uninformative
+                "allele_answer":Allele.uninformative.value
             },
             {
                 "id":"D21S1437",
                 "type":SelectionType.chromAndAllele,
                 "chrom_answer":Chromosome.ch21.value,
-                "allele_answer":Allele.diallelic
+                "allele_answer":Allele.diallelic.value
             },
             {
                 "id":"D13S634",
                 "type":SelectionType.chromAndAllele,
                 "chrom_answer":Chromosome.ch13.value,
-                "allele_answer":Allele.diallelic
+                "allele_answer":Allele.diallelic.value
             },
             {
                 "id":"D18S535",
                 "type":SelectionType.chromAndAllele,
                 "chrom_answer":Chromosome.ch18.value,
-                "allele_answer":Allele.diallelic
+                "allele_answer":Allele.diallelic.value
+            },
+            {
+                "id":"AMEX",
+                "type":SelectionType.amel,
+                "answer":AMEL.xy.value
+            },
+            {
+                "id":"TAF9L",
+                "type":SelectionType.taf9l,
+                "answer":TAF9L.onexchrom.value
             }
         ]
         this.getDropdowns = this.getDropdowns.bind(this);
@@ -77,7 +87,18 @@ class PrenatalRadDemo extends Component {
             </div>
         }
         if (marker.type==="amel"){
+            return <div className="mb-3">
+                <Button variant="secondary">{marker.id}</Button>
+                <Dropdown className="mt-3 d-inline" as={ButtonGroup}>
+                    <label className="mx-0 my-0 px-4 py-0" style={{border:"1px solid gray",lineHeight:"38px"}}>Select</label>
+                    <Dropdown.Toggle/>
+                    <Dropdown.Menu alignRight>
+                        <Dropdown.Item>{AMEL.xx.name}</Dropdown.Item>
+                        <Dropdown.Item>{AMEL.xy.name}</Dropdown.Item>
 
+                    </Dropdown.Menu>
+                </Dropdown> 
+            </div>
         }
         if (marker.type==="chromOnly"){
             return <div className="mb-3">
@@ -97,7 +118,18 @@ class PrenatalRadDemo extends Component {
             </div>
         }
         if (marker.type==="taf9l"){
+            return <div className="mb-3">
+                <Button variant="secondary">{marker.id}</Button>
+                <Dropdown className="mt-3 d-inline" as={ButtonGroup}>
+                    <label className="mx-0 my-0 px-4 py-0" style={{border:"1px solid gray",lineHeight:"38px"}}>Select</label>
+                    <Dropdown.Toggle/>
+                    <Dropdown.Menu alignRight>
+                        <Dropdown.Item>{TAF9L.onexchrom.name}</Dropdown.Item>
+                        <Dropdown.Item>{TAF9L.twoxchrom.name}</Dropdown.Item>
 
+                    </Dropdown.Menu>
+                </Dropdown> 
+            </div>
         }
     }
     
@@ -123,6 +155,7 @@ class PrenatalRadDemo extends Component {
                                 {this.getDropdowns(marker)}
                             </div>
                         },this)}
+
                     </Card.Body>
 
                 </Card>

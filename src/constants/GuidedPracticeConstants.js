@@ -10,6 +10,14 @@ export var Allele = {
     diallelic:{name:"Diallelic",value:"diallelic"},
     triallelic:{name:"Triallelic",value:"triallelic"}
 }
+export var AMEL = {
+    xx:{name:"XX",value:"xx"},
+    xy:{name:"XY",value:"xy"}
+}
+export var TAF9L = {
+    onexchrom:{name:"1 X chromosome",value:"onexchrom"},
+    twoxchrom:{name:"2 X chromosomes",value:"twoxchrom"}
+}
 export var SelectionType = {
     chromOnly:"chromOnly",
     chromAndAllele:"chromAndAllele",
