@@ -9,7 +9,20 @@ class PrenatalRadDemo extends Component {
 
     constructor(props) {
         super(props);
+        this.initState();
         this.createDropdown = this.createDropdown.bind(this);
+    }
+
+    initState(){
+        let answerState = {};
+        for (let key of Object.keys(prenatalRAD_data)){
+            for (let question of prenatalRAD_data[key].questions){
+                console.log(question)
+                answerState[question.id] = "";
+            }
+        }
+        console.log("answer",answerState);
+        this.state = {answers:answerState};
     }
 
     createDropdown(question_data){
@@ -18,12 +31,12 @@ class PrenatalRadDemo extends Component {
             for (let question of question_data[x]){
                 dropdown.push(
                     <Dropdown className="mt-3 d-inline" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0" style={{border:"1px solid gray",lineHeight:"38px"}}>Select</label>
+                        <label className="mx-0 my-0 px-4 py-0" style={{border:"1px solid gray",lineHeight:"38px"}}>{this.state.answers[question.id]===""?"Select":this.state.answers[question.id]}</label>
                         <Dropdown.Toggle/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
-                                return <Dropdown.Item>{option.name}</Dropdown.Item>
-                            })}
+                                return <Dropdown.Item onClick={()=>{var updatedAnswers = {...this.state.answers};updatedAnswers[question.id]=option.value;this.setState({answers:updatedAnswers}); console.log("uodate",this.state)}}>{option.name}</Dropdown.Item>
+                            },this)}
                         </Dropdown.Menu>
                     </Dropdown> 
                 )
@@ -54,7 +67,7 @@ class PrenatalRadDemo extends Component {
                                     return (
                                         <div>
                                             <Button variant="secondary">{key}</Button>
-                                            {this.createDropdown(prenatalRAD_data[key])}
+                                            {this.createDropdown(prenatalRAD_data[key],key)}
                                         </div>
                                     )
                                 },this)

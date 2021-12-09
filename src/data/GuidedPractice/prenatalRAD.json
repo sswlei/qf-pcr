@@ -2,6 +2,7 @@
     "DXS6803":{
         "questions":[
             {
+                "id":"DXS6803_q1",
                 "options":[
                     {"name":"Ch13","value":"ch13"},
                     {"name":"Ch18","value":"ch18"},
@@ -16,6 +17,7 @@
     "D21S1435":{
         "questions":[
             {
+                "id":"D21S1435_q1",
                 "options":[
                     {"name":"Ch13","value":"ch13"},
                     {"name":"Ch18","value":"ch18"},
@@ -26,6 +28,7 @@
                 "answer":"ch21"
             },
             {
+                "id":"D21S1435_q2",
                 "options":[
                     {"name":"Uninformative","value":"uninformative"},
                     {"name":"Diallelic","value":"diallelic"},
@@ -38,6 +41,7 @@
     "D21S11":{        
         "questions":[
             {
+                "id":"D21S11_q1",
                 "options":[
                     {"name":"Ch13","value":"ch13"},
                     {"name":"Ch18","value":"ch18"},
@@ -48,6 +52,7 @@
                 "answer":"ch21"
             },
             {
+                "id":"D21S11_q2",
                 "options":[
                     {"name":"Uninformative","value":"uninformative"},
                     {"name":"Diallelic","value":"diallelic"},
@@ -60,6 +65,7 @@
     "D21S1437":{
         "questions":[
             {
+                "id":"D21S1437_q1",
                 "options":[
                     {"name":"Ch13","value":"ch13"},
                     {"name":"Ch18","value":"ch18"},
@@ -70,6 +76,7 @@
                 "answer":"ch21"
             },
             {
+                "id":"D21S1437_q2",
                 "options":[
                     {"name":"Uninformative","value":"uninformative"},
                     {"name":"Diallelic","value":"diallelic"},
@@ -82,6 +89,7 @@
     "D13S634":{
         "questions":[
             {
+                "id":"D13S634_q1",
                 "options":[
                     {"name":"Ch13","value":"ch13"},
                     {"name":"Ch18","value":"ch18"},
@@ -92,6 +100,7 @@
                 "answer":"ch13"
             },
             {
+                "id":"D13S634_q2",
                 "options":[
                     {"name":"Uninformative","value":"uninformative"},
                     {"name":"Diallelic","value":"diallelic"},
@@ -104,6 +113,7 @@
     "D18S535":{
         "questions":[
             {
+                "id":"D18S535_q1",
                 "options":[
                     {"name":"Ch13","value":"ch13"},
                     {"name":"Ch18","value":"ch18"},
@@ -114,6 +124,7 @@
                 "answer":"ch18"
             },
             {
+                "id":"D18S535_q2",
                 "options":[
                     {"name":"Uninformative","value":"uninformative"},
                     {"name":"Diallelic","value":"diallelic"},
@@ -126,6 +137,7 @@
     "AMEL":{
         "questions":[
             {
+                "id":"AMEL_q1",
                 "options":[
                     {"name":"XX","value":"xx"},
                     {"name":"XY","value":"xy"}
@@ -137,6 +149,7 @@
     "TAF9L":{
         "questions":[
             {
+                "id":"taf9l_q1",
                 "options":[
                     {"name":"1 X chromosome","value":"onexchrom"},
                     {"name":"2 X chromosomes","value":"twoxchrom"}
