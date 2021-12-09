@@ -18,9 +18,3 @@ export var TAF9L = {
     onexchrom:{name:"1 X chromosome",value:"onexchrom"},
     twoxchrom:{name:"2 X chromosomes",value:"twoxchrom"}
 }
-export var SelectionType = {
-    chromOnly:"chromOnly",
-    chromAndAllele:"chromAndAllele",
-    amel:"amel",
-    taf9l:"taf9l"
-}
