@@ -2,10 +2,17 @@ import React, {Component} from "react";
 import { Tabs, Tab, Container, Button } from 'react-bootstrap';
 import ReviewPeaks from '../../components/GuidedPractice/ReviewPeaks';
 import PrenatalRadDemo from "../../components/GuidedPractice/PrenatalRadDemo";
+import GenotypeTable from "../../components/GuidedPractice/GenotypeTable";
 class GuidedPractice extends Component{
     constructor(){
         super();
-        this.state = {completedSteps:0};
+        this.state = {completedSteps:0, currentTab:0};
+    }
+    onClickNext() {
+        var nextTab = this.state.currentTab+1;
+        if (nextTab < this.background_data.length){
+            this.setState({currentTab:nextTab});
+        }
     }
     render(){
         return (
@@ -21,6 +28,7 @@ class GuidedPractice extends Component{
                     <Tab eventKey="part3" title="3. Inspect peaks: Special Loci">
                     </Tab>
                     <Tab eventKey="part4" title="4. Genotype Table">
+                        <GenotypeTable></GenotypeTable>
                     </Tab>
                     <Tab eventKey="part5" title="5. Final Conclusion">
                     </Tab>
