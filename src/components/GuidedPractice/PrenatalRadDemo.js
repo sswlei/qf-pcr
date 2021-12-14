@@ -81,7 +81,7 @@ class PrenatalRadDemo extends Component {
                             Object.keys(prenatalRAD_data).map(function(key, index) {
                                 return (
                                     <div>
-                                            <label className="px-4 py-0 rounded-left" style={{background:"gray",lineHeight:"40px",color:"white"}}>{key}</label>
+                                        <label className="px-4 py-0 rounded-left" style={{background:"gray",lineHeight:"40px",color:"white"}}>{key}</label>
                                         {this.createDropdown(prenatalRAD_data[key],key)}
                                     </div>
                                 )
