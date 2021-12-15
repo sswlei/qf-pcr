@@ -14,6 +14,7 @@ class GenotypeTable extends Component{
                 area1:null,
                 area2:null,
                 area3:null,
+                ratio:null,
                 warning:"",
                 conclusion:""
             };
@@ -25,32 +26,35 @@ class GenotypeTable extends Component{
     }
     onValueChange(key,valueName,value){
         var tableState = {...this.state.tableState}
-        console.log(key,tableState[key])
         tableState[key][valueName] = value;
+        tableState[key].ratio = this.calculateValue(tableState[key].area1,tableState[key].area2);
+        tableState[key].warning = this.checkRatioWarning(tableState[key].ratio);
         this.setState({tableState});
     }
     calculateValue(val1,val2){
         if ((val1 != null && val1 != '') && (val2 != null && val2 != '')){
             var ratio = Number.parseFloat(val1)/Number.parseFloat(val2);
-            // this.checkRatioWarning(key,ratio);
             return ratio;
         }
         return "";
     }
-    checkRatioWarning(key,ratio){
-        var tableState = {...this.state.tableState}
+    checkRatioWarning(ratio){
+        if (ratio === "" || ratio === null){
+            return "";
+        }
+        ratio = Number.parseFloat(ratio);
         var abnormalRatioRange1Min = 0.45;
         var abnormalRatioRange1Max = 0.65;
         var abnormalRatioRange2Min = 1.8;
         var abnormalRatioRange2Max = 2.4;
-        if (abnormalRatioRange1Min <= ratio <= abnormalRatioRange1Max){
-            tableState[key].warning =  "Abnormal ratio detected";
-            this.setState({tableState});
-        }
-        if (abnormalRatioRange2Min <= ratio <= abnormalRatioRange2Max){
-            tableState[key].warning =  "Abnormal ratio detected";
-            this.setState({tableState});
+        var ratioCheck1 = abnormalRatioRange1Min <= ratio && ratio <= abnormalRatioRange1Max;
+        var ratioCheck2 = abnormalRatioRange2Min <= ratio && ratio <= abnormalRatioRange2Max;
 
+        if (ratioCheck1 || ratioCheck2){
+            return "Abnormal ratio detected";
+        }
+        else{
+            return "";
         }
     }
 
@@ -76,7 +80,7 @@ class GenotypeTable extends Component{
                                     <td><input type="number" maxLength={6} value={this.state.tableState[key].area1} onChange={(e)=>{this.onValueChange(key,"area1",e.target.value)}}/></td>
                                     <td><input type="number" maxLength={6} value={this.state.tableState[key].area2} onChange={(e)=>{this.onValueChange(key,"area2",e.target.value)}}/></td>
                                     <td><input type="number" maxLength={6} value={this.state.tableState[key].area3} onChange={(e)=>{this.onValueChange(key,"area3",e.target.value)}}/></td>
-                                    <td>{this.calculateValue(this.state.tableState[key].area1,this.state.tableState[key].area2)}</td>
+                                    <td>{this.state.tableState[key].ratio}</td>
                                     <td>{this.state.tableState[key].warning}</td>
                                     <td>{this.state.tableState[key].conclusion}</td>
                                 </tr>
