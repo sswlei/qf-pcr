@@ -1,36 +1,62 @@
 import React, {Component} from "react";
-import { Tabs, Tab, Container, Button } from 'react-bootstrap';
+import { Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
 import ReviewPeaks from '../../components/GuidedPractice/ReviewPeaks';
 import PrenatalRadDemo from "../../components/GuidedPractice/PrenatalRadDemo";
 import GenotypeTable from "../../components/GuidedPractice/GenotypeTable";
+import FinalConclusion from "../../components/GuidedPractice/FinalConclusion";
+
 class GuidedPractice extends Component{
     constructor(){
         super();
         this.state = {completedSteps:0, currentTab:0};
+        this.handleSelect = this.handleSelect.bind(this);
+        this.onClickNext = this.onClickNext.bind(this);
+
     }
-    onClickNext() {
-        var nextTab = this.state.currentTab+1;
-        if (nextTab < this.background_data.length){
+    handleSelect(tab) {
+        this.setState({currentTab:tab});
+    }
+    onClickNext(){
+        var nextTab = Number.parseInt(this.state.currentTab)+1;
+
+        if (nextTab <= 3){
             this.setState({currentTab:nextTab});
         }
     }
     render(){
         return (
-            <Container>
-                <Tabs defaultActiveKey="part1" className="mb-3">
-                    <Tab eventKey="part1" title="1. Review quality of peaks">
-                        <ReviewPeaks></ReviewPeaks>
-                        <Button>Next</Button>
+            <Container className="mt-4">
+                <Tabs onSelect={this.handleSelect} activeKey={this.state.currentTab} className="mb-3">
+                    <Tab eventKey={0} title="1. Review quality of peaks">
+                        <Row>
+                            <Card className="px-5 py-5 mb-5">
+                                <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>
+                                <Button onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                            </Card>
+                        </Row>
                     </Tab>
-                    <Tab eventKey="part2" title="2. Inspect peaks: Identify Markers">
-                        <PrenatalRadDemo></PrenatalRadDemo>
+                    <Tab eventKey={1} title="2. Inspect peaks: Identify Markers">
+                        <Row>
+                            <Card className="px-5 py-5 mb-5">
+                                <PrenatalRadDemo></PrenatalRadDemo>
+                                <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                            </Card>
+                        </Row>
                     </Tab>
-                    <Tab eventKey="part3" title="3. Inspect peaks: Special Loci">
+                    <Tab eventKey={2} title="3. Genotype Table">
+                        <Row>
+                            <Card className="px-5 py-5 mb-5">
+                                <GenotypeTable></GenotypeTable>
+                                <Button onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                            </Card>
+                        </Row>
                     </Tab>
-                    <Tab eventKey="part4" title="4. Genotype Table">
-                        <GenotypeTable></GenotypeTable>
-                    </Tab>
-                    <Tab eventKey="part5" title="5. Final Conclusion">
+                    <Tab eventKey={3} title="4. Final Conclusion">
+                        <Row>
+                            <Card className="px-5 py-5 mb-5">
+                                <FinalConclusion></FinalConclusion>
+                            </Card>
+                        </Row>
                     </Tab>
                 </Tabs>
             </Container>

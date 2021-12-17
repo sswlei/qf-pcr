@@ -60,7 +60,7 @@ class GenotypeTable extends Component{
 
     render(){
         return (
-                <Table>
+                <Table responsive >
                      <thead>
                         <tr>
                         <th>Marker</th>
