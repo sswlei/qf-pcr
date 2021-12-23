@@ -4,6 +4,7 @@ import ReviewPeaks from '../../components/GuidedPractice/ReviewPeaks';
 import PrenatalRadDemo from "../../components/GuidedPractice/PrenatalRadDemo";
 import GenotypeTable from "../../components/GuidedPractice/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/FinalConclusion";
+import '../../components/css/StepBar.css';
 
 class GuidedPractice extends Component{
     constructor(){
@@ -26,6 +27,7 @@ class GuidedPractice extends Component{
     render(){
         return (
             <Container className="mt-4">
+                <div className="step-arrows"></div>
                 <Tabs onSelect={this.handleSelect} activeKey={this.state.currentTab} className="mb-3">
                     <Tab eventKey={0} title="1. Review quality of peaks">
                         <Row>
