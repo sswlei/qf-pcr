@@ -132,6 +132,9 @@ export default [
            Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as the Integrated Prenatal Screen (early screen during pregnancy (10-13.5 weeks) to test for PAPP-A (pregnancy associated plasma protein-A) or beta human chorionic gonadotrophin (hCG) and can include fetal ultrasound). Advanced maternal age (&gt;40yrs at time of delivery) is another risk factor that may prompt QF-PCR to assess for trisomies. 
            <br></br>
            <br></br>
+           Normal = one peak or 2 peaks with similar peak area; Abnormal = 2 peaks with 1:2 or 2:1 ratio or 3 peaks with 1:1:1 ratio.
+           <br></br>
+           <br></br>
            Note that for followup diagnostic testing, such as QF-PCR, a positive result does not confirm that the fetus is affected, just as a negative result does not eliminate the possibility the fetus is affected. However, a negative result can exclude the tested aneuploidies as a diagnosis.
            <br></br>
            <br></br>
@@ -210,7 +213,7 @@ export default [
                 <li>QF-PCR does not require culturing of cells (10-40% of culture attempts fail): QF-PCR analyzes genomic DNA</li>
                 <li>As for prenatal QF-PCR, only informative markers (must have at least 2 peaks) are analyzed</li>
                 <li>Normal: one peak or 2 peaks with similar peak areas</li>
-                <li>Abnormal: 2 peaks with 1:2 or 2:1 ratio, or 2 peaks (with 1:1:1) ratio</li>
+                <li>Abnormal: 2 peaks with 1:2 or 2:1 ratio, or 3 peaks with 1:1:1 ratio</li>
                 <li>Most common cause of abnormality: chromosome non-disjunction</li>
                 <li>Maternal cell contamination or mosaicism can complicate diagnosis</li>
 
