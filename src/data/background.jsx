@@ -24,23 +24,26 @@ export default [
     },
     {
         id:"pcr-overview",
-        title:"PCR overview",content:<div>In 1983 Dr. Kary Mullis was inspired {<PopOver text={'polymerase'}/>} to develop a method for in vitro (“in glass” i.e. outside of the living cell) DNA amplification, when he realized that short oligonucleotide “primers” could be designed to target specific sequences. PCR is an amplification method where the amount of target DNA is doubled at each step during the early, exponential phase of the reaction (replication slows during later stages as reagents run out and become rate-limiting). Two years later the first paper describing the practical application of PCR, as a method to amplify the gene for betaglobin as a diagnosis method for sickle cell anemia, was published. Mullis called this technique a polymerase-catalyzed chain reaction because the key enzyme is DNA polymerase and the copies of the template that are created act as more targets for the polymerase, causing exponential amplification.
+        title:"PCR overview",content:<div>In 1983 Dr. Kary Mullis was inspired polymerase to develop a method for in vitro (“in glass” i.e. outside of the living cell) DNA amplification, when he realized that short oligonucleotide “primers” could be designed to target specific sequences. PCR is an amplification method where the amount of target DNA is doubled at each step during the early, exponential phase of the reaction (replication slows during later stages as reagents run out and become rate-limiting). Two years later the first paper describing the practical application of PCR, as a method to amplify the gene for betaglobin as a diagnosis method for sickle cell anemia, was published. Mullis called this technique a polymerase-catalyzed chain reaction because the key enzyme is DNA polymerase and the copies of the template that are created act as more targets for the polymerase, causing exponential amplification.
         <br></br>                                                
         <br></br>
         This technique uses the same components and enzyme from DNA replication within cells, but it has been adapted for lab use. Over the years the original PCR protocol has been optimized by utilizing a temperature-resistant polymerase (so the polymerase does not need to be replaced each cycle) and fluorescent labels (allowing for automated product detection). In summary, PCR is a method to target a specific portion of the genome in order to increase its abundance. Key components in the PCR reaction include (in addition to the previously mentioned polymerase), 2 short oligonucleotide “primers” to initiate the amplification at a specific location and all four nucleotide building blocks for DNA. The PCR reaction occurs in a device called a thermocycler, which allows for precise temperature and reaction length control. Each PCR cycle consists of 3 reactions, illustrated below:
         {<Image src={PCRPhoto} fluid></Image>}
         <br></br>
         <br></br>
-        Annealing (50-70C: a critical step for reaction specificity, dependent on the GC content of the primers), to allow the primers to find the complementary sequence in the genome and hybridize to form a double stranded region. The primer sequences need to be carefully designed to only match the region surrounding the area of interest (one primer on each side) in the genome to ensure that only the ROI is amplified. The annealing temperature setting on the thermocycler is based on the melting temperature (the temperature at which 1/2 of the primers have dissociated from the template) of the primers.
+        <strong>Annealing</strong> (50-70C: a critical step for reaction specificity, dependent on the GC content of the primers), to allow the primers to find the complementary sequence in the genome and hybridize to form a double stranded region. The primer sequences need to be carefully designed to only match the region surrounding the area of interest (one primer on each side) in the genome to ensure that only the region of interest is amplified. The annealing temperature setting on the thermocycler is based on the melting temperature (the temperature at which 1/2 of the primers have dissociated from the template) of the primers.
         <br></br>
         <br></br>
-        Extension (68-75C: dependent on the polymerase): DNA synthesis, where new nucleotides are added to the 3’ end of the primers via hydrogen bonding, creating a new DNA strand complementary to one of the template strands.
+        <strong>Extension</strong> (68-75C: dependent on the polymerase): DNA synthesis, where new nucleotides are added to the 3’ end of the primers via hydrogen bonding, creating a new DNA strand complementary to one of the template strands.
+        <br></br>
+        <br></br>
+        <strong>Denaturation</strong> (94-95C): the first step in PCR: where double stranded DNA become single stranded when the high temperature breaks the hydrogen bonds between the 2 strands.        
         <br></br>
         <br></br>
         This method allows lab workers to generate millions of copies of a relevant region of the genome to be used for analyses.
         <br></br>
         <br></br>
-        The early cycles feature exponential amplification: every cycle doubles the amount of DNA, with the rate of amplification eventually decreasing in later stages as reagent are exhausted.</div>
+        The early cycles feature exponential amplification: every cycle doubles the amount of DNA, with the rate of amplification eventually decreasing in later stages as reagents are exhausted.</div>
     },
     {
         id:"what-is-aneuploidy",
@@ -85,7 +88,7 @@ export default [
                 </li>
             </ul>
             
-            This online module will provide practice for both of these types of cases.
+            This online module will provide practice for both prenatal and pregnancy loss cases.
 
         </div>
     },
@@ -126,7 +129,10 @@ export default [
            Some of these conditions are present as {<PopOver text={'mosaics'}/>}, which can make diagnosis more challenging as some are not detected by this diagnostic test.
            <br></br>
            <br></br>
-           Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as the Integrated Prenatal Screen (early screen during pregnancy (10-13.5 weeks) to test for PAPP-A (pregnancy associated plasma protein-A) or beta human chorionic gonadotrophin (hCG) and can include fetal ultrasound). Advanced maternal age (&gt;40yrs at time of delivery) is another risk factor that may prompt QF-PCR to assess for trisomies.
+           Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as the Integrated Prenatal Screen (early screen during pregnancy (10-13.5 weeks) to test for PAPP-A (pregnancy associated plasma protein-A) or beta human chorionic gonadotrophin (hCG) and can include fetal ultrasound). Advanced maternal age (&gt;40yrs at time of delivery) is another risk factor that may prompt QF-PCR to assess for trisomies. 
+           <br></br>
+           <br></br>
+           Normal = one peak or 2 peaks with similar peak area; Abnormal = 2 peaks with 1:2 or 2:1 ratio or 3 peaks with 1:1:1 ratio.
            <br></br>
            <br></br>
            Note that for followup diagnostic testing, such as QF-PCR, a positive result does not confirm that the fetus is affected, just as a negative result does not eliminate the possibility the fetus is affected. However, a negative result can exclude the tested aneuploidies as a diagnosis.
@@ -193,7 +199,7 @@ export default [
                 <li>Major cause of PL are chromosomal abnormalities</li>
                 <li>Trisomies possible for all autosomal chromosomes in PL</li>
                 <li>QF-PCR for PL looks for most common chromosomal trisomies associated with early fetal loss: Chromosomes 15, 16, 21, and 22</li>
-                <li>Also checks for trisomy in same chromosomes as prenatal RAD (i.e. 13, 18: can occur in PL later in pregnancy)</li>
+                <li>Also checks for trisomy in same chromosomes as prenatal QF-PCR (i.e. 13, 18: can occur in PL later in pregnancy)</li>
                 <li>Autosomal monosomies rare</li>
                 <li>Identifying cause of PL can provide information about chance PL can occur in future pregnancies</li>
                 <li>Possible reasons for performing PL QF-PCR:
@@ -205,9 +211,9 @@ export default [
                     </ul>
                 </li>
                 <li>QF-PCR does not require culturing of cells (10-40% of culture attempts fail): QF-PCR analyzes genomic DNA</li>
-                <li>As for prenatal RAD, only informative markers (must have at least 2 peaks) are analyzed</li>
+                <li>As for prenatal QF-PCR, only informative markers (must have at least 2 peaks) are analyzed</li>
                 <li>Normal: one peak or 2 peaks with similar peak areas</li>
-                <li>Abnormal: 2 peaks with 1:2 or 2:1 ratio, or 2 peaks (with 1:1:1) ratio</li>
+                <li>Abnormal: 2 peaks with 1:2 or 2:1 ratio, or 3 peaks with 1:1:1 ratio</li>
                 <li>Most common cause of abnormality: chromosome non-disjunction</li>
                 <li>Maternal cell contamination or mosaicism can complicate diagnosis</li>
 
