@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
+import { Col, Nav, Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
 import ReviewPeaks from '../../components/GuidedPractice/ReviewPeaks';
 import PrenatalRadDemo from "../../components/GuidedPractice/PrenatalRadDemo";
 import GenotypeTable from "../../components/GuidedPractice/GenotypeTable";
@@ -12,10 +12,12 @@ class GuidedPractice extends Component{
         this.state = {completedSteps:0, currentTab:0};
         this.handleSelect = this.handleSelect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
+        this.getStepColor = this.getStepColor.bind(this);
+
 
     }
     handleSelect(tab) {
-        this.setState({currentTab:tab});
+        this.setState({currentTab:parseInt(tab)});
     }
     onClickNext(){
         var nextTab = Number.parseInt(this.state.currentTab)+1;
@@ -24,11 +26,67 @@ class GuidedPractice extends Component{
             this.setState({currentTab:nextTab});
         }
     }
+    getStepColor(tab){
+        if (tab===this.state.currentTab){
+            return "current-step";
+        }
+    }
     render(){
         return (
             <Container className="mt-4">
-                <div className="step-arrows"></div>
-                <Tabs onSelect={this.handleSelect} activeKey={this.state.currentTab} className="mb-3">
+                {/* <div className="step-arrows"></div> */}
+                
+                <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
+                    <Row>
+                        <Col sm={12}>
+                            <Nav>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(0)}`}>
+                                    <Nav.Link eventKey={0}><strong>Step 1</strong> <br></br> Review quality of peaks</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(1)}`}>
+                                    <Nav.Link eventKey={1}><strong>Step 2</strong> <br></br> Inspect peaks: Identify Markers</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(2)}`}>
+                                    <Nav.Link eventKey={2}><strong>Step 3</strong> <br></br> Genotype Table</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(3)}`}>
+                                    <Nav.Link eventKey={3}><strong>Step 4</strong> <br></br> Final Conclusion</Nav.Link>
+                                </Nav.Item>
+                            </Nav>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                        <Tab.Content>
+                            <Tab.Pane eventKey={0}>
+                                <Card className="px-5 py-5 mb-5">
+                                    <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>
+                                    <Button onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                </Card>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey={1}>
+                                <Card className="px-5 py-5 mb-5">
+                                    <PrenatalRadDemo></PrenatalRadDemo>
+                                    <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                </Card>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey={2}>
+                                <Card className="px-5 py-5 mb-5">
+                                    <GenotypeTable></GenotypeTable>
+                                    <Button onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                </Card>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey={3}>
+                                <Card className="px-5 py-5 mb-5">
+                                    <FinalConclusion></FinalConclusion>
+                                    <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                </Card>
+                            </Tab.Pane>
+                        </Tab.Content>
+                        </Col>
+                    </Row>
+                </Tab.Container>
+                {/* <Tabs onSelect={this.handleSelect} activeKey={this.state.currentTab} className="mb-3">
                     <Tab eventKey={0} title="1. Review quality of peaks">
                         <Row>
                             <Card className="px-5 py-5 mb-5">
@@ -60,7 +118,7 @@ class GuidedPractice extends Component{
                             </Card>
                         </Row>
                     </Tab>
-                </Tabs>
+                </Tabs> */}
             </Container>
         )
     }
