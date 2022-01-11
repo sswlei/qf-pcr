@@ -68,10 +68,10 @@ class PrenatalRadDemo extends Component {
                         <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
                             {({ zoomIn, zoomOut, resetTransform }) => (
                                 <React.Fragment>
-                                    <div className="tools">
-                                        <button onClick={() => zoomIn()}>Zoom In</button>
-                                        <button onClick={() => zoomOut()}>Zoom Out</button>
-                                        <button onClick={() => resetTransform()}>Reset</button>
+                                    <div className="tools"  className="mb-2">
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomIn()}>Zoom In</Button>
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomOut()}>Zoom Out</Button>
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
                                     </div>
                                     <TransformComponent wrapperStyle={{width:"100%",height:600}}>
                                         <img src={NormalMale} alt="Normal Male" />
@@ -90,8 +90,7 @@ class PrenatalRadDemo extends Component {
                                     <div>
                                         <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
                                         <div>
-                                        {this.createDropdown(prenatalRAD_data[key],key)}
-
+                                            {this.createDropdown(prenatalRAD_data[key],key)}
                                         </div>
                                     </div>
                                 )
