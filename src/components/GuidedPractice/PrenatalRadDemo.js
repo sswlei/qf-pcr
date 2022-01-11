@@ -43,7 +43,9 @@ class PrenatalRadDemo extends Component {
             for (let question of question_data[x]){
                 dropdown.push(
                     <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id].value,question.answer)}}>{this.state.answers[question.id]===""?"Select":this.state.answers[question.id].name}</label>
+                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id].value,question.answer)}}>
+                            {this.state.answers[question.id]===""?"Select":this.state.answers[question.id].name}
+                        </label>
                         <Dropdown.Toggle variant="secondary" style={{height:40}}/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
@@ -61,17 +63,25 @@ class PrenatalRadDemo extends Component {
 
         return (
             <Row>
-                <p>In the following interactive example, please examine the image and select the correct marker(s) for each section.</p>
-                <Card className="col-7" style={{maxHeight:600}}>
-                    <Card.Body>
+                <p>In the following interactive example, please examine the image and select the correct chromosome/allele label for each section.</p>
+                <div className="col-7" style={{maxHeight:600}}>
                         <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
-                            <TransformComponent wrapperStyle={{width:"100%",height:500}}>
-                                <img src={NormalMale} alt="Normal Male" />
-                            </TransformComponent>
+                            {({ zoomIn, zoomOut, resetTransform }) => (
+                                <React.Fragment>
+                                    <div className="tools"  className="mb-2">
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomIn()}>Zoom In</Button>
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomOut()}>Zoom Out</Button>
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
+                                    </div>
+                                    <TransformComponent wrapperStyle={{width:"100%",height:600}}>
+                                        <img src={NormalMale} alt="Normal Male" />
+                                    </TransformComponent>
+                                </React.Fragment>
+                            )}
+
                         </TransformWrapper>
-                    </Card.Body>
-                </Card>
-                <Card  className="col-5 py-3" style={{maxHeight:600}}>
+                </div>
+                <Card  className="col-5 py-3" style={{maxHeight:650}}>
                     <Card.Body style={{overflowY:"scroll"}}>
 
                         {
@@ -79,11 +89,8 @@ class PrenatalRadDemo extends Component {
                                 return (
                                     <div>
                                         <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
-                                        {/* style={{background:"gray",lineHeight:"40px",color:"white"}} */}
-
                                         <div>
-                                        {this.createDropdown(prenatalRAD_data[key],key)}
-
+                                            {this.createDropdown(prenatalRAD_data[key],key)}
                                         </div>
                                     </div>
                                 )
