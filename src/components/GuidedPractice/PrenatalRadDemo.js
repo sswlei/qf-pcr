@@ -81,7 +81,7 @@ class PrenatalRadDemo extends Component {
 
                         </TransformWrapper>
                 </div>
-                <Card  className="col-5 py-3" style={{maxHeight:600}}>
+                <Card  className="col-5 py-3" style={{maxHeight:650}}>
                     <Card.Body style={{overflowY:"scroll"}}>
 
                         {
