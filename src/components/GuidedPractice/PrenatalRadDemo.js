@@ -28,7 +28,6 @@ class PrenatalRadDemo extends Component {
     }
 
     onClickNext(){
-        this.props.onClickNext();
         if (this.checkAllCorrect()){
             this.props.onClickNext();
         }
@@ -126,7 +125,7 @@ class PrenatalRadDemo extends Component {
                         }
                     </Card.Body>
                 </Card>
-                <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                <Button className={"mt-3"} onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
 
             </Row>
         )

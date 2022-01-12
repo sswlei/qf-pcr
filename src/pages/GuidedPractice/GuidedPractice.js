@@ -25,6 +25,7 @@ class GuidedPractice extends Component{
             stepsCompleted++;
         }
         if ( nextTab <= 3 ){
+            window.scrollTo(0, 0);
             this.setState({ currentTab:nextTab, completedSteps:stepsCompleted });
         }
     }
