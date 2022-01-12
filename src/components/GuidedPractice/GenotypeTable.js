@@ -72,6 +72,14 @@ class GenotypeTable extends Component{
     render(){
         return (
             <>
+                <h2>Genotype Table</h2>
+                <p>In the following interactive example, transcribe the peak area values into a genotype table (enter "0" if the marker is absent). The table will automatically calculate the values and inform you if there are any warnings you should take into consideration.</p>
+                <h5>Possible warnings:</h5>
+                <ul>
+                    <li>Ratio: 2 peaks seen, non normal ratio</li>
+                    <li>3 alleles: 3 peaks seen</li>
+                    <li>Absent: marker not seen (i.e. for Y chrom specific markers in biological female)</li>
+                </ul>
                 <Card>
                     <Card.Body>
                         <TransformWrapper initialScale={0.5} minScale={0.4} maxScale={2} centerOnInit={true}>

@@ -89,48 +89,53 @@ class PrenatalRadDemo extends Component {
     render() {
 
         return (
-            <Row>
-                <p>In the following interactive example, please examine the image and select the correct chromosome/allele label for each section.</p>
-                <Col sm={12} md={7} style={{maxHeight:600}}>
-                        <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
-                            {({ zoomIn, zoomOut, resetTransform }) => (
-                                <React.Fragment>
-                                    <div className="tools"  className="mb-2">
-                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomIn()}>Zoom In</Button>
-                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomOut()}>Zoom Out</Button>
-                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
-                                    </div>
-                                    <TransformComponent wrapperStyle={{width:"100%",height:600}}>
-                                        <img src={NormalMale} alt="Normal Male" />
-                                    </TransformComponent>
-                                </React.Fragment>
-                            )}
-
-                        </TransformWrapper>
-                </Col>
-                <Col sm={12} md={5}>
-                    <Card style={{maxHeight:650}}>
-                        <Card.Body style={{overflowY:"scroll"}}>
-
-                            {
-                                Object.keys(prenatalRAD_data).map(function(key, index) {
-                                    return (
-                                        <div>
-                                            <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
-                                            <div>
-                                                {this.createDropdown(prenatalRAD_data[key])}
-                                            </div>
+            <>
+                <h2>Identify markers</h2>
+                <p>In the following interactive example, please examine the image and select the correct marker(s) for each section.</p>
+                <Row>
+                    
+                    <Col sm={12} md={7} style={{maxHeight:600}}>
+                            <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
+                                {({ zoomIn, zoomOut, resetTransform }) => (
+                                    <React.Fragment>
+                                        <div className="tools"  className="mb-2">
+                                            <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomIn()}>Zoom In</Button>
+                                            <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomOut()}>Zoom Out</Button>
+                                            <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
                                         </div>
-                                    )
-                                },this)
-                            }
-                        </Card.Body>
-                    </Card>
-                </Col>
-                
-                <Button className={"mt-3"} onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                        <TransformComponent wrapperStyle={{width:"100%",height:600}}>
+                                            <img src={NormalMale} alt="Normal Male" />
+                                        </TransformComponent>
+                                    </React.Fragment>
+                                )}
 
-            </Row>
+                            </TransformWrapper>
+                    </Col>
+                    <Col sm={12} md={5}>
+                        <Card style={{maxHeight:650}}>
+                            <Card.Body style={{overflowY:"scroll"}}>
+
+                                {
+                                    Object.keys(prenatalRAD_data).map(function(key, index) {
+                                        return (
+                                            <div>
+                                                <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
+                                                <div>
+                                                    {this.createDropdown(prenatalRAD_data[key])}
+                                                </div>
+                                            </div>
+                                        )
+                                    },this)
+                                }
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    
+                    <Button className={"mt-3"} onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+
+                </Row>
+            </>
+          
         )
     }
 }
