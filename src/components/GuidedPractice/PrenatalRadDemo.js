@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NormalMale from '../../assets/normalMale.JPG';
 import ReactImageMagnify from 'react-image-magnify';
-import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Container } from 'react-bootstrap';
+import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
 
@@ -91,7 +91,7 @@ class PrenatalRadDemo extends Component {
         return (
             <Row>
                 <p>In the following interactive example, please examine the image and select the correct chromosome/allele label for each section.</p>
-                <div className="col-7" style={{maxHeight:600}}>
+                <Col sm={12} md={7} style={{maxHeight:600}}>
                         <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
                             {({ zoomIn, zoomOut, resetTransform }) => (
                                 <React.Fragment>
@@ -107,24 +107,27 @@ class PrenatalRadDemo extends Component {
                             )}
 
                         </TransformWrapper>
-                </div>
-                <Card  className="col-5 py-3" style={{maxHeight:650}}>
-                    <Card.Body style={{overflowY:"scroll"}}>
+                </Col>
+                <Col sm={12} md={5}>
+                    <Card style={{maxHeight:650}}>
+                        <Card.Body style={{overflowY:"scroll"}}>
 
-                        {
-                            Object.keys(prenatalRAD_data).map(function(key, index) {
-                                return (
-                                    <div>
-                                        <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
+                            {
+                                Object.keys(prenatalRAD_data).map(function(key, index) {
+                                    return (
                                         <div>
-                                            {this.createDropdown(prenatalRAD_data[key])}
+                                            <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
+                                            <div>
+                                                {this.createDropdown(prenatalRAD_data[key])}
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            },this)
-                        }
-                    </Card.Body>
-                </Card>
+                                    )
+                                },this)
+                            }
+                        </Card.Body>
+                    </Card>
+                </Col>
+                
                 <Button className={"mt-3"} onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
 
             </Row>
