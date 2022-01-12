@@ -2,11 +2,11 @@ import React from "react";
 import PopOver from '../components/PopOver';
 import PCRPhoto from '../assets/pcr_photo.png';
 
-import trisomy13 from '../assets/trisomy_13.png';
-import trisomy18 from '../assets/trisomy_18.png';
-import trisomy21 from '../assets/trisomy_21.png';
-import klinefelter_47XXY from '../assets/klinefelter_47-XXY.png';
-import turner from '../assets/turner.png';
+import trisomy13 from '../assets/tri13_circled.png';
+import trisomy18 from '../assets/tri18_circled.png';
+import trisomy21 from '../assets/tri21_circled.png';
+import klinefelter_47XXY from '../assets/XXY_circled.png';
+import turner from '../assets/Turner_circled.png';
 
 import { Figure, Image, Table } from 'react-bootstrap';
 
