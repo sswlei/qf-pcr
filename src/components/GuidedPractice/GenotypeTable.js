@@ -74,7 +74,7 @@ class GenotypeTable extends Component{
             <>
                 <Card>
                     <Card.Body>
-                        <TransformWrapper initialScale={0.5} minScale={0.5} maxScale={2} centerOnInit={true}>
+                        <TransformWrapper initialScale={0.5} minScale={0.4} maxScale={2} centerOnInit={true}>
                             {({ zoomIn, zoomOut, resetTransform }) => (
                                 <React.Fragment>
                                     <div className="tools"  className="mb-2">
