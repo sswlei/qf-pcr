@@ -12,32 +12,57 @@ class PrenatalRadDemo extends Component {
         this.initState();
         this.createDropdown = this.createDropdown.bind(this);
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
+        this.checkAllCorrect = this.checkAllCorrect.bind(this);
+        this.onAnswerSelect = this.onAnswerSelect.bind(this);
+        this.onClickNext = this.onClickNext.bind(this);
     }
 
     initState(){
         let answerState = {};
         for (let key of Object.keys(prenatalRAD_data)){
             for (let question of prenatalRAD_data[key].questions){
-                console.log(question)
                 answerState[question.id] = "";
             }
         }
-        console.log("answer",answerState);
         this.state = {answers:answerState};
     }
 
-    getAnswerBackground(selected,answer){
-        console.log("ans",selected+" "+answer)
-        if (selected===""){
-            return "white";
-
+    onClickNext(){
+        this.props.onClickNext();
+        if (this.checkAllCorrect()){
+            this.props.onClickNext();
         }
-        if (selected===answer){
+        else{
+            alert("Please make sure all fields are answered correctly.");
+        }
+    }
+
+    getAnswerBackground(isCorrect){
+        if (isCorrect===""||isCorrect==null){
+            return "white";
+        }
+        if (isCorrect){
             return "lightgreen";
         }
         else{
-            return "red";
+            return "#F1A3A3";
         }
+    }
+
+    checkAllCorrect(){
+        for (var key in this.state.answers){
+            if (key, this.state.answers[key].correct != true){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    onAnswerSelect(option_data, question_data){
+        var updatedAnswers = {...this.state.answers};
+        option_data.correct = option_data.value===question_data.answer;
+        updatedAnswers[question_data.id]=option_data;
+        this.setState({answers:updatedAnswers});
     }
 
     createDropdown(question_data){
@@ -45,12 +70,14 @@ class PrenatalRadDemo extends Component {
         for (let x in question_data){
             for (let question of question_data[x]){
                 dropdown.push(
-                    <Dropdown className="mt-3 d-inline" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id],question.answer)}}>{this.state.answers[question.id]===""?"Select":this.state.answers[question.id]}</label>
-                        <Dropdown.Toggle variant="secondary" style={{marginTop:"-4px"}}/>
+                    <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
+                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id].correct)}}>
+                            {this.state.answers[question.id]===""?"Select":this.state.answers[question.id].name}
+                        </label>
+                        <Dropdown.Toggle variant="secondary" style={{height:40}}/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
-                                return <Dropdown.Item onClick={()=>{var updatedAnswers = {...this.state.answers};updatedAnswers[question.id]=option.value;this.setState({answers:updatedAnswers}); console.log("uodate",this.state)}}>{option.name}</Dropdown.Item>
+                                return <Dropdown.Item onClick={()=>{this.onAnswerSelect(option, question)}}>{option.name}</Dropdown.Item>
                             },this)}
                         </Dropdown.Menu>
                     </Dropdown> 
@@ -63,33 +90,45 @@ class PrenatalRadDemo extends Component {
     render() {
 
         return (
-            <>
-                <p>In the following interactive example, please examine the image and select the correct marker(s) for each section.</p>
-                <Card className="col-7">
-                    <Card.Body>
+            <Row>
+                <p>In the following interactive example, please examine the image and select the correct chromosome/allele label for each section.</p>
+                <div className="col-7" style={{maxHeight:600}}>
                         <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
-                            <TransformComponent wrapperStyle={{width:"100%",height:500}}>
-                                <img src={NormalMale} alt="Normal Male" />
-                            </TransformComponent>
+                            {({ zoomIn, zoomOut, resetTransform }) => (
+                                <React.Fragment>
+                                    <div className="tools"  className="mb-2">
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomIn()}>Zoom In</Button>
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => zoomOut()}>Zoom Out</Button>
+                                        <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
+                                    </div>
+                                    <TransformComponent wrapperStyle={{width:"100%",height:600}}>
+                                        <img src={NormalMale} alt="Normal Male" />
+                                    </TransformComponent>
+                                </React.Fragment>
+                            )}
+
                         </TransformWrapper>
-                    </Card.Body>
-                </Card>
-                <Card  className="col-5">
-                    <Card.Body>
+                </div>
+                <Card  className="col-5 py-3" style={{maxHeight:650}}>
+                    <Card.Body style={{overflowY:"scroll"}}>
 
                         {
                             Object.keys(prenatalRAD_data).map(function(key, index) {
                                 return (
                                     <div>
-                                        <label className="px-4 py-0 rounded-left" style={{background:"gray",lineHeight:"40px",color:"white"}}>{key}</label>
-                                        {this.createDropdown(prenatalRAD_data[key],key)}
+                                        <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
+                                        <div>
+                                            {this.createDropdown(prenatalRAD_data[key])}
+                                        </div>
                                     </div>
                                 )
                             },this)
                         }
                     </Card.Body>
                 </Card>
-            </>
+                <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+
+            </Row>
         )
     }
 }
