@@ -71,25 +71,21 @@ class GuidedPractice extends Component{
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
                                     <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>
-                                    <Button onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <PrenatalRadDemo></PrenatalRadDemo>
-                                    <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                    <PrenatalRadDemo onClickNext={this.onClickNext}></PrenatalRadDemo>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable></GenotypeTable>
-                                    <Button onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                                    <GenotypeTable onClickNext={this.onClickNext}></GenotypeTable>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
                                     <FinalConclusion></FinalConclusion>
-                                    {/* <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button> */}
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>

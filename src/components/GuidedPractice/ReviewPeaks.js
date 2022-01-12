@@ -17,6 +17,7 @@ class ReviewPeaks extends Component{
                         <p>
                             You will also need to run positive (i.e. aneuploidy present) and negative controls in each QF-PCR reaction: if results fail, cannot proceed with analysis
                         </p>
+                        <Button onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
                 </>
            
         )

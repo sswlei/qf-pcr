@@ -12,6 +12,9 @@ class PrenatalRadDemo extends Component {
         this.initState();
         this.createDropdown = this.createDropdown.bind(this);
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
+        this.checkAllCorrect = this.checkAllCorrect.bind(this);
+        this.onAnswerSelect = this.onAnswerSelect.bind(this);
+        this.onClickNext = this.onClickNext.bind(this);
     }
 
     initState(){
@@ -24,17 +27,42 @@ class PrenatalRadDemo extends Component {
         this.state = {answers:answerState};
     }
 
-    getAnswerBackground(selected,answer){
-        if (selected===""||selected==null){
-            return "white";
-
+    onClickNext(){
+        this.props.onClickNext();
+        if (this.checkAllCorrect()){
+            this.props.onClickNext();
         }
-        if (selected===answer){
+        else{
+            alert("Please make sure all fields are answered correctly.");
+        }
+    }
+
+    getAnswerBackground(isCorrect){
+        if (isCorrect===""||isCorrect==null){
+            return "white";
+        }
+        if (isCorrect){
             return "lightgreen";
         }
         else{
             return "#F1A3A3";
         }
+    }
+
+    checkAllCorrect(){
+        for (var key in this.state.answers){
+            if (key, this.state.answers[key].correct != true){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    onAnswerSelect(option_data, question_data){
+        var updatedAnswers = {...this.state.answers};
+        option_data.correct = option_data.value===question_data.answer;
+        updatedAnswers[question_data.id]=option_data;
+        this.setState({answers:updatedAnswers});
     }
 
     createDropdown(question_data){
@@ -43,13 +71,13 @@ class PrenatalRadDemo extends Component {
             for (let question of question_data[x]){
                 dropdown.push(
                     <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id].value,question.answer)}}>
+                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id].correct)}}>
                             {this.state.answers[question.id]===""?"Select":this.state.answers[question.id].name}
                         </label>
                         <Dropdown.Toggle variant="secondary" style={{height:40}}/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
-                                return <Dropdown.Item onClick={()=>{var updatedAnswers = {...this.state.answers};updatedAnswers[question.id]=option;this.setState({answers:updatedAnswers});}}>{option.name}</Dropdown.Item>
+                                return <Dropdown.Item onClick={()=>{this.onAnswerSelect(option, question)}}>{option.name}</Dropdown.Item>
                             },this)}
                         </Dropdown.Menu>
                     </Dropdown> 
@@ -90,7 +118,7 @@ class PrenatalRadDemo extends Component {
                                     <div>
                                         <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
                                         <div>
-                                            {this.createDropdown(prenatalRAD_data[key],key)}
+                                            {this.createDropdown(prenatalRAD_data[key])}
                                         </div>
                                     </div>
                                 )
@@ -98,6 +126,8 @@ class PrenatalRadDemo extends Component {
                         }
                     </Card.Body>
                 </Card>
+                <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+
             </Row>
         )
     }

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Container, Row, Table, Card } from "react-bootstrap";
+import { Button, Container, Row, Table, Card } from "react-bootstrap";
 import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
 
 class GenotypeTable extends Component{
@@ -60,6 +60,7 @@ class GenotypeTable extends Component{
 
     render(){
         return (
+            <>
                 <Table responsive >
                      <thead>
                         <tr>
@@ -88,7 +89,10 @@ class GenotypeTable extends Component{
                         },this)}
                       
                     </tbody>
-                </Table>
+                </Table>                                   
+                <Button onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+            </>
+
         )
     }
 }
