@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import NormalMale from '../../assets/normalMale.JPG';
+import xIcon from '../../assets/x.svg';
+import checkIcon from '../../assets/checkmark.svg';
+
+
 import ReactImageMagnify from 'react-image-magnify';
 import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -12,71 +16,69 @@ class PrenatalRadDemo extends Component {
         this.initState();
         this.createDropdown = this.createDropdown.bind(this);
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
-        this.checkAllCorrect = this.checkAllCorrect.bind(this);
         this.onAnswerSelect = this.onAnswerSelect.bind(this);
-        this.onClickNext = this.onClickNext.bind(this);
+        this.checkQuestionCorrect = this.checkQuestionCorrect.bind(this);
     }
 
     initState(){
         let answerState = {};
         for (let key of Object.keys(prenatalRAD_data)){
+            answerState[key] = {};
             for (let question of prenatalRAD_data[key].questions){
-                answerState[question.id] = "";
+                answerState[key][question.id]="";
             }
         }
         this.state = {answers:answerState};
+        console.log(answerState);
     }
 
-    onClickNext(){
-        if (this.checkAllCorrect()){
-            this.props.onClickNext();
-        }
-        else{
-            alert("Please make sure all fields are answered correctly.");
-        }
-    }
 
     getAnswerBackground(isCorrect){
         if (isCorrect===""||isCorrect==null){
             return "white";
         }
         if (isCorrect){
-            return "lightgreen";
+            return "#BCF4BC";
         }
         else{
-            return "#F1A3A3";
+            return "#E67878";
         }
     }
 
-    checkAllCorrect(){
-        for (var key in this.state.answers){
-            if (key, this.state.answers[key].correct != true){
-                return false;
+    checkQuestionCorrect(key){
+        for (var question_id in this.state.answers[key]){
+            var isCorrect = this.state.answers[key][question_id].correct;
+            if (isCorrect === null || isCorrect === undefined){
+                return null;
+            }
+            if (isCorrect === false){
+                return xIcon;
             }
         }
-        return true;
+        return checkIcon;
     }
 
-    onAnswerSelect(option_data, question_data){
+    onAnswerSelect(key, option_data, question_data){
+        console.log(this.state.answers);
         var updatedAnswers = {...this.state.answers};
         option_data.correct = option_data.value===question_data.answer;
-        updatedAnswers[question_data.id]=option_data;
+        updatedAnswers[key][question_data.id]=option_data;
         this.setState({answers:updatedAnswers});
     }
 
-    createDropdown(question_data){
+    createDropdown(key,question_data){
         let dropdown = [];
         for (let x in question_data){
             for (let question of question_data[x]){
                 dropdown.push(
                     <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[question.id].correct)}}>
-                            {this.state.answers[question.id]===""?"Select":this.state.answers[question.id].name}
+                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[key][question.id].correct)}}>
+                            {this.state.answers[key][question.id]===""?"Select":this.state.answers[key][question.id].name} 
                         </label>
                         <Dropdown.Toggle variant="secondary" style={{height:40}}/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
-                                return <Dropdown.Item onClick={()=>{this.onAnswerSelect(option, question)}}>{option.name}</Dropdown.Item>
+                                return <Dropdown.Item onClick={()=>{this.onAnswerSelect(key, option, question)}}>{option.name}</Dropdown.Item>
                             },this)}
                         </Dropdown.Menu>
                     </Dropdown> 
@@ -119,9 +121,13 @@ class PrenatalRadDemo extends Component {
                                     Object.keys(prenatalRAD_data).map(function(key, index) {
                                         return (
                                             <div>
-                                                <label style={{fontWeight:"bold", color:'#6c757d'}}>{key}</label> 
+                                                    <label style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
+                                                        <span>
+                                                            <img className="ml-2" style={{height:15}} src={this.checkQuestionCorrect(key)}></img>
+                                                        </span>
+                                                    </label> 
                                                 <div>
-                                                    {this.createDropdown(prenatalRAD_data[key])}
+                                                    {this.createDropdown(key,prenatalRAD_data[key])}
                                                 </div>
                                             </div>
                                         )
