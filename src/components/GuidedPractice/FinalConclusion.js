@@ -2,6 +2,26 @@ import { Component } from "react";
 import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 
 class FinalConclusion extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            finalAnswer:""
+        }
+        this.finalOptions = [
+            "Normal biological female",
+            "Normal biological male",
+            "Trisomy 13 biological male",
+            "Trisomy 13 biological female",
+            "Trisomy 18 biological male",
+            "Trisomy 18 biological female",
+            "Trisomy 21 biological male",
+            "Trisomy 21 biological female",
+            "Klinefelter",
+            "Turner",
+            "Other",
+            "Further testing required"
+        ];
+    }
     render(){
         return <div>
             <h3>Is there enough evidence for a final conclusion?</h3>
@@ -39,23 +59,14 @@ class FinalConclusion extends Component{
             </p>
 
             <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{width:200,border:"1px solid gray",lineHeight:"38px"}}>
-                    Select
+                <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px"}}>
+                    {this.state.finalAnswer===""?"Select":this.state.finalAnswer}
                 </label>
                 <Dropdown.Toggle variant="secondary" style={{height:40}}/>
                 <Dropdown.Menu alignRight>
-                    <Dropdown.Item>Normal biological female</Dropdown.Item>
-                    <Dropdown.Item>Normal biological male</Dropdown.Item>
-                    <Dropdown.Item>Trisomy 13 biological male</Dropdown.Item>
-                    <Dropdown.Item>Trisomy 13 biological female</Dropdown.Item>
-                    <Dropdown.Item>Trisomy 18 biological male</Dropdown.Item>
-                    <Dropdown.Item>Trisomy 18 biological female</Dropdown.Item>
-                    <Dropdown.Item>Trisomy 21 biological male</Dropdown.Item>
-                    <Dropdown.Item>Trisomy 21 biological female</Dropdown.Item>
-                    <Dropdown.Item>Klinefelter</Dropdown.Item>
-                    <Dropdown.Item>Turner</Dropdown.Item>
-                    <Dropdown.Item>Other</Dropdown.Item>
-                    <Dropdown.Item>Further testing required</Dropdown.Item>
+                    {this.finalOptions.map((item)=>{
+                        return <Dropdown.Item onClick={()=>{this.setState({finalAnswer:item})}}>{item}</Dropdown.Item>
+                    })}
                 </Dropdown.Menu>
             </Dropdown> 
                 <br></br>
