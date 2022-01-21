@@ -35,6 +35,9 @@ class GenotypeTable extends Component{
     }
     calculateValue(val1,val2){
         if ((val1 != null && val1 != '') && (val2 != null && val2 != '')){
+            if ( val2 == 0 ){
+                return "";
+            }
             var ratio = (Number.parseFloat(val1)/Number.parseFloat(val2)).toFixed(4);
             return ratio;
         }
