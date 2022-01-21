@@ -6,7 +6,7 @@ import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizPage from './pages/QuizPage';
 import GuidedPractice from './pages/GuidedPractice/GuidedPractice';
-
+import CompletedPractice from './components/GuidedPractice/CompletedPractice';
 class Navigate extends Component {
 
     constructor(props) {
@@ -45,6 +45,9 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice">
                             <GuidedPractice />
+                        </Route>
+                        <Route exact path="/practice/prenatal_rad_complete">
+                            <CompletedPractice />
                         </Route>
                         <Route exact path="/practice/prenatalrad">
                             <GuidedPractice />

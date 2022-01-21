@@ -22,6 +22,10 @@ class FinalConclusion extends Component{
             "Further testing required"
         ];
     }
+    onFinish(){
+        window.localStorage.setItem("guidedPracticeComplete",true);
+        window.location.href = "/practice/prenatal_rad_complete"
+    }
     render(){
         return <div>
             <h3>Is there enough evidence for a final conclusion?</h3>
