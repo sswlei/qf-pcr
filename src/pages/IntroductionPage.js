@@ -25,6 +25,7 @@ class IntroductionPage extends Component {
                 </div>
                 <span className="d-flex flex-column col-sm-11 mt-3 align-items-center">
                     <Image
+                        style={{maxWidth:1000,width:"100%"}}
                         src={NormalMale} 
                         alt = 'Normal Male Results'
                     />
