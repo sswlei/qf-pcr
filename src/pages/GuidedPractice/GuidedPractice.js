@@ -33,6 +33,9 @@ class GuidedPractice extends Component{
         if ( tab===this.state.currentTab ){
             return "current-step";
         }
+        else if (tab<this.state.currentTab){
+            return "completed-step"
+        }
         return "";
     }
 
