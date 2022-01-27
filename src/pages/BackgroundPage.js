@@ -25,13 +25,13 @@ class BackgroundPage extends Component {
 
     render() {
         return (
-            <div style={{ height: '100%', minHeight: '100vh' }} className="bg-secondary text-dark py-4">
+            <div style={{ height: '100%', minHeight: '100vh' }} className="text-dark py-4">
                 <Container>
                     <Row>
                         <Tab.Container id="background-tabs"  activeKey={this.background_data[this.state.currentTab].id}>
                             <Row>
                                 <Col sm={4}>
-                                    <Card className="border-0 mb-3">
+                                    <Card className="mb-3">
                                         <ListGroup variant="flush" >
                                             {this.background_data.map(function(x,index) {
                                                 return (

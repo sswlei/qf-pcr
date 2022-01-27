@@ -10,7 +10,7 @@ class CompletedPractice extends Component{
         return <Container className="mt-4">
             <Card className="px-5 py-5 mb-5" style={{textAlign:"center"}}>
                 <Card.Title>
-                    <h2>You have successfully completed the Guided Practice for <br></br> <strong style={{color:"mediumseagreen"}}>Prenatal Rapid Aneuploidy Detection!</strong></h2>
+                    <h2>You have successfully completed the Guided Practice for <br></br> <strong style={{color:"#45cd89"}}>Prenatal Rapid Aneuploidy Detection!</strong></h2>
                 </Card.Title>
                 <Card.Body>
                     <Image height={200} src={CheckCircle}></Image>

@@ -5,7 +5,8 @@ import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizPage from './pages/QuizPage';
-import GuidedPractice from './pages/GuidedPractice/GuidedPractice';
+import GuidedPractice from './pages/GuidedPractice';
+import PrenatalRadPractice from './pages/GuidedPractice/GuidedPractice';
 import CompletedPractice from './pages/GuidedPractice/CompletedPractice';
 class Navigate extends Component {
 
@@ -45,11 +46,10 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice" component={GuidedPractice}>
                         </Route>
-                        <Route exact path="/practice/prenatal_rad_complete">
+                        <Route exact path="/practice/prenatalrad_complete">
                             <CompletedPractice />
                         </Route>
-                        <Route exact path="/practice/prenatalrad">
-                            <GuidedPractice />
+                        <Route exact path="/practice/prenatalrad" component={PrenatalRadPractice}>
                         </Route>
                     </Route>
 

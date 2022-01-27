@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, Row, Tabs, Tab, Card, Alert, Image, InputGroup, FormControl, Accordion, Form } from 'react-bootstrap';
 import { Download } from 'react-bootstrap-icons';
 import PeakReview from '../assets/peakReview.png';
-import Viewer from 'react-viewer';
 import NormalMale from '../assets/normalMale.JPG';
 import AnswerKey from '../assets/answerKey.jpg';
 import ReactImageMagnify from 'react-image-magnify';
@@ -31,6 +30,12 @@ class GuidedPractice extends Component {
             currentStep: null,
             showAnswerKey: false
         }
+        this.onClickPrenatalRad = this.onClickPrenatalRad.bind(this);
+    }
+
+    onClickPrenatalRad(){
+        this.props.history.push('/practice/prenatalrad');
+
     }
 
     render() {
@@ -49,29 +54,27 @@ class GuidedPractice extends Component {
                                 <Card.Title>Prenatal Rapid Aneuploidy Detection</Card.Title>
                                 <hr />
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    A guided example on Prenatal Rapid Aneuploidy Detection
                                 </Card.Text>
                             </Card.Body>
 
                             <Card.Body>
-                                <Button onClick={() => window.location.href="#/practice/prenatalrad"} variant="primary">Start</Button>
+                                <Button onClick={this.onClickPrenatalRad} variant="primary">Start</Button>
                             </Card.Body>
                         </Card>
-                        <Card className="col-md-5 col-sm-8 m-2" >
+                        {/* <Card className="col-md-5 col-sm-8 m-2" >
                             <Card.Body>
                                 <Card.Title>Pregnancy Loss (PL) QF-PCR</Card.Title>
                                 <hr />
                                 <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    Coming Soon
                                 </Card.Text>
                             </Card.Body>
 
                             <Card.Body>
                                 <Button disabled onClick={() => this.setState({ selected: 'Pregnancy Loss (PL) QF-PCR' })} variant="primary">Start</Button>
                             </Card.Body>
-                        </Card>
+                        </Card> */}
 
                     </Row> :
 

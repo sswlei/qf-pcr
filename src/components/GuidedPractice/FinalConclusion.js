@@ -27,7 +27,7 @@ class FinalConclusion extends Component{
     onFinish(){
         if (prenatalRAD_data.final_conclusion === this.state.finalAnswer){
             window.localStorage.setItem("guidedPracticeComplete",true);
-            this.props.history.push('/practice/prenatal_rad_complete');
+            this.props.history.push('/practice/prenatalrad_complete');
         }
         else{
             alert("Answer incorrect!");
