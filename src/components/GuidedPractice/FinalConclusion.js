@@ -1,5 +1,6 @@
 import { Component } from "react";
-import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
+import { Dropdown, Button, ButtonGroup } from 'react-bootstrap';
+import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
 
 class FinalConclusion extends Component{
     constructor(props) {
@@ -21,10 +22,17 @@ class FinalConclusion extends Component{
             "Other",
             "Further testing required"
         ];
+        this.onFinish = this.onFinish.bind(this);
     }
     onFinish(){
-        window.localStorage.setItem("guidedPracticeComplete",true);
-        window.location.href = "/practice/prenatal_rad_complete"
+        if (prenatalRAD_data.final_conclusion === this.state.finalAnswer){
+            window.localStorage.setItem("guidedPracticeComplete",true);
+            this.props.history.push('/practice/prenatal_rad_complete');
+        }
+        else{
+            alert("Answer incorrect!");
+        }
+
     }
     render(){
         return <div>
@@ -74,7 +82,7 @@ class FinalConclusion extends Component{
                 </Dropdown.Menu>
             </Dropdown> 
                 <br></br>
-            <Button className={"mt-3"} style={{width: 100,float:"right"}}>Finish</Button>
+            <Button onClick={this.onFinish} className={"mt-3"} style={{width: 100,float:"right"}}>Finish</Button>
 
         </div>
     }

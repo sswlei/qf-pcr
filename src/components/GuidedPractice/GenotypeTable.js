@@ -11,7 +11,7 @@ class GenotypeTable extends Component{
     }
     initState(){
         let tableState = [];
-        for (let key of Object.keys(prenatalRAD_data)){
+        for (let key of Object.keys(prenatalRAD_data.markers)){
             tableState[key] = {
                 area1:null,
                 area2:null,

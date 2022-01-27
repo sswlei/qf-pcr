@@ -41,13 +41,13 @@
 }
 
 .step-arrows.completed-step{
-    background-color: #a1e1f5;
+    background-color: #cef3ff;
 }
 .step-arrows.completed-step a{
-    color: #0890b9;
+    color: #83b6c5;
 }
 .step-arrows.completed-step::after{
-    border-left: 20px solid #a1e1f5;
+    border-left: 20px solid #cef3ff;
 }
 .step-arrows:not(:last-child).completed-step::before {
     content: " ";
@@ -61,7 +61,7 @@
     margin-left: 1px;
     border-top: 35px solid transparent;
     border-bottom: 35px solid transparent;
-    border-left: 20px solid #5bc0de;
+    border-left: 20px solid #9fd2e0;
     z-index: 1;
 }
 .step-arrows.current-step{

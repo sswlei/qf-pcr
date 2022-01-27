@@ -22,14 +22,13 @@ class PrenatalRadDemo extends Component {
 
     initState(){
         let answerState = {};
-        for (let key of Object.keys(prenatalRAD_data)){
+        for (let key of Object.keys(prenatalRAD_data.markers)){
             answerState[key] = {};
-            for (let question of prenatalRAD_data[key].questions){
+            for (let question of prenatalRAD_data.markers[key].questions){
                 answerState[key][question.id]="";
             }
         }
         this.state = {answers:answerState};
-        console.log(answerState);
     }
 
 
@@ -59,7 +58,6 @@ class PrenatalRadDemo extends Component {
     }
 
     onAnswerSelect(key, option_data, question_data){
-        console.log(this.state.answers);
         var updatedAnswers = {...this.state.answers};
         option_data.correct = option_data.value===question_data.answer;
         updatedAnswers[key][question_data.id]=option_data;
@@ -118,7 +116,7 @@ class PrenatalRadDemo extends Component {
                             <Card.Body style={{overflowY:"scroll"}}>
 
                                 {
-                                    Object.keys(prenatalRAD_data).map(function(key, index) {
+                                    Object.keys(prenatalRAD_data.markers).map(function(key, index) {
                                         return (
                                             <div>
                                                     <label style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
@@ -127,7 +125,7 @@ class PrenatalRadDemo extends Component {
                                                         </span>
                                                     </label> 
                                                 <div>
-                                                    {this.createDropdown(key,prenatalRAD_data[key])}
+                                                    {this.createDropdown(key,prenatalRAD_data.markers[key])}
                                                 </div>
                                             </div>
                                         )
