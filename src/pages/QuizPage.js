@@ -8,22 +8,7 @@ class QuizPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
-            data: [
-                {
-                    'title': " Livebirth aneuploidies for autosome chromosomes are all trisomies",
-                    "type": "tf",
-                    "answer": true
-                },
-                {
-                    'title': "The fluorescent label in QF-PCR is present on:",
-                    "type": "mcq",
-                    "choices": [" the primers", "the nucleotides", "one of the nucleotides", "a and b"],
-                    "answer": 0,
-                    "feedback": "Correct: by labelling the primers, different labels can be used, allowing for multiplexing"
-                }
-
-            ],
+            data: [],
             user_input: false,
             showFeedback: false
         }
