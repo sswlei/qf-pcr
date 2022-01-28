@@ -44,163 +44,22 @@ class GuidedPractice extends Component {
         return (
             <div style={{ height: '100%', minHeight: '100vh' }} className="col-12 d-flex border-2 flex-column justify-content-start mt-5 align-items-start col-12 h-100 text-dark">
 
-                <h4 className="text-info ml-5 border-bottom border-dark" style={{ letterSpacing: 1 }}>Guided Demo</h4>
+                <h4 className="text-info" style={{ letterSpacing: 1, width:"100%",textAlign:"center" }}>Guided Demos</h4>
+                <Row style={{ fontSize: '1.2rem', height: '100%' }} className="d-flex col-12 mx-auto flex-row justify-content-around align-items-center bg-white p-3 ">
+                    <Card className="col-md-5 col-sm-9 m-2" >
+                        <Card.Body>
+                            <Card.Title>Prenatal Rapid Aneuploidy Detection</Card.Title>
+                            <hr />
+                            <Card.Text>
+                                A guided example on Prenatal Rapid Aneuploidy Detection
+                            </Card.Text>
+                        </Card.Body>
 
-
-                {this.state.selected == null ?
-                    <Row style={{ fontSize: '1.2rem', height: '100%' }} className="d-flex col-12 mx-auto flex-row justify-content-around align-items-center bg-white p-3 ">
-                        <Card className="col-md-5 col-sm-9 m-2" >
-                            <Card.Body>
-                                <Card.Title>Prenatal Rapid Aneuploidy Detection</Card.Title>
-                                <hr />
-                                <Card.Text>
-                                    A guided example on Prenatal Rapid Aneuploidy Detection
-                                </Card.Text>
-                            </Card.Body>
-
-                            <Card.Body>
-                                <Button onClick={this.onClickPrenatalRad} variant="primary">Start</Button>
-                            </Card.Body>
-                        </Card>
-                        {/* <Card className="col-md-5 col-sm-8 m-2" >
-                            <Card.Body>
-                                <Card.Title>Pregnancy Loss (PL) QF-PCR</Card.Title>
-                                <hr />
-                                <Card.Text>
-                                    Coming Soon
-                                </Card.Text>
-                            </Card.Body>
-
-                            <Card.Body>
-                                <Button disabled onClick={() => this.setState({ selected: 'Pregnancy Loss (PL) QF-PCR' })} variant="primary">Start</Button>
-                            </Card.Body>
-                        </Card> */}
-
-                    </Row> :
-
-                    <Row style={{ fontSize: '1.2rem', height: '100%' }} className="d-flex col-12 mx-auto flex-row justify-content-around align-items-center bg-white p-3 ">
-                        <Card className="col-12 m-2" >
-                            <Card.Body>
-                                <Card.Title className="d-flex">{this.state.selected}
-                                </Card.Title>
-                                <hr />
-                                <Card.Text >
-
-
-                                    Sample case: Normal male
-                                    <ul>
-                                        <li>Visually inspect peak trace data</li>
-                                        <li>Use peak trace data to complete genotype table</li>
-                                    </ul>
-
-
-
-
-                                </Card.Text>
-                                {this.state.currentStep !== null ?
-
-                                    <Alert variant="success">
-                                        <Alert.Heading>{this.state.steps[this.state.currentStep]}</Alert.Heading>
-                                        <p>Do not proceed with analysis unless all review questions answered with YES </p>
-                                        <p> NO answer = repeat PCR</p>
-                                        <hr />
-                                        <Form.Check
-                                            onClick={(e) => this.setState({showAnswerKey: !this.state.showAnswerKey})}
-                                            type="checkbox"
-                                            className="m-2"
-                                            label="Show Answer Key"
-                                        />
-                                        <Row className="col-12 d-flex flex-row">
-                                            <ReactImageMagnify
-                                                className="col-7"
-                                                enlargedImagePosition="over"
-                                                smallImage={{
-                                                    alt: 'Normal Male',
-                                                    isFluidWidth: true,
-                                                    src: this.state.showAnswerKey ? AnswerKey : NormalMale
-                                                }}
-                                                largeImage={{
-                                                    src: this.state.showAnswerKey ? AnswerKey : NormalMale,
-                                                    width: 2000,
-                                                    height: 800
-                                                }}
-                                            />
-                                            {this.state.currentStep >= 1 ?
-                                                <Accordion className="col-5" defaultActiveKey={1}>
-                                                    {this.state.markers.map((i, index) =>
-                                                        <Card>
-                                                            <Accordion.Toggle className={`bg-${i.title}`} as={Card.Header} eventKey={index + 1}>
-
-                                                            </Accordion.Toggle>
-                                                            <Accordion.Collapse eventKey={index + 1}>
-                                                                <Card.Body>
-                                                                    {i.keys.map((x) =>
-                                                                        <span>
-                                                                            <InputGroup size="sm" className="m-3">
-                                                                                <InputGroup.Prepend>
-                                                                                    <InputGroup.Text >{x}</InputGroup.Text>
-                                                                                </InputGroup.Prepend>
-                                                                                <FormControl />
-                                                                            </InputGroup> </span>)}
-                                                                </Card.Body>
-
-
-                                                            </Accordion.Collapse>
-
-                                                        </Card>
-                                                    )}
-
-
-                                                </Accordion>
-                                                :
-                                                <Image src={PeakReview} width="60%" className="mb-4 col-5" />
-                                            }
-
-                                        </Row>
-                                    </Alert>
-
-                                    : <Tabs
-                                        id="controlled-tab-example"
-                                        //activeKey={'steps'}
-                                        //onSelect={(k) => setKey(k)}
-                                        className="mb-3"
-                                    >
-                                        <Tab eventKey="steps" title="Steps">
-                                            <ol>
-                                                {this.state.steps.map((i) => <li className="mt-1">{i}</li>)}
-
-
-                                            </ol>
-                                        </Tab>
-                                        <Tab eventKey="assumptions" title="Assumptions">
-                                            <p>also need to run positive (i.e. aneuploidy present) and negative controls in each QF-PCR reaction: if results fail, cannot proceed with analysis</p>
-                                            <p>these results not presented as part of this online practice module, but you should assume all controls behaved as expected</p>
-
-                                        </Tab>
-
-                                    </Tabs>}
-                                <div className="d-flex justify-content-between mt-3">
-
-                                    {this.state.currentStep !== null ?
-
-                                        <Button
-                                            onClick={() => this.setState({ currentStep: this.state.currentStep + 1 })}
-                                            variant="outline-info">Next</Button> :
-                                        <Button
-                                            onClick={() => this.setState({ currentStep: 0 })}
-                                            variant="info">Begin</Button>}
-                                    <Button onClick={() => this.setState({ selected: null, currentStep: null })} variant="outline-danger">
-                                        Cancel
-                                    </Button>
-                                </div>
-
-
-                            </Card.Body>
-                        </Card>
-
-                    </Row>
-                }
-
+                        <Card.Body>
+                            <Button style={{display:"block",margin:"auto", width:100}} onClick={this.onClickPrenatalRad} variant="primary">Start</Button>
+                        </Card.Body>
+                    </Card>
+                </Row>
             </div>
         )
     }

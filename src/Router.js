@@ -6,7 +6,7 @@ import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizPage from './pages/QuizPage';
 import GuidedPractice from './pages/GuidedPractice';
-import PrenatalRadPractice from './pages/GuidedPractice/GuidedPractice';
+import PrenatalRadPractice from './pages/GuidedPractice/PrenatalRadPractice';
 import CompletedPractice from './pages/GuidedPractice/CompletedPractice';
 class Navigate extends Component {
 
