@@ -34,14 +34,12 @@ class QuizPage extends Component {
     }
 
     getRandomQuestions() {
-        console.log(QuestionList);
         let list = [];
         let mcq_s = QuestionList.mcq_questions;
         let tf_s = QuestionList.tf_questions;
 
 
-
-        for (let i = 0; i < 4; i++) {
+        while (list.length<6) {
             const random = Math.floor(Math.random() * mcq_s.length);
             if (list.indexOf(mcq_s[random]) !== -1) {
                 continue;
@@ -49,8 +47,8 @@ class QuizPage extends Component {
             list.push(mcq_s[random]);
 
         }
-
-        for (let i = 0; i < 4; i++) {
+    
+        while (list.length<10) {
             const random = Math.floor(Math.random() * tf_s.length);
             if (list.indexOf(tf_s[random]) !== -1) {
                 continue;
@@ -58,8 +56,7 @@ class QuizPage extends Component {
             list.push(tf_s[random]);
 
         }
-
-
+        
         this.setState({ data: list, user_input: false, showFeedback: false });
     }
 
@@ -135,10 +132,10 @@ class QuizPage extends Component {
                                     {this.state.showFeedback ? 
                                     <Alert className="m-1" variant={i.correct ? "success" : "danger"} >
                                     <Alert.Heading>{i.correct ? 'Correct' : 'Incorrect' }</Alert.Heading>
-                                   {i.correct ?    
-                                   <p>
-                                       {i.feedback}
-                                   </p>             :
+                                    {i.correct ?    
+                                    <p>
+                                        {i.feedback}
+                                    </p>             :
                                     <p>
                                         Correct Answer: {i.type === 'tf' ? i.answer : i.choices[i.answer]}
                                     </p>}

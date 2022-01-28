@@ -85,7 +85,7 @@
             "feedback": "Correct: while all these options are possible, there are more autosomal chromosome markers tested, and you cannot assess peak area ratios with only 1 chromosome, so the peak is uninformative."
         },
         {
-            "title": "A advantage of QF-PCR over conventional karyotyping is:",
+            "title": "An advantage of QF-PCR over conventional karyotyping is:",
             "type": "mcq",
             "choices": [
                 "QF-PCR does not require culturing of cells",
@@ -109,7 +109,7 @@
             "feedback": "Correct: the temperature for annealing the primer is based on primer G/C content and should be set so the primer will only bind to specific unique sequences"
         },
         {
-            "title": "Which of the following is not a reason for performing QF-PCR",
+            "title": "Which of the following is not a reason for performing QF-PCR?",
             "type": "mcq",
             "choices": [
                 "mother is over 40 years old",
