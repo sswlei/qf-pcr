@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Tabs, Tab, Card, Alert, Image, InputGroup, FormControl, Accordion, Form } from 'react-bootstrap';
-import { Download } from 'react-bootstrap-icons';
-import PeakReview from '../assets/peakReview.png';
-import NormalMale from '../assets/normalMale.JPG';
-import AnswerKey from '../assets/answerKey.jpg';
-import ReactImageMagnify from 'react-image-magnify';
+
 
 class GuidedPractice extends Component {
 

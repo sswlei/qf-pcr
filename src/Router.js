@@ -5,6 +5,7 @@ import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizPage from './pages/QuizPage';
+import Quiz1 from './pages/Quiz/Quiz1';
 import GuidedPractice from './pages/GuidedPractice';
 import PrenatalRadPractice from './pages/GuidedPractice/PrenatalRadPractice';
 import CompletedPractice from './pages/GuidedPractice/CompletedPractice';
@@ -37,9 +38,11 @@ class Navigate extends Component {
                         </Route>
                         <Route path="/background">
                             <BackgroundPage />
-                        </Route>                        
-                        <Route path="/quiz">
-                            <QuizPage />
+                        </Route>          
+                        <Route path="/quiz" component={QuizPage}>
+                        </Route>              
+                        <Route exact path={`/quiz${1}`}>
+                            <Quiz1 />
                         </Route>
                         <Route exact path="/">
                             <Redirect to="/introduction" />
