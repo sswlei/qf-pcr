@@ -66,7 +66,7 @@ class Quiz1 extends Component {
 
 
         return (
-            <div style={{ height: '100%' }} className=" mx-auto d-flex flex-column align-items-center mt-5 col-12">
+            <div style={{ height: '100%' }} className=" mx-auto d-flex flex-column align-items-center my-5 col-12">
 
                 <Card className="col-sm-11 col-md-9" >
                     <Card.Header className="m-3" as="h5">Quiz #1</Card.Header>

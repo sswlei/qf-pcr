@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Dropdown, Button, ButtonGroup } from 'react-bootstrap';
 import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
+import { setModuleComplete } from '../../util/utils.js';
 
 class FinalConclusion extends Component{
     constructor(props) {
@@ -26,7 +27,7 @@ class FinalConclusion extends Component{
     }
     onFinish(){
         if (prenatalRAD_data.final_conclusion === this.state.finalAnswer){
-            window.localStorage.setItem("guidedPracticeComplete",true);
+            setModuleComplete("Prenatal RAD Guided Practice",true);
             this.props.history.push('/practice/prenatalrad_complete');
         }
         else{
