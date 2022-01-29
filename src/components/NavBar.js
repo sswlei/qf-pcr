@@ -23,10 +23,12 @@ class NavBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse >
                     <Nav className="ml-auto text-monospace ">
-                        <Nav.Link href="#introduction" className={this.props.history.location.pathname === '/introduction' ? "active border-bottom border-secondary" : null}>Introduction</Nav.Link>
-                        <Nav.Link href="#background" className={this.props.history.location.pathname === '/background' ? "active border-bottom border-secondary" : null}>Background</Nav.Link>
-                        <Nav.Link href="#practice" className={this.props.history.location.pathname === '/practice' ? "active border-bottom border-secondary" : null}>Guided Practice</Nav.Link>
-                        <Nav.Link href="#quiz" className={this.props.history.location.pathname === '/quiz' ? "active border-bottom border-secondary" : null}>Quiz</Nav.Link>  
+                        <Nav.Link href="#introduction" className={`${this.props.history.location.pathname === '/introduction' ? "active border-bottom border-secondary" : null} mr-2`}>Introduction</Nav.Link>
+                        <Nav.Link href="#background" className={`${this.props.history.location.pathname === '/background' ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
+                        <Nav.Link href="#practice" className={`${this.props.history.location.pathname === '/practice' ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>
+                        <Nav.Link href="#quiz" className={`${this.props.history.location.pathname === '/quiz' ? "active border-bottom border-secondary" : null} mr-2`}>Quiz</Nav.Link>  
+                        <Nav.Link href="#achievements" className={`${this.props.history.location.pathname === '/achievements' ? "active border-bottom border-secondary" : null} mr-2`}>Achievements</Nav.Link>  
+
                     </Nav>
                     <Button href="#/" className="ml-2" variant="outline-info"> <FontAwesomeIcon rotation={180} size={'1x'} icon={faSignOutAlt} /></Button>
                 </Navbar.Collapse>

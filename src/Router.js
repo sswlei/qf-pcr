@@ -9,6 +9,8 @@ import Quiz1 from './pages/Quiz/Quiz1';
 import GuidedPractice from './pages/GuidedPractice';
 import PrenatalRadPractice from './pages/GuidedPractice/PrenatalRadPractice';
 import CompletedPractice from './pages/GuidedPractice/CompletedPractice';
+import AchievementPage from './pages/AchievementPage';
+
 class Navigate extends Component {
 
     constructor(props) {
@@ -53,6 +55,8 @@ class Navigate extends Component {
                             <CompletedPractice />
                         </Route>
                         <Route exact path="/practice/prenatalrad" component={PrenatalRadPractice}>
+                        </Route>
+                        <Route exact path="/achievements" component={AchievementPage}>
                         </Route>
                     </Route>
 
