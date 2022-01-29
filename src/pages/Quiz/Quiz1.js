@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Alert, Form, ListGroupItem, Card, ListGroup } from 'react-bootstrap';
 import QuestionList from '../../assets/questions.json';
+import { setModuleComplete } from '../../util/utils';
 
 class Quiz1 extends Component {
 
@@ -9,8 +10,10 @@ class Quiz1 extends Component {
         this.state = {
             data: [],
             user_input: false,
-            showFeedback: false
+            showFeedback: false,
+            submitted:false
         }
+        this.checkAllCorrect = this.checkAllCorrect.bind(this);
     }
 
     componentDidMount() {
@@ -42,6 +45,14 @@ class Quiz1 extends Component {
         }
         
         this.setState({ data: list, user_input: false, showFeedback: false });
+    }
+
+    checkAllCorrect(){
+        console.log(this.state.data.filter((i) => i.correct).length === this.state.data.length)
+        if (this.state.data.filter((i) => i.correct).length === this.state.data.length){
+            return true;
+        }
+        return false;
     }
 
     answerQuestions(index, input) {
@@ -136,15 +147,30 @@ class Quiz1 extends Component {
                     { this.state.showFeedback ? <Card.Footer className=""> Score: { this.state.data.filter((i) => i.correct).length + ' / ' + this.state.data.length }</Card.Footer> : null}
                     <ListGroup className="list-group-flush">
                         <ListGroupItem className="d-flex justify-content-end">
-                            <Button 
-                            onClick={() => !this.state.showFeedback ? this.setState({showFeedback: true}) : window.location.reload()} 
-                            disabled={!this.state.user_input} 
-                            size="sm" 
-                            variant="primary">{!this.state.showFeedback ? 'Check' : 'Reset'}
-                            </Button>
-
+                            {
+                                (!this.state.submitted)?
+                                    <Button 
+                                    onClick={() => {
+                                            this.setState({showFeedback: true,submitted:true});
+                                            if (this.checkAllCorrect()){
+                                                setModuleComplete("Quiz #1",true)
+                                            }
+                                        }
+                                    } 
+                                    disabled={!this.state.user_input} 
+                                    size="sm" 
+                                    variant="primary">Submit
+                                    </Button>:null
+                            }
+                            {
+                                (this.state.submitted && !this.checkAllCorrect())?
+                                    <Button 
+                                    onClick={()=>window.location.reload()} 
+                                    size="sm" 
+                                    variant="primary">Reset
+                                    </Button>:null
+                            }
                         </ListGroupItem>
-
                     </ListGroup>
 
                 </Card>
