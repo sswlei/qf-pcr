@@ -29,7 +29,7 @@ class AchievementPage extends Component {
                         Object.keys(this.state.completed_modules).map(x=>{
                             return (
                                 this.state.completed_modules[x]?
-                                <Card className="col-md-5 col-sm-9" style={{ minWidth:220 }} >
+                                <Card className="col-md-5 col-sm-9 mb-3" style={{ minWidth:220, height:230 }} >
                                     <Card.Body className="text-center">
                                         <Card.Title>{x}</Card.Title>
                                         <Image height={100} src={Award}></Image>
