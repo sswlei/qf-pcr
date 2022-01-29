@@ -18,8 +18,14 @@ class GenotypeTable extends Component{
                 area3:null,
                 ratio:null,
                 warning:"",
-                conclusion:""
+                notes:""
             };
+            if (key==="AMEL"){
+                tableState[key].notes = "1 peak = only X chrom present; 2 peaks = X and Y chrom present";
+            }
+            if (key==="TAF9L"){
+                tableState[key].notes = "Peaks same height = 2 X chromosomes; first peak 2x the second one = 1 X chromosome; first peak shorter than second = Abnormal";
+            }
 
         }
         this.state = {tableState:tableState};
@@ -102,17 +108,17 @@ class GenotypeTable extends Component{
                         </TransformWrapper>
                     </Card.Body>
                 </Card>
-               <div className="my-4 py-2" style={{maxHeight:500,overflowY:"scroll"}}>
-                <Table responsive >
+            <div className="my-4 py-2" style={{maxHeight:500,overflowY:"scroll"}}>
+                <Table >
                         <thead>
                             <tr>
-                            <th>Marker</th>
-                            <th>Area 1</th>
-                            <th>Area 2</th>
-                            <th>Area 3</th>
-                            <th>A1/A2</th>
-                            <th>Warning</th>
-                            <th>Conclusion</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>Marker</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>Area 1</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>Area 2</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>Area 3</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>A1/A2</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>Warning</th>
+                                <th style={{position:"sticky",top:"-9px",background:"#f3f3f3"}}>Notes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -122,18 +128,18 @@ class GenotypeTable extends Component{
                                         <td>{key}</td>
                                         <td><input style={{width:70}} type="number" onInput={(e) => e.target.value = e.target.value.slice(0, 5)} value={this.state.tableState[key].area1} onChange={(e)=>{this.onValueChange(key,"area1",e.target.value)}}/></td>
                                         <td><input style={{width:70}} type="text" onInput={(e) => e.target.value = e.target.value.slice(0, 5)} maxLength={5} value={this.state.tableState[key].area2} onChange={(e)=>{this.onValueChange(key,"area2",e.target.value)}}/></td>
-                                        <td><input style={{width:70}} type="text" onInput={(e) => e.target.value = e.target.value.slice(0, 5)} maxLength={5} value={this.state.tableState[key].area3} onChange={(e)=>{this.onValueChange(key,"area3",e.target.value)}}/></td>
+                                        <td><input style={{width:70}} disabled={key==="AMEL" || key==="TAF9L"} type="text" onInput={(e) => e.target.value = e.target.value.slice(0, 5)} maxLength={5} value={this.state.tableState[key].area3} onChange={(e)=>{this.onValueChange(key,"area3",e.target.value)}}/></td>
                                         <td>{this.state.tableState[key].ratio}</td>
                                         <td style={{color:"red"}}>{this.state.tableState[key].warning}</td>
-                                        <td>{this.state.tableState[key].conclusion}</td>
+                                        <td style={{width:300}}>{this.state.tableState[key].notes}</td>
                                     </tr>
                                 )
                             },this)}
                         
                         </tbody>
                     </Table>                                   
-               </div>
-               
+            </div>
+            
                 <Button onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
             </>
 
