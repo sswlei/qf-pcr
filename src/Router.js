@@ -4,12 +4,15 @@ import NavBar from './components/NavBar';
 import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
-import QuizPage from './pages/QuizPage';
-import Quiz1 from './pages/Quiz/Quiz1';
-import GuidedPractice from './pages/GuidedPractice';
-import PrenatalRadPractice from './pages/GuidedPractice/PrenatalRadPractice';
-import CompletedPractice from './pages/GuidedPractice/CompletedPractice';
+import QuizListPage from './pages/Quiz/QuizListPage';
+import QuizPage from './pages/Quiz/QuizPage';
+import GuidedPracticePage from './pages/GuidedPractice/GuidedPracticePage';
+import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
+import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
 import AchievementPage from './pages/AchievementPage';
+import PrenatalRadDemo from './components/GuidedPractice/PrenatalRad/Main';
+
+import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 
 class Navigate extends Component {
 
@@ -41,20 +44,23 @@ class Navigate extends Component {
                         <Route path="/background">
                             <BackgroundPage />
                         </Route>          
-                        <Route path="/quiz" component={QuizPage}>
+                        <Route exact path="/quiz" component={QuizListPage}>
                         </Route>              
-                        <Route exact path={`/quiz${1}`}>
-                            <Quiz1 />
+                        <Route exact path={`/quiz/${1}`}>
+                            <QuizPage quizData={Quiz1Data}/>
                         </Route>
                         <Route exact path="/">
                             <Redirect to="/introduction" />
                         </Route>
-                        <Route exact path="/practice" component={GuidedPractice}>
+                        <Route exact path="/practice" component={GuidedPracticeList}>
                         </Route>
                         <Route exact path="/practice/prenatalrad_complete">
                             <CompletedPractice />
                         </Route>
-                        <Route exact path="/practice/prenatalrad" component={PrenatalRadPractice}>
+                        <Route exact path="/practice/prenatalrad" render={(routeProps) => 
+                            <GuidedPracticePage>
+                                <PrenatalRadDemo {...routeProps}></PrenatalRadDemo>
+                            </GuidedPracticePage>}>
                         </Route>
                         <Route exact path="/achievements" component={AchievementPage}>
                         </Route>

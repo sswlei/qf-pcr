@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Container, Row, Image, Card, Button } from "react-bootstrap";
-import CriteriaImg from "../../assets/peakReview.png";
+import CriteriaImg from "../../../assets/peakReview.png";
 class ReviewPeaks extends Component{
     constructor(props){
         super(props);
@@ -19,7 +19,6 @@ class ReviewPeaks extends Component{
                         </p>
                         <Button onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
                 </>
-           
         )
     }
 }

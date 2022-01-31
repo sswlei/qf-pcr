@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import NormalMale from '../../assets/normalMale.JPG';
-import xIcon from '../../assets/x.svg';
-import checkIcon from '../../assets/checkmark.svg';
-
-
-import ReactImageMagnify from 'react-image-magnify';
-import { DropdownButton, Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
+import NormalMale from '../../../assets/normalMale.JPG';
+import xIcon from '../../../assets/x.svg';
+import checkIcon from '../../../assets/checkmark.svg';
+import { Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
+import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
 
 class PrenatalRadDemo extends Component {
 

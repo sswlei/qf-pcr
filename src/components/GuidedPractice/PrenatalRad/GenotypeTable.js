@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Button, Container, Row, Table, Card } from "react-bootstrap";
-import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
-import NormalMale from '../../assets/normalMaleKey.jpg';
+import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
+import NormalMale from '../../../assets/normalMaleKey.jpg';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 class GenotypeTable extends Component{

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Alert, Form, ListGroupItem, Card, ListGroup } from 'react-bootstrap';
-import QuestionList from '../../assets/questions.json';
 import { setModuleComplete } from '../../util/utils';
 
-class Quiz1 extends Component {
+class Main extends Component {
 
     constructor(props) {
         super(props);
@@ -22,8 +21,8 @@ class Quiz1 extends Component {
 
     getRandomQuestions() {
         let list = [];
-        let mcq_s = QuestionList.mcq_questions;
-        let tf_s = QuestionList.tf_questions;
+        let mcq_s = this.props.quizData.mcq_questions;
+        let tf_s = this.props.quizData.tf_questions;
 
 
         while (list.length<6) {
@@ -48,7 +47,6 @@ class Quiz1 extends Component {
     }
 
     checkAllCorrect(){
-        console.log(this.state.data.filter((i) => i.correct).length === this.state.data.length)
         if (this.state.data.filter((i) => i.correct).length === this.state.data.length){
             return true;
         }
@@ -59,7 +57,6 @@ class Quiz1 extends Component {
         this.setState({ ...this.state.data, })
 
         let questions = [...this.state.data];
-        console.log(questions);
         questions[index] = { ...questions[index], user_input: input, 
             
             
@@ -77,9 +74,8 @@ class Quiz1 extends Component {
 
 
         return (
-            <div style={{ height: '100%' }} className=" mx-auto d-flex flex-column align-items-center my-5 col-12">
 
-                <Card className="col-sm-11 col-md-9" >
+                <Card >
                     <Card.Header className="m-3" as="h5">Quiz #1</Card.Header>
 
                     <ol>
@@ -174,9 +170,8 @@ class Quiz1 extends Component {
                     </ListGroup>
 
                 </Card>
-            </div>
         )
     }
 }
 
-export default Quiz1;
+export default Main;
