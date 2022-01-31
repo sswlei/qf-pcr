@@ -1,5 +1,5 @@
 import React from "react";
-import PopOver from '../components/PopOver';
+import PopOver from '../components/General/PopOver';
 import PCRPhoto from '../assets/pcr_photo.png';
 
 import trisomy13 from '../assets/tri13_circled.png';

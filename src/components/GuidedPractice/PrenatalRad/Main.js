@@ -4,7 +4,7 @@ import ReviewPeaks from './ReviewPeaks';
 import IdentifyMarkers from "./IdentifyMarkers";
 import GenotypeTable from "./GenotypeTable";
 import FinalConclusion from "./FinalConclusion";
-import '../../css/StepBar.css';
+import '../css/StepBar.css';
 
 class Main extends Component{
     constructor(){

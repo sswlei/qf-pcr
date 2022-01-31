@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, HashRouter, Redirect } from "react-router-dom";
-import NavBar from './components/NavBar';
+import NavBar from './components/General/NavBar';
 import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
@@ -55,7 +55,7 @@ class Navigate extends Component {
                         <Route exact path="/practice" component={GuidedPracticeList}>
                         </Route>
                         <Route exact path="/practice/prenatalrad_complete">
-                            <CompletedPractice />
+                            <CompletedPractice title={"Prenatal Rapid Aneuploidy Detection"}/>
                         </Route>
                         <Route exact path="/practice/prenatalrad" render={(routeProps) => 
                             <GuidedPracticePage>
