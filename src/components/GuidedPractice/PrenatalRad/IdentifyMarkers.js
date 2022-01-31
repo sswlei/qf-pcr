@@ -6,7 +6,7 @@ import { Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
 
-class PrenatalRadDemo extends Component {
+class IdentifyMarkers extends Component {
 
     constructor(props) {
         super(props);
@@ -141,4 +141,4 @@ class PrenatalRadDemo extends Component {
     }
 }
 
-export default PrenatalRadDemo;
+export default IdentifyMarkers;

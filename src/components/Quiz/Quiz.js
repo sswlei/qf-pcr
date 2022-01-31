@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Alert, Form, ListGroupItem, Card, ListGroup } from 'react-bootstrap';
 import { setModuleComplete } from '../../util/utils';
 
-class Main extends Component {
+class Quiz extends Component {
 
     constructor(props) {
         super(props);
@@ -174,4 +174,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default Quiz;

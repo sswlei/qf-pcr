@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Quiz from "../../components/Quiz/Main";
+import Quiz from "../../components/Quiz/Quiz";
 import { Container } from 'react-bootstrap';
 
 class QuizPage extends Component {

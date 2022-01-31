@@ -6,7 +6,7 @@ import GenotypeTable from "./GenotypeTable";
 import FinalConclusion from "./FinalConclusion";
 import '../css/StepBar.css';
 
-class Main extends Component{
+class PrenatalRad extends Component{
     constructor(){
         super();
         this.state = {completedSteps:0, currentTab:0};
@@ -98,4 +98,4 @@ class Main extends Component{
         )
     }
 }
-export default Main;
+export default PrenatalRad;

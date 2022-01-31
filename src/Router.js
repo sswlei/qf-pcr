@@ -10,7 +10,7 @@ import GuidedPracticePage from './pages/GuidedPractice/GuidedPracticePage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
 import AchievementPage from './pages/AchievementPage';
-import PrenatalRadDemo from './components/GuidedPractice/PrenatalRad/Main';
+import PrenatalRadDemo from './components/GuidedPractice/PrenatalRad/PrenatalRad';
 
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 
