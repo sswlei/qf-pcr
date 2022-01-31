@@ -136,7 +136,7 @@ class IdentifyMarkers extends Component {
 
                 </Row>
             </>
-          
+        
         )
     }
 }
