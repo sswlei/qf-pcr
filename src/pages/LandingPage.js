@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Row, Image } from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import Logo from '../assets/landingPage.png'
 
 class LandingPage extends Component {

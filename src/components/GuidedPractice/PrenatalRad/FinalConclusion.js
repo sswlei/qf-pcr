@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Dropdown, Button, ButtonGroup } from 'react-bootstrap';
-import prenatalRAD_data  from "../../data/GuidedPractice/prenatalRAD.json"
-import { setModuleComplete } from '../../util/utils.js';
+import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
+import { setModuleComplete } from '../../../util/utils.js';
 
 class FinalConclusion extends Component{
     constructor(props) {

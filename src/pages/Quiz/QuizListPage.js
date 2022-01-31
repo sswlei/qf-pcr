@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Row, Card } from 'react-bootstrap';
 
 
-class QuizPage extends Component {
+class QuizListPage extends Component {
 
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ class QuizPage extends Component {
     }
 
     onClickQuiz(quiz_num){
-        this.props.history.push(`/quiz${quiz_num}`);
+        this.props.history.push(`/quiz/${quiz_num}`);
 
     }
 
@@ -24,7 +24,7 @@ class QuizPage extends Component {
 
                 <h4 className="text-info" style={{ letterSpacing: 1, width:"100%",textAlign:"center" }}>Quizzes</h4>
                 <Row style={{ fontSize: '1.2rem', height: '100%' }} className="d-flex col-12 mx-auto flex-row justify-content-around align-items-center bg-white p-3 ">
-                    <Card className="col-md-5 col-sm-9 m-2" >
+                    <Card className="col-md-3 col-sm-9 m-2" >
                         <Card.Body>
                             <Card.Title>Quiz #1</Card.Title>
                             <hr />
@@ -43,4 +43,4 @@ class QuizPage extends Component {
     }
 }
 
-export default QuizPage;
+export default QuizListPage;

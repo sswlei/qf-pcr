@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import { Col, Nav, Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
-import ReviewPeaks from '../../components/GuidedPractice/ReviewPeaks';
-import PrenatalRadDemo from "../../components/GuidedPractice/PrenatalRadDemo";
-import GenotypeTable from "../../components/GuidedPractice/GenotypeTable";
-import FinalConclusion from "../../components/GuidedPractice/FinalConclusion";
-import '../../components/css/StepBar.css';
+import ReviewPeaks from './ReviewPeaks';
+import IdentifyMarkers from "./IdentifyMarkers";
+import GenotypeTable from "./GenotypeTable";
+import FinalConclusion from "./FinalConclusion";
+import '../../css/StepBar.css';
 
-class GuidedPractice extends Component{
+class Main extends Component{
     constructor(){
         super();
         this.state = {completedSteps:0, currentTab:0};
@@ -47,9 +47,7 @@ class GuidedPractice extends Component{
     }
 
     render(){
-        return (
-            <Container className="mt-4">
-                
+        return (                
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
                     <Row>
                         <Col sm={12}>
@@ -79,7 +77,7 @@ class GuidedPractice extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <PrenatalRadDemo onClickNext={this.onClickNext}></PrenatalRadDemo>
+                                    <IdentifyMarkers onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
@@ -97,8 +95,7 @@ class GuidedPractice extends Component{
                     </Row>
                 </Tab.Container>
 
-            </Container>
         )
     }
 }
-export default GuidedPractice;
+export default Main;
