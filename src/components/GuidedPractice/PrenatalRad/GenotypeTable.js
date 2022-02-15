@@ -8,6 +8,8 @@ class GenotypeTable extends Component{
     constructor(props) {
         super(props);
         this.initState();
+        this.onValueChange = this.onValueChange.bind(this);
+        this.calculateValue = this.calculateValue.bind(this);
     }
     initState(){
         let tableState = [];
@@ -29,14 +31,12 @@ class GenotypeTable extends Component{
 
         }
         this.state = {tableState:tableState};
-        this.onValueChange = this.onValueChange.bind(this);
-        this.calculateValue = this.calculateValue.bind(this);
     }
     onValueChange(key,valueName,value){
         var tableState = {...this.state.tableState}
         tableState[key][valueName] = value;
         tableState[key].ratio = this.calculateValue(tableState[key].area1,tableState[key].area2);
-        tableState[key].warning = this.checkWarning(tableState[key]);
+        tableState[key].warning = this.checkWarning(tableState[key],key);
         this.setState({tableState});
     }
     calculateValue(val1,val2){
@@ -49,7 +49,7 @@ class GenotypeTable extends Component{
         }
         return "";
     }
-    checkWarning(data){
+    checkWarning(data,key){
         var warningStr = "";
         var ratio = data.ratio;
         ratio = Number.parseFloat(ratio);
@@ -57,9 +57,22 @@ class GenotypeTable extends Component{
         var abnormalRatioRange1Max = 0.65;
         var abnormalRatioRange2Min = 1.8;
         var abnormalRatioRange2Max = 2.4;
+        var normalRatioRangeTAF9LMin = 1.97;
+        var normalRatioRangeTAF9LMax = 2.57; 
         var ratioCheck1 = abnormalRatioRange1Min <= ratio && ratio <= abnormalRatioRange1Max;
         var ratioCheck2 = abnormalRatioRange2Min <= ratio && ratio <= abnormalRatioRange2Max;
+        if (key === "TAF9L"){
+            if (normalRatioRangeTAF9LMin <= ratio && ratio <= normalRatioRangeTAF9LMax){
+                warningStr = "";
+            }
+            else{
+                if (!isNaN(ratio)){
+                    warningStr = "Abnormal ratio detected"
+                }
+            }
+            return warningStr;
 
+        }
         if (ratioCheck1 || ratioCheck2){
             warningStr = "Abnormal ratio detected"
         }
