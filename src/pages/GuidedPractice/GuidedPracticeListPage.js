@@ -18,7 +18,7 @@ class GuidedPractice extends Component {
     }
 
     onClick(route){
-        this.props.history.push(`/practice/${route}`);
+        this.props.history.push(`/guidedpractice/${route}`);
     }
 
     render() {

@@ -8,6 +8,7 @@ class GuidedPracticePage extends Component{
     render(){
         return (
             <Container className="mt-4">
+                <h2 className="mb-3 text-monospace text-info">Guided Practice</h2>
                 {this.props.children}
             </Container>
         )

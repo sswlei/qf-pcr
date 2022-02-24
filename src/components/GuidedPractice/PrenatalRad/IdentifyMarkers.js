@@ -88,10 +88,19 @@ class IdentifyMarkers extends Component {
         return (
             <>
                 <h2>Identify markers</h2>
-                <p>In the following interactive example, please examine the image and select the correct marker(s) for each section.</p>
+                <p>In the following interactive example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). Zoom in on the image if necessary. Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if you selection was not correct. Note that AMEL and TAF9L have unique selections:
+<br></br>
+<br></br>
+
+AMEL: are there 2 peaks (XY) or 1 peak? (XX)
+<br></br>
+<br></br>
+TAF9L: compare peak heights: if the first peak is 2x than the second one, this is evidence for 1 X chromosome; if the first peak has same height, this is evidence for 2 X chromosomes.</p>
+<br></br>
+<br></br>
                 <Row>
                     
-                    <Col sm={12} md={7} style={{maxHeight:600}}>
+                    <Col md={12} lg={7} style={{maxHeight:600}}>
                             <TransformWrapper initialScale={0.3} minScale={0.3} maxScale={2} centerOnInit={true}>
                                 {({ zoomIn, zoomOut, resetTransform }) => (
                                     <React.Fragment>
@@ -108,7 +117,7 @@ class IdentifyMarkers extends Component {
 
                             </TransformWrapper>
                     </Col>
-                    <Col sm={12} md={5}>
+                    <Col md={12} lg={5}>
                         <Card style={{maxHeight:650}}>
                             <Card.Body style={{overflowY:"scroll"}}>
 
