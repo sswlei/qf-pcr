@@ -4,11 +4,12 @@ import IdentifyMarkers from "../../components/GuidedPractice/PrenatalRad/Identif
 import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
+import { useParams } from "react-router-dom";
 
 class PracticeCasePage extends Component{
-    constructor(){
-        super();
-        this.state = {completedSteps:0, currentTab:0};
+    constructor(props){
+        super(props);
+        this.state = {completedSteps:0, currentTab:0, caseId:this.props.match.params.caseId, caseType:this.props.match.params.caseType};
         this.handleSelect = this.handleSelect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
@@ -48,7 +49,7 @@ class PracticeCasePage extends Component{
     render(){
         return (       
             <Container className="mt-4">
-                <h2 className="mb-3 text-monospace text-info">Practice Case #1</h2>
+                <h2 className="mb-3 text-monospace text-info">Practice Case #{this.state.caseId}</h2>
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
                     <Row>
                         <Col sm={12}>

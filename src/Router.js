@@ -68,7 +68,10 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice" component={PracticeCaseListPage}>
                         </Route>
+                        <Route path="/practice/:caseType/:caseId" component={PracticeCasePage}>
+                        </Route>
                     </Route>
+                    
 
 
                 </Switch>

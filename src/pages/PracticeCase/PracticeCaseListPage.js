@@ -26,7 +26,7 @@ class PracticeCaseListPage extends Component {
     createListGroupItems(key){
         var list = [];
         for (var arrayItem of this.cases[key]){
-            list.push(<ListGroup.Item>{arrayItem.title}</ListGroup.Item>)
+            list.push(<ListGroup.Item><a href={`#${arrayItem.route}`}>{arrayItem.title}</a></ListGroup.Item>)
         }
         if (list.length < 1){
             list.push(<ListGroup.Item className="text-secondary">No practice cases available</ListGroup.Item>)
