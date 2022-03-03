@@ -5,6 +5,7 @@ import IdentifyMarkers from "./IdentifyMarkers";
 import GenotypeTable from "./GenotypeTable";
 import FinalConclusion from "./FinalConclusion";
 import '../css/StepBar.css';
+import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
 
 class PrenatalRad extends Component{
     constructor(){
@@ -77,17 +78,17 @@ class PrenatalRad extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <IdentifyMarkers onClickNext={this.onClickNext}></IdentifyMarkers>
+                                    <IdentifyMarkers data={prenatalRAD_data} onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable onClickNext={this.onClickNext}></GenotypeTable>
+                                    <GenotypeTable data={prenatalRAD_data}  onClickNext={this.onClickNext}></GenotypeTable>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion data={prenatalRAD_data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>

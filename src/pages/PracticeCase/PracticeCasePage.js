@@ -5,6 +5,8 @@ import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeT
 import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
 import { useParams } from "react-router-dom";
+import practice_data from '../../data/PracticeCase/prenatalrad/route_data.json';
+import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
 
 class PracticeCasePage extends Component{
     constructor(props){
@@ -14,6 +16,7 @@ class PracticeCasePage extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
+        this.data = practice_data['practice/prenatalrad/1'].data;
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -53,15 +56,18 @@ class PracticeCasePage extends Component{
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
                     <Row>
                         <Col sm={12}>
-                            <Nav className="step-arrows-3">
+                            <Nav className="step-arrows-4">
                                 <Nav.Item className={`step-arrows ${this.getStepColor(0)}`}>
-                                    <Nav.Link disabled={!this.isStepCompleted(0)}  eventKey={0}><strong>Part 1</strong> <br></br> Identify Markers</Nav.Link>
+                                    <Nav.Link disabled={!this.isStepCompleted(0)}  eventKey={0}><strong>Intro</strong> <br></br> Start</Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item className={`step-arrows ${this.getStepColor(1)}`} >
-                                    <Nav.Link disabled={!this.isStepCompleted(1)} eventKey={1}><strong>Part 2</strong> <br></br> Genotype Table</Nav.Link>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(1)}`}>
+                                    <Nav.Link disabled={!this.isStepCompleted(1)}  eventKey={1}><strong>Part 1</strong> <br></br> Identify Markers</Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item className={`step-arrows ${this.getStepColor(2)}`}>
-                                    <Nav.Link disabled={!this.isStepCompleted(2)}  eventKey={2}><strong>Part 3</strong> <br></br> Final Conclusion</Nav.Link>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(2)}`} >
+                                    <Nav.Link disabled={!this.isStepCompleted(2)} eventKey={2}><strong>Part 2</strong> <br></br> Genotype Table</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(3)}`}>
+                                    <Nav.Link disabled={!this.isStepCompleted(3)}  eventKey={3}><strong>Part 3</strong> <br></br> Final Conclusion</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
@@ -71,17 +77,22 @@ class PracticeCasePage extends Component{
                         <Tab.Content>
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <IdentifyMarkers onClickNext={this.onClickNext}></IdentifyMarkers>
+                                    <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable onClickNext={this.onClickNext}></GenotypeTable>
+                                    <IdentifyMarkers data={this.data} onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion history={this.props.history}></FinalConclusion>
+                                    <GenotypeTable data={this.data}  onClickNext={this.onClickNext}></GenotypeTable>
+                                </Card>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey={3}>
+                                <Card className="px-5 py-5 mb-5">
+                                    <FinalConclusion data={this.data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>

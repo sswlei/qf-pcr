@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import { Button, Container, Row, Table, Card } from "react-bootstrap";
-import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
 import NormalMale from '../../../assets/normalMaleKey.jpg';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
@@ -13,7 +12,7 @@ class GenotypeTable extends Component{
     }
     initState(){
         let tableState = [];
-        for (let key of Object.keys(prenatalRAD_data.markers)){
+        for (let key of Object.keys(this.props.data.markers)){
             tableState[key] = {
                 area1:null,
                 area2:null,

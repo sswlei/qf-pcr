@@ -4,28 +4,32 @@ import xIcon from '../../../assets/x.svg';
 import checkIcon from '../../../assets/checkmark.svg';
 import { Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
 
 class IdentifyMarkers extends Component {
 
     constructor(props) {
         super(props);
+        this.initState = this.initState.bind(this);
+
         this.initState();
         this.createDropdown = this.createDropdown.bind(this);
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
         this.onAnswerSelect = this.onAnswerSelect.bind(this);
         this.checkQuestionCorrect = this.checkQuestionCorrect.bind(this);
+        
     }
 
     initState(){
         let answerState = {};
-        for (let key of Object.keys(prenatalRAD_data.markers)){
+
+        for (let key of Object.keys(this.props.data.markers)){
             answerState[key] = {};
-            for (let question of prenatalRAD_data.markers[key].questions){
+            for (let question of this.props.data.markers[key].questions){
                 answerState[key][question.id]="";
             }
         }
         this.state = {answers:answerState};
+
     }
 
 
@@ -122,7 +126,7 @@ TAF9L: compare peak heights: if the first peak is 2x than the second one, this i
                             <Card.Body style={{overflowY:"scroll"}}>
 
                                 {
-                                    Object.keys(prenatalRAD_data.markers).map(function(key, index) {
+                                    Object.keys(this.props.data.markers).map(function(key, index) {
                                         return (
                                             <div>
                                                     <label style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
@@ -131,7 +135,7 @@ TAF9L: compare peak heights: if the first peak is 2x than the second one, this i
                                                         </span>
                                                     </label> 
                                                 <div>
-                                                    {this.createDropdown(key,prenatalRAD_data.markers[key])}
+                                                    {this.createDropdown(key,this.props.data.markers[key])}
                                                 </div>
                                             </div>
                                         )

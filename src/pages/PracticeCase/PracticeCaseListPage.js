@@ -10,7 +10,7 @@ class PracticeCaseListPage extends Component {
                 {
                     title:"Practice Case #1",
                     description:"",
-                    route:"practice/prenatalrad/1"
+                    route:"practice/prenatalrad/1",
                 },
                 {
                     title:"Practice Case #2",
