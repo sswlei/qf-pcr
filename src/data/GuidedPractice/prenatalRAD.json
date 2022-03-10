@@ -471,5 +471,6 @@
         }
 
     },
-    "final_conclusion":"Normal biological male"
+    "final_conclusion":"Normal biological male",
+    "image":"/images/normalMale.JPG"
 }

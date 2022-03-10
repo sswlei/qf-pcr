@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NormalMale from '../../../assets/normalMale.JPG';
 import xIcon from '../../../assets/x.svg';
 import checkIcon from '../../../assets/checkmark.svg';
 import { Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
@@ -16,6 +15,7 @@ class IdentifyMarkers extends Component {
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
         this.onAnswerSelect = this.onAnswerSelect.bind(this);
         this.checkQuestionCorrect = this.checkQuestionCorrect.bind(this);
+        console.log(this.props.data)
         
     }
 
@@ -114,7 +114,7 @@ TAF9L: compare peak heights: if the first peak is 2x than the second one, this i
                                             <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
                                         </div>
                                         <TransformComponent wrapperStyle={{width:"100%",height:600}}>
-                                            <img src={NormalMale} alt="Normal Male" />
+                                            <img src={this.props.data.image} />
                                         </TransformComponent>
                                     </React.Fragment>
                                 )}

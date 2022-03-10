@@ -4,7 +4,6 @@ import IdentifyMarkers from "../../components/GuidedPractice/PrenatalRad/Identif
 import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
-import { useParams } from "react-router-dom";
 import practice_data from '../../data/PracticeCase/prenatalrad/route_data.json';
 import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
 
@@ -16,7 +15,7 @@ class PracticeCasePage extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
-        this.data = practice_data['practice/prenatalrad/1'].data;
+        this.data = practice_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
