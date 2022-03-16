@@ -78,12 +78,12 @@ class PrenatalRad extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <IdentifyMarkers data={prenatalRAD_data} onClickNext={this.onClickNext}></IdentifyMarkers>
+                                    <IdentifyMarkers canSkip={true} showEvaluation={true} data={prenatalRAD_data} onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable data={prenatalRAD_data}  onClickNext={this.onClickNext}></GenotypeTable>
+                                    <GenotypeTable canSkip={true} data={prenatalRAD_data} onClickNext={this.onClickNext}></GenotypeTable>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>

@@ -15,8 +15,30 @@ class IdentifyMarkers extends Component {
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
         this.onAnswerSelect = this.onAnswerSelect.bind(this);
         this.checkQuestionCorrect = this.checkQuestionCorrect.bind(this);
-        console.log(this.props.data)
+        this.onClickNext = this.onClickNext.bind(this);
+    }
+
+    onClickNext(){
+        if (this.checkAllAnswered()){
+            this.props.onClickNext();
+        }
+        else{
+            alert("Some questions have not been answered!")
+        }
         
+    }
+
+    checkAllAnswered(){
+        if (!this.props.canSkip){
+            for (let question of Object.keys(this.state.answers)){
+                for (const [key, value] of Object.entries(this.state.answers[question])){
+                    if (value === '' || value === null ){
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     initState(){
@@ -34,28 +56,38 @@ class IdentifyMarkers extends Component {
 
 
     getAnswerBackground(isCorrect){
-        if (isCorrect===""||isCorrect==null){
-            return "white";
-        }
-        if (isCorrect){
-            return "#BCF4BC";
+        if (this.props.showEvaluation){
+            if (isCorrect===""||isCorrect==null){
+                return "white";
+            }
+            if (isCorrect){
+                return "#BCF4BC";
+            }
+            else{
+                return "#E67878";
+            }
         }
         else{
-            return "#E67878";
+            return "white";
         }
     }
 
     checkQuestionCorrect(key){
-        for (var question_id in this.state.answers[key]){
-            var isCorrect = this.state.answers[key][question_id].correct;
-            if (isCorrect === null || isCorrect === undefined){
-                return null;
+        if (this.props.showEvaluation){
+            for (var question_id in this.state.answers[key]){
+                var isCorrect = this.state.answers[key][question_id].correct;
+                if (isCorrect === null || isCorrect === undefined){
+                    return null;
+                }
+                if (isCorrect === false){
+                    return xIcon;
+                }
             }
-            if (isCorrect === false){
-                return xIcon;
-            }
+            return checkIcon;
         }
-        return checkIcon;
+        else{
+            return null;
+        }
     }
 
     onAnswerSelect(key, option_data, question_data){
@@ -145,7 +177,7 @@ TAF9L: compare peak heights: if the first peak is 2x than the second one, this i
                         </Card>
                     </Col>
                     
-                    <Button className={"mt-3"} onClick={this.props.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
+                    <Button className={"mt-3"} onClick={this.onClickNext} style={{width: 100,marginLeft:"auto"}}>Next</Button>
 
                 </Row>
             </>
