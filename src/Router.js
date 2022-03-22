@@ -15,6 +15,7 @@ import PrenatalRadDemo from './components/GuidedPractice/PrenatalRad/PrenatalRad
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import PracticeCasePage from './pages/PracticeCase/PracticeCasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
+import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 
 class Navigate extends Component {
 
@@ -68,8 +69,12 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice" component={PracticeCaseListPage}>
                         </Route>
-                        <Route path="/practice/:caseType/:caseId" component={PracticeCasePage}>
+                        <Route exact path="/practice/:caseType/:caseId" component={PracticeCasePage}>
                         </Route>
+                        <Route exact path="/practice/:caseType/:caseId/evaluation" component={EvaluationPage}>
+                        </Route>
+
+                        
                     </Route>
                     
 

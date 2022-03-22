@@ -81,17 +81,17 @@ class PracticeCasePage extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <IdentifyMarkers canSkip={false} showEvaluation={false} data={this.data} onClickNext={this.onClickNext}></IdentifyMarkers>
+                                    <IdentifyMarkers caseType={this.state.caseType} caseId = {this.state.caseId} canSkip={false} saveAnswers={true} showEvaluation={false} data={this.data} onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable canSkip={false} data={this.data}  onClickNext={this.onClickNext}></GenotypeTable>
+                                    <GenotypeTable data={this.data} onClickNext={this.onClickNext}></GenotypeTable>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion data={this.data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion isGuided={false} caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>

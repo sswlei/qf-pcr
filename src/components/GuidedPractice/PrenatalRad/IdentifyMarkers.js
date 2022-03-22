@@ -9,7 +9,6 @@ class IdentifyMarkers extends Component {
     constructor(props) {
         super(props);
         this.initState = this.initState.bind(this);
-
         this.initState();
         this.createDropdown = this.createDropdown.bind(this);
         this.getAnswerBackground = this.getAnswerBackground.bind(this);
@@ -36,6 +35,11 @@ class IdentifyMarkers extends Component {
                         return false;
                     }
                 }
+            }
+        }
+        if (this.props.saveAnswers){
+            if (this.props.caseType!=null && this.props.caseType != "" && this.props.caseId!=null){
+                localStorage.setItem(this.props.caseType+this.props.caseId+"_markers",JSON.stringify(this.state.answers));
             }
         }
         return true;

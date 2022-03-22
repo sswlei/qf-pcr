@@ -88,7 +88,7 @@ class PrenatalRad extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion data={prenatalRAD_data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion isGuided={true} data={prenatalRAD_data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>
