@@ -4,7 +4,7 @@ import { ListGroup, Container, Button, Table } from 'react-bootstrap';
 class EvaluationPage extends Component{
     constructor(props){
         super(props);
-
+        this.onClickRetry = this.onClickRetry.bind(this);
     }
     calculateMarkersScore(){
         var correctMarkers = 0;
@@ -23,6 +23,10 @@ class EvaluationPage extends Component{
     getFinalConclusion(){
         var answer = JSON.parse(localStorage.getItem(this.props.match.params.caseType+this.props.match.params.caseId+"_conclusion"));
         return  <td className={answer.correct?"text-success":"text-danger"} style={{textAlign:"right"}}>{`${answer.correct?"Correct!":"Incorrect."} (Answered: ${answer.answer})`}</td> ;
+    }
+    onClickRetry(){
+        this.props.history.push(`/practice/${this.props.match.params.caseType}/${this.props.match.params.caseId}`);
+
     }
 
     render(){
@@ -44,7 +48,7 @@ class EvaluationPage extends Component{
                             <td>Final conclusion</td>
                             {this.getFinalConclusion()}
                         </tr>
-                        <tr><td></td><td></td></tr>
+                        <tr><td></td><td><Button onClick={this.onClickRetry} variant="info">Retry</Button></td></tr>
                     </tbody>
                 </Table>
             </Container>
