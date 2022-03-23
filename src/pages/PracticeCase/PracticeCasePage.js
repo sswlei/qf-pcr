@@ -1,20 +1,21 @@
 import React, {Component} from "react";
 import { Col, Nav, Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
-import ReviewPeaks from './ReviewPeaks';
-import IdentifyMarkers from "./IdentifyMarkers";
-import GenotypeTable from "./GenotypeTable";
-import FinalConclusion from "./FinalConclusion";
-import '../css/StepBar.css';
-import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
+import IdentifyMarkers from "../../components/GuidedPractice/PrenatalRad/IdentifyMarkers";
+import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeTable";
+import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
+import '../../components/GuidedPractice/css/StepBar.css';
+import practice_data from '../../data/PracticeCase/prenatalrad/route_data.json';
+import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
 
-class PrenatalRad extends Component{
-    constructor(){
-        super();
-        this.state = {completedSteps:0, currentTab:0};
+class PracticeCasePage extends Component{
+    constructor(props){
+        super(props);
+        this.state = {completedSteps:0, currentTab:0, caseId:this.props.match.params.caseId, caseType:this.props.match.params.caseType};
         this.handleSelect = this.handleSelect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
+        this.data = practice_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -48,22 +49,24 @@ class PrenatalRad extends Component{
     }
 
     render(){
-        return (                
+        return (       
+            <Container className="mt-4">
+                <h2 className="mb-3 text-monospace text-info">Practice Case #{this.state.caseId}</h2>
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
                     <Row>
                         <Col sm={12}>
-                            <Nav>
+                            <Nav className="step-arrows-4">
                                 <Nav.Item className={`step-arrows ${this.getStepColor(0)}`}>
-                                    <Nav.Link disabled={!this.isStepCompleted(0)}  eventKey={0}><strong>Step 1</strong> <br></br> Review quality of peaks</Nav.Link>
+                                    <Nav.Link disabled={!this.isStepCompleted(0)}  eventKey={0}><strong>Intro</strong> <br></br> Start</Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item className={`step-arrows ${this.getStepColor(1)}`} >
-                                    <Nav.Link disabled={!this.isStepCompleted(1)} eventKey={1}><strong>Step 2</strong> <br></br> Identify Markers</Nav.Link>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(1)}`}>
+                                    <Nav.Link disabled={!this.isStepCompleted(1)}  eventKey={1}><strong>Part 1</strong> <br></br> Identify Markers</Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item className={`step-arrows ${this.getStepColor(2)}`}>
-                                    <Nav.Link disabled={!this.isStepCompleted(2)}  eventKey={2}><strong>Step 3</strong> <br></br> Genotype Table</Nav.Link>
+                                <Nav.Item className={`step-arrows ${this.getStepColor(2)}`} >
+                                    <Nav.Link disabled={!this.isStepCompleted(2)} eventKey={2}><strong>Part 2</strong> <br></br> Genotype Table</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className={`step-arrows ${this.getStepColor(3)}`}>
-                                    <Nav.Link disabled={!this.isStepCompleted(3)}  eventKey={3}><strong>Step 4</strong> <br></br> Final Conclusion</Nav.Link>
+                                    <Nav.Link disabled={!this.isStepCompleted(3)}  eventKey={3}><strong>Part 3</strong> <br></br> Final Conclusion</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
@@ -73,30 +76,31 @@ class PrenatalRad extends Component{
                         <Tab.Content>
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>
+                                    <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <IdentifyMarkers canSkip={true} showEvaluation={true} data={prenatalRAD_data} onClickNext={this.onClickNext}></IdentifyMarkers>
+                                    <IdentifyMarkers caseType={this.state.caseType} caseId = {this.state.caseId} canSkip={false} saveAnswers={true} showEvaluation={false} data={this.data} onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable canSkip={true} data={prenatalRAD_data} onClickNext={this.onClickNext}></GenotypeTable>
+                                    <GenotypeTable data={this.data} onClickNext={this.onClickNext}></GenotypeTable>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion isGuided={true} data={prenatalRAD_data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion isGuided={false} caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>
                     </Row>
                 </Tab.Container>
+            </Container>         
 
         )
     }
 }
-export default PrenatalRad;
+export default PracticeCasePage;

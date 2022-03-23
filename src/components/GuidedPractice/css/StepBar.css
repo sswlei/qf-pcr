@@ -36,6 +36,14 @@
     text-align: center;
 }
 
+.step-arrows-3 .step-arrows{
+    height: 70px;
+    width: 33.33%;
+    background: #f8f8f8;
+    position: relative;
+    text-align: center;
+}
+
 .step-arrows a{
     color:gray;
 }
