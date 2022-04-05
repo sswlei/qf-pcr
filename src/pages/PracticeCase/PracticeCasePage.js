@@ -4,7 +4,7 @@ import IdentifyMarkers from "../../components/GuidedPractice/PrenatalRad/Identif
 import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
-import practice_data from '../../data/PracticeCase/prenatalrad/route_data.json';
+import practice_data from '../../data/PracticeCase/prenatalrad/practice_data.json';
 import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
 
 class PracticeCasePage extends Component{
