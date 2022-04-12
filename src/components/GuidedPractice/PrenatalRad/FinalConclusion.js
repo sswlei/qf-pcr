@@ -19,6 +19,8 @@ class FinalConclusion extends Component{
             "Trisomy 18 biological female",
             "Trisomy 21 biological male",
             "Trisomy 21 biological female",
+            "Trisomy 22 biological male",
+            "Trisomy 22 biological female",
             "Klinefelter",
             "Turner",
             "Other",
