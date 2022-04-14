@@ -10,7 +10,7 @@ import GuidedPracticePage from './pages/GuidedPractice/GuidedPracticePage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
 import AchievementPage from './pages/AchievementPage';
-import PrenatalRadDemo from './components/GuidedPractice/PrenatalRad/PrenatalRad';
+import Main from './components/GuidedPractice/Base/Main';
 
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import PracticeCasePage from './pages/PracticeCase/PracticeCasePage';
@@ -62,9 +62,19 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/guidedpractice/prenatalrad" render={(routeProps) => 
                             <GuidedPracticePage>
-                                <PrenatalRadDemo {...routeProps}></PrenatalRadDemo>
+                                <Main {...routeProps}></Main>
                             </GuidedPracticePage>}>
                         </Route>
+
+                        <Route exact path="/guidedpractice/pregnancyloss_complete">
+                            <CompletedPractice title={"Pregnancy Loss"}/>
+                        </Route>
+                        <Route exact path="/guidedpractice/pregnancyloss" render={(routeProps) => 
+                            <GuidedPracticePage>
+                                <Main {...routeProps}></Main>
+                            </GuidedPracticePage>}>
+                        </Route>
+
                         <Route exact path="/achievements" component={AchievementPage}>
                         </Route>
                         <Route exact path="/practice" component={PracticeCaseListPage}>

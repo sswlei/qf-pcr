@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import { Col, Nav, Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
-import IdentifyMarkers from "../../components/GuidedPractice/PrenatalRad/IdentifyMarkers";
-import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeTable";
-import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
+import IdentifyMarkers from "../../components/GuidedPractice/Base/IdentifyMarkers";
+import GenotypeTable from "../../components/GuidedPractice/Base/GenotypeTable";
+import FinalConclusion from "../../components/GuidedPractice/Base/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
 import practice_data from '../../data/PracticeCase/prenatalrad/route_data.json';
 import PracticeIntro from "../../components/PracticeCase/PracticeIntro";

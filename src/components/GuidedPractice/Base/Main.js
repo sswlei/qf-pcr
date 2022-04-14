@@ -6,8 +6,9 @@ import GenotypeTable from "./GenotypeTable";
 import FinalConclusion from "./FinalConclusion";
 import '../css/StepBar.css';
 import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
+import pl_data  from "../../../data/GuidedPractice/pregnancyLoss.json"
 
-class PrenatalRad extends Component{
+class Main extends Component{
     constructor(){
         super();
         this.state = {completedSteps:0, currentTab:0};
@@ -15,6 +16,7 @@ class PrenatalRad extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
+        console.log("test",this.props);
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -99,4 +101,4 @@ class PrenatalRad extends Component{
         )
     }
 }
-export default PrenatalRad;
+export default Main;
