@@ -4,7 +4,9 @@ import IdentifyMarkers from "../../components/GuidedPractice/PrenatalRad/Identif
 import GenotypeTable from "../../components/GuidedPractice/PrenatalRad/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/PrenatalRad/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
-import practice_data from '../../data/PracticeCase/prenatalrad/practice_data.json';
+import prenatalRad_data from '../../data/PracticeCase/prenatalrad/practice_data.json';
+import pl_data from '../../data/PracticeCase/pregnancyloss/practice_data.json';
+
 import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
 
 class PracticeCasePage extends Component{
@@ -15,7 +17,15 @@ class PracticeCasePage extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
-        this.data = practice_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
+        if (this.props.match.params.caseType === "prenatalrad"){
+            this.data = prenatalRad_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
+        }
+        else if (this.props.match.params.caseType === "pregnancyloss"){
+            this.data = pl_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
+        }
+        else{
+            this.data = null;
+        }
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});

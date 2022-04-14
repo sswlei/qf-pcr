@@ -829,7 +829,7 @@
         
             },
             "final_conclusion":"Normal biological male",
-            "image":"PATIENT5"
+            "image":"images/pl_5.JPG"
         }
     },
     "practice/pregnancyloss/2":{
@@ -1951,7 +1951,7 @@
         
             },
             "final_conclusion":"Trisomy 16 biological male",
-            "image":"PATIENT9"
+            "image":"images/pl_9.JPG"
         }
     },
     "practice/pregnancyloss/3":{
@@ -2785,7 +2785,7 @@
         
             },
             "final_conclusion":"Trisomy 22 biological male",
-            "image":"PATIENT7"
+            "image":"images/pl_7.jpg"
         }
         
     },
@@ -3658,7 +3658,7 @@
         
             },
             "final_conclusion":"Trisomy 13 biological male",
-            "image":"patinet3"
+            "image":"images/pl_3.jpg"
         
         }
     },
@@ -4480,7 +4480,7 @@
         
             },
             "final_conclusion":"Turner",
-            "image":"pATIENT1"
+            "image":"images/pl_1.jpg"
         
         }
     }
