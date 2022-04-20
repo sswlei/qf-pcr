@@ -32,7 +32,7 @@ class FinalConclusion extends Component{
         if (this.props.isGuided){
             if (this.props.data.final_conclusion === this.state.finalAnswer){
                 setModuleComplete("Prenatal RAD Guided Practice",true);
-                this.props.history.push('/guidedpractice/prenatalrad_complete');
+                this.props.history.push(`/guidedpractice/complete/${this.props.caseType}`);
             }
             else{
                 alert("Answer incorrect!");
