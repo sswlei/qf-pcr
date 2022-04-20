@@ -9,14 +9,23 @@ import prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.json"
 import pl_data  from "../../../data/GuidedPractice/pregnancyLoss.json"
 
 class Main extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {completedSteps:0, currentTab:0};
         this.handleSelect = this.handleSelect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
-        console.log("test",this.props);
+        if (this.props.match.params.caseType === "pregnancyloss"){
+            this.data = pl_data;
+        }
+        else if (this.props.match.params.caseType === "prenatalrad"){
+            this.data = prenatalRAD_data;
+        }
+        else{
+            this.data = null;
+        }
+        console.log("test",this.props.match.params.caseType);
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -80,17 +89,17 @@ class Main extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <IdentifyMarkers canSkip={true} showEvaluation={true} data={prenatalRAD_data} onClickNext={this.onClickNext}></IdentifyMarkers>
+                                    <IdentifyMarkers canSkip={true} showEvaluation={true} data={this.data} onClickNext={this.onClickNext}></IdentifyMarkers>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <GenotypeTable canSkip={true} data={prenatalRAD_data} onClickNext={this.onClickNext}></GenotypeTable>
+                                    <GenotypeTable canSkip={true} data={this.data} onClickNext={this.onClickNext}></GenotypeTable>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion isGuided={true} data={prenatalRAD_data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion isGuided={true} data={this.data} history={this.props.history} caseType={this.props.match.params.caseType}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>

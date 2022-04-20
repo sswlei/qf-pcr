@@ -57,23 +57,18 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/guidedpractice" component={GuidedPracticeList}>
                         </Route>
-                        <Route exact path="/guidedpractice/prenatalrad_complete">
+                        <Route exact path="/guidedpractice/complete/prenatalrad">
                             <CompletedPractice title={"Prenatal Rapid Aneuploidy Detection"}/>
                         </Route>
-                        <Route exact path="/guidedpractice/prenatalrad" render={(routeProps) => 
+                        <Route exact path="/guidedpractice/complete/pregnancyloss">
+                            <CompletedPractice title={"Pregnancy Loss"}/>
+                        </Route>
+                        <Route exact path="/guidedpractice/:caseType" render={(routeProps) => 
                             <GuidedPracticePage>
                                 <Main {...routeProps}></Main>
                             </GuidedPracticePage>}>
                         </Route>
 
-                        <Route exact path="/guidedpractice/pregnancyloss_complete">
-                            <CompletedPractice title={"Pregnancy Loss"}/>
-                        </Route>
-                        <Route exact path="/guidedpractice/pregnancyloss" render={(routeProps) => 
-                            <GuidedPracticePage>
-                                <Main {...routeProps}></Main>
-                            </GuidedPracticePage>}>
-                        </Route>
 
                         <Route exact path="/achievements" component={AchievementPage}>
                         </Route>
