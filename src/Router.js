@@ -16,6 +16,7 @@ import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import PracticeCasePage from './pages/PracticeCase/PracticeCasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
+import GeneratorPage from './pages/GeneratorPage';
 
 class Navigate extends Component {
 
@@ -73,7 +74,8 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice/:caseType/:caseId/evaluation" component={EvaluationPage}>
                         </Route>
-
+                        <Route exact path="/generator" component={GeneratorPage}>
+                        </Route>
                         
                     </Route>
                     
