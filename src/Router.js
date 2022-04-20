@@ -16,6 +16,10 @@ import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import PracticeCasePage from './pages/PracticeCase/PracticeCasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
+import FinalAssessmentIntro from './pages/FinalAssessment/IntroPage';
+import FinalAssessmentEvaluation from './pages/FinalAssessment/EvaluationPage';
+import FinalAssesmentExam from './pages/FinalAssessment/FinalAssessmentPage';
+import FinalAssessmentComplete from './pages/FinalAssessment/CompletedFinalPage';
 
 class Navigate extends Component {
 
@@ -78,7 +82,14 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice/:caseType/:caseId/evaluation" component={EvaluationPage}>
                         </Route>
-                        
+                        <Route exact path="/final_assessment/intro" component={FinalAssessmentIntro}>
+                        </Route>
+                        <Route exact path="/final_assessment/exam" component={PracticeCasePage}>
+                        </Route>
+                        <Route exact path="/final_assessment/evaluation" component={FinalAssessmentEvaluation}>
+                        </Route>
+                        <Route exact path="/final_assessment/complete" component={FinalAssessmentComplete}>
+                        </Route>
                     </Route>
                     
 
