@@ -128,7 +128,7 @@ class IdentifyMarkers extends Component {
         return (
             <>
                 <h2>Identify markers</h2>
-                <p>In the following interactive example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). Zoom in on the image if necessary. Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if you selection was not correct. Note that AMEL and TAF9L have unique selections:
+                <p>In the following interactive chromatogram example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). Zoom in on the image if necessary. Notice that the peak area is labelled underneath each peak (you will use this data in Step 3). Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if you selection was not correct. Note that AMEL and TAF9L have unique selections:
 <br></br>
 <br></br>
 
