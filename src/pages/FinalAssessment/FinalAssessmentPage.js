@@ -4,8 +4,8 @@ import IdentifyMarkers from "../../components/GuidedPractice/Base/IdentifyMarker
 import GenotypeTable from "../../components/GuidedPractice/Base/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/Base/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
-import practice_data from '../../data/PracticeCase/prenatalrad/route_data.json';
-import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
+import final_data from '../../data/FinalAssessment/finalAssessment.json';
+import FinalIntro from "../../components/FinalAssessment/FinalIntro";
 
 class FinalAssessmentPage extends Component{
     constructor(props){
@@ -15,7 +15,7 @@ class FinalAssessmentPage extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
-        this.data = practice_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
+        this.data = final_data[Math.floor((Math.random() * 1) + 0)];
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -51,7 +51,7 @@ class FinalAssessmentPage extends Component{
     render(){
         return (       
             <Container className="mt-4">
-                <h2 className="mb-3 text-monospace text-info">FinalAssessment</h2>
+                <h2 className="mb-3 text-monospace text-info">Final Assessment</h2>
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
                     <Row>
                         <Col sm={12}>
@@ -76,7 +76,7 @@ class FinalAssessmentPage extends Component{
                         <Tab.Content>
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>
+                                    <FinalIntro onClickNext={this.onClickNext}></FinalIntro>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
