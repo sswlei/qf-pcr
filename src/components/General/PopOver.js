@@ -16,13 +16,26 @@ class PopOver extends Component {
             { title: 'monosomy', define: 'Monosomy: one copy of a chromosome. Not tolerated for autosomes' },
             { title: 'trisomy', define: 'Trisomy: 3 copies of a chromosome. Most autosomal trisomies are not compatible with life' },
             { title: 'mosaics', define: '2 or more genetically distinct populations arising from 1 zygote' },
-            { title:"screens", define: "identifies possible future problem i.e. identifies individuals at risk for future issues"}
+            { title:"screens", define: "identifies possible future problem i.e. identifies individuals at risk for future issues"},
+            { title:"polyploidy", define: "polyploidy is more than two complete sets of chromosomes such ad triploidy (3n) or tetraploidy (4n)"},
+            { title:"integrated prenatal screen", define: "measures markers in both maternal serum and on ultrasound"},
+            { title:"serum integrated prenatal screen", define: "measures markers in two separate maternal serum tests"},
+            { title:"QUAD screen", define: "measures four markers in a single second-trimester maternal serum test"},
+            { title:"first-trimester screening", define: "at 11-14 wks of pregnancy measures markers in one maternal serum test and on ultrasound"},
+            { title:"non-invasive prenatal screening", define: "analyzes fetal DNA circulating in maternal blood for presence of aneuploidy of select chromosomes"},
+            { title:"polymorphism", define: "two or more variations in the same region of DNA sequence"},
+            { title:"sex chromosomes", define: "chromosome that participates in sex determination. Humans have two sex chromosomes: X and Y. Biological females have two X chromosomes, while biological males have an X and a Y."}
+
+
+
+
+
+
             ]
         }
     }
 
     render() {
-       
         return (
 
             <OverlayTrigger
