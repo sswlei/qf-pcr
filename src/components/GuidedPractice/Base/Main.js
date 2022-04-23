@@ -16,6 +16,7 @@ class Main extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
+        
         if (this.props.match.params.caseType === "pregnancyloss"){
             this.data = pl_data;
         }
@@ -25,6 +26,14 @@ class Main extends Component{
         else{
             this.data = null;
         }
+    }
+    getTitle(){
+        if (this.props.match.params.caseType === "pregnancyloss"){
+            return "Pregnancy Loss Guided Practice";
+        }
+        else if (this.props.match.params.caseType === "prenatalrad"){
+            return "Prenatal RAD Guided Practice";
+        } 
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -98,7 +107,7 @@ class Main extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion isGuided={true} data={this.data} history={this.props.history} caseType={this.props.match.params.caseType}></FinalConclusion>
+                                    <FinalConclusion title={this.getTitle()} isGuided={true} data={this.data} history={this.props.history} caseType={this.props.match.params.caseType}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>
