@@ -4,27 +4,41 @@ import IdentifyMarkers from "../../components/GuidedPractice/Base/IdentifyMarker
 import GenotypeTable from "../../components/GuidedPractice/Base/GenotypeTable";
 import FinalConclusion from "../../components/GuidedPractice/Base/FinalConclusion";
 import '../../components/GuidedPractice/css/StepBar.css';
-import prenatalRad_data from '../../data/PracticeCase/prenatalrad/practice_data.json';
-import pl_data from '../../data/PracticeCase/pregnancyloss/practice_data.json';
+import final_data from '../../data/FinalAssessment/finalAssessment.json';
+import FinalIntro from "../../components/FinalAssessment/FinalIntro";
 
-import PracticeIntro from "../../components/PracticeCase/PracticeIntro";
-
-class PracticeCasePage extends Component{
+class FinalAssessmentPage extends Component{
     constructor(props){
         super(props);
-        this.state = {completedSteps:0, currentTab:0, caseId:this.props.match.params.caseId, caseType:this.props.match.params.caseType};
+        this.state = {completedSteps:0, currentTab:0, caseId:this.props.match.params.caseId, caseType:this.props.match.params.caseType, reachedMaxAttempts: false};
         this.handleSelect = this.handleSelect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
-        if (this.props.match.params.caseType === "prenatalrad"){
-            this.data = prenatalRad_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
+        this.checkAttempts = this.checkAttempts.bind(this);
+
+        this.checkAttempts();
+
+        this.data = final_data[0]; //default set to 0
+        let currentCase = localStorage.getItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_case`);
+
+        if (currentCase == null){
+            let randomCase = Math.round(Math.random());
+            this.data = final_data[randomCase];
+            localStorage.setItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_case`, randomCase);
+
+        }else{
+            this.data = final_data[currentCase];
         }
-        else if (this.props.match.params.caseType === "pregnancyloss"){
-            this.data = pl_data[`practice/${this.state.caseType}/${this.state.caseId}`].data;
+    }
+    checkAttempts(){
+        let currentAttempts = localStorage.getItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_attempts`);
+        if (currentAttempts == null){
+            localStorage.setItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_attempts`, 0);
         }
-        else{
-            this.data = null;
+        else if (currentAttempts >= 3){
+            this.setState({reachedMaxAttempts:true});
+            this.props.history.push(`/final_assessment/${this.props.match.params.caseType}/${this.props.match.params.caseId}/max_attempts`);
         }
     }
     handleSelect(tab) {
@@ -61,7 +75,7 @@ class PracticeCasePage extends Component{
     render(){
         return (       
             <Container className="mt-4">
-                <h2 className="mb-3 text-monospace text-info">Practice Case #{this.state.caseId}</h2>
+                <h2 className="mb-3 text-monospace text-info">Final Assessment</h2>
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
                     <Row>
                         <Col sm={12}>
@@ -86,7 +100,7 @@ class PracticeCasePage extends Component{
                         <Tab.Content>
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>
+                                    <FinalIntro onClickNext={this.onClickNext}></FinalIntro>
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
@@ -101,7 +115,7 @@ class PracticeCasePage extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion isGuided={false} category="practice" caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion isGuided={false} category="final_assessment" caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>
@@ -113,4 +127,4 @@ class PracticeCasePage extends Component{
         )
     }
 }
-export default PracticeCasePage;
+export default FinalAssessmentPage;
