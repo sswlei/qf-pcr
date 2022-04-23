@@ -25,7 +25,6 @@ class Main extends Component{
         else{
             this.data = null;
         }
-        console.log("test",this.props.match.params.caseType);
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});

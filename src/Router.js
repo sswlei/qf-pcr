@@ -17,9 +17,9 @@ import PracticeCasePage from './pages/PracticeCase/PracticeCasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 import FinalAssessmentIntro from './pages/FinalAssessment/IntroPage';
-import FinalAssessmentEvaluation from './pages/FinalAssessment/EvaluationPage';
 import FinalAssessmentExam from './pages/FinalAssessment/FinalAssessmentPage';
 import FinalAssessmentComplete from './pages/FinalAssessment/CompletedFinalPage';
+import MaxAttemptsPage from './pages/MaxAttemptsPage';
 
 class Navigate extends Component {
 
@@ -80,15 +80,15 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice/:caseType/:caseId" component={PracticeCasePage}>
                         </Route>
-                        <Route exact path="/practice/:caseType/:caseId/evaluation" component={EvaluationPage}>
+                        <Route exact path="/:category/:caseType/:caseId/evaluation" component={EvaluationPage}>
                         </Route>
                         <Route exact path="/final_assessment" component={FinalAssessmentIntro}>
                         </Route>
                         <Route exact path="/final_assessment/:caseType/:caseId" component={FinalAssessmentExam}>
                         </Route>
-                        <Route exact path="/final_assessment/:caseType/:caseId/evaluation" component={FinalAssessmentEvaluation}>
-                        </Route>
                         <Route exact path="/final_assessment/complete" component={FinalAssessmentComplete}>
+                        </Route>
+                        <Route exact path="/:category/:caseType/:caseId/max_attempts" component={MaxAttemptsPage}>
                         </Route>
                     </Route>
                     

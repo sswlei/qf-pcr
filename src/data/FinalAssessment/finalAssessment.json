@@ -14,6 +14,15 @@
                             {"name":"Ch Y","value":"chy"}
                         ],
                         "answer":"chx"
+                    },
+                    {
+                        "id":"DXS6803_q2",
+                        "options":[
+                            {"name":"Uninformative","value":"uninformative"},
+                            {"name":"Diallelic","value":"diallelic"},
+                            {"name":"Triallelic","value":"triallelic"}
+                        ],
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -37,7 +46,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -61,7 +70,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"uninformative"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -85,7 +94,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -109,7 +118,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -133,7 +142,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"uninformative"
                     }
                 ]
             },
@@ -149,6 +158,15 @@
                             {"name":"Ch Y","value":"chy"}
                         ],
                         "answer":"chx"
+                    },
+                    {
+                        "id":"DXS1187_q2",
+                        "options":[
+                            {"name":"Uninformative","value":"uninformative"},
+                            {"name":"Diallelic","value":"diallelic"},
+                            {"name":"Triallelic","value":"triallelic"}
+                        ],
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -172,7 +190,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"uninformative"
                     }
                 ]
             },
@@ -188,6 +206,15 @@
                             {"name":"Ch Y","value":"chy"}
                         ],
                         "answer":"chx"
+                    },
+                    {
+                        "id":"HPRT_q2",
+                        "options":[
+                            {"name":"Uninformative","value":"uninformative"},
+                            {"name":"Diallelic","value":"diallelic"},
+                            {"name":"Triallelic","value":"triallelic"}
+                        ],
+                        "answer":"uninformative"
                     }
                 ]
             },
@@ -211,7 +238,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -235,7 +262,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -248,6 +275,15 @@
                             {"name":"XY","value":"xy"}
                         ],
                         "answer":"xy"
+                    },
+                    {
+                        "id":"AMEL_q2",
+                        "options":[
+                            {"name":"Uninformative","value":"uninformative"},
+                            {"name":"Diallelic","value":"diallelic"},
+                            {"name":"Triallelic","value":"triallelic"}
+                        ],
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -260,6 +296,15 @@
                             {"name":"2 X chromosomes","value":"twoxchrom"}
                         ],
                         "answer":"onexchrom"
+                    },
+                    {
+                        "id":"taf9l_q2",
+                        "options":[
+                            {"name":"Uninformative","value":"uninformative"},
+                            {"name":"Diallelic","value":"diallelic"},
+                            {"name":"Triallelic","value":"triallelic"}
+                        ],
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -283,22 +328,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
-                    }
-                ]
-            },
-            "SRY":{
-                "questions":[
-                    {
-                        "id":"SRY_q1",
-                        "options":[
-                            {"name":"Ch13","value":"ch13"},
-                            {"name":"Ch18","value":"ch18"},
-                            {"name":"Ch21","value":"ch21"},
-                            {"name":"Ch X","value":"chx"},
-                            {"name":"Ch Y","value":"chy"}
-                        ],
-                        "answer":"chy"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -322,7 +352,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -346,7 +376,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -370,7 +400,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"uninformative"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -394,7 +424,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -418,7 +448,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -442,7 +472,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"triallelic"
                     }
                 ]
             },
@@ -466,13 +496,13 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"diallelic"
+                        "answer":"uninformative"
                     }
                 ]
             }
 
         },
-        "final_conclusion":"Normal biological male",
+        "final_conclusion":"Other",
         "image":"/images/final_rad.JPG"
     },
     {
@@ -1303,7 +1333,7 @@
             }
 
         },
-        "final_conclusion":"Trisomy 21 biological female",
+        "final_conclusion":"Trisomy 22 biological female",
         "image":"images/final_pl.JPG"
     }
 ]

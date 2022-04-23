@@ -28,7 +28,7 @@ class NavBar extends Component {
                         <Nav.Link href="#guidedpractice" className={`${this.props.history.location.pathname === '/guidedpractice' ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>
                         <Nav.Link href="#practice" className={`${this.props.history.location.pathname === '/practice' ? "active border-bottom border-secondary" : null} mr-2`}>Practice Cases</Nav.Link>  
                         <Nav.Link href="#quiz" className={`${this.props.history.location.pathname === '/quiz' ? "active border-bottom border-secondary" : null} mr-2`}>Quiz</Nav.Link>  
-                        <Nav.Link href="#final_assessment" className={`${this.props.history.location.pathname === '/final_assessment/intro' ? "active border-bottom border-secondary" : null} mr-2`}>Final Assessmnet</Nav.Link>  
+                        <Nav.Link href="#final_assessment" className={`${this.props.history.location.pathname === '/final_assessment/intro' ? "active border-bottom border-secondary" : null} mr-2`}>Final Assessment</Nav.Link>  
                         <Nav.Link href="#achievements" className={`${this.props.history.location.pathname === '/achievements' ? "active border-bottom border-secondary" : null} mr-2`}>Achievements</Nav.Link>  
 
                     </Nav>

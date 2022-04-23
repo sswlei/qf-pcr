@@ -4,7 +4,6 @@ import { Container, Button } from 'react-bootstrap';
 class IntroPage extends Component{
     constructor(props){
         super(props);
-        console.log(props)
     }
     render(){
         return (

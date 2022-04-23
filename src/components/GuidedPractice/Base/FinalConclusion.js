@@ -27,6 +27,7 @@ class FinalConclusion extends Component{
             "Further testing required"
         ];
         this.onFinish = this.onFinish.bind(this);
+        this.updateAttempts = this.updateAttempts.bind(this);
     }
     onFinish(){
         if (this.props.isGuided){
@@ -41,10 +42,21 @@ class FinalConclusion extends Component{
         else{
             var conclusion = JSON.stringify({"answer":this.state.finalAnswer,"correct":this.props.data.final_conclusion===this.state.finalAnswer});
             localStorage.setItem(this.props.caseType+this.props.caseId+"_conclusion",conclusion);
-            this.props.history.push(`/practice/${this.props.caseType}/${this.props.caseId}/evaluation`);
+            this.updateAttempts();
+            this.props.history.push(`/${this.props.category}/${this.props.caseType}/${this.props.caseId}/evaluation`);
         }
         
 
+    }
+    updateAttempts(){
+        let currentAttempts = localStorage.getItem(`${this.props.caseType}${this.props.caseId}_attempts`);
+        if (currentAttempts == null){
+            localStorage.setItem(`${this.props.caseType}${this.props.caseId}_attempts`, 0);
+        }
+        else{
+            currentAttempts++;
+            localStorage.setItem(`${this.props.caseType}${this.props.caseId}_attempts`, currentAttempts);
+        }
     }
     render(){
         return <div>

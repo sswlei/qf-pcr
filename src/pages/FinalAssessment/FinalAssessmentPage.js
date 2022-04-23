@@ -10,12 +10,36 @@ import FinalIntro from "../../components/FinalAssessment/FinalIntro";
 class FinalAssessmentPage extends Component{
     constructor(props){
         super(props);
-        this.state = {completedSteps:0, currentTab:0, caseId:this.props.match.params.caseId, caseType:this.props.match.params.caseType};
+        this.state = {completedSteps:0, currentTab:0, caseId:this.props.match.params.caseId, caseType:this.props.match.params.caseType, reachedMaxAttempts: false};
         this.handleSelect = this.handleSelect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
-        this.data = final_data[Math.floor((Math.random() * 1) + 0)];
+        this.checkAttempts = this.checkAttempts.bind(this);
+
+        this.checkAttempts();
+
+        this.data = final_data[0]; //default set to 0
+        let currentCase = localStorage.getItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_case`);
+
+        if (currentCase == null){
+            let randomCase = Math.round(Math.random());
+            this.data = final_data[randomCase];
+            localStorage.setItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_case`, randomCase);
+
+        }else{
+            this.data = final_data[currentCase];
+        }
+    }
+    checkAttempts(){
+        let currentAttempts = localStorage.getItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_attempts`);
+        if (currentAttempts == null){
+            localStorage.setItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_attempts`, 0);
+        }
+        else if (currentAttempts >= 3){
+            this.setState({reachedMaxAttempts:true});
+            this.props.history.push(`/final_assessment/${this.props.match.params.caseType}/${this.props.match.params.caseId}/max_attempts`);
+        }
     }
     handleSelect(tab) {
         this.setState({currentTab:parseInt(tab)});
@@ -91,7 +115,7 @@ class FinalAssessmentPage extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion isGuided={false} caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion isGuided={false} category="final_assessment" caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>

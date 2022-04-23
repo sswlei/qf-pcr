@@ -25,7 +25,7 @@ class EvaluationPage extends Component{
         return  <td className={answer.correct?"text-success":"text-danger"} style={{textAlign:"right"}}>{`${answer.correct?"Correct!":"Incorrect."} (Answered: ${answer.answer})`}</td> ;
     }
     onClickRetry(){
-        this.props.history.push(`/practice/${this.props.match.params.caseType}/${this.props.match.params.caseId}`);
+        this.props.history.push(`/${this.props.match.params.category}/${this.props.match.params.caseType}/${this.props.match.params.caseId}`);
 
     }
 
