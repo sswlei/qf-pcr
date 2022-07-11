@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
-import NormalMale from '../assets/normalMale.JPG'
+import NormalMale from '../assets/normalMale.jpg'
 
 class IntroductionPage extends Component {
 

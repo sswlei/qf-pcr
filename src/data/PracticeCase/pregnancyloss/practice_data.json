@@ -829,7 +829,7 @@
         
             },
             "final_conclusion":"Normal biological male",
-            "image":"images/pl_5.JPG"
+            "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_5.jpg"
         }
     },
     "practice/pregnancyloss/2":{
@@ -1951,7 +1951,7 @@
         
             },
             "final_conclusion":"Trisomy 16 biological male",
-            "image":"images/pl_9.JPG"
+            "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_9.jpg"
         }
     },
     "practice/pregnancyloss/3":{
@@ -2785,7 +2785,7 @@
         
             },
             "final_conclusion":"Trisomy 22 biological male",
-            "image":"images/pl_7.jpg"
+            "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_7.jpg"
         }
         
     },
@@ -3658,7 +3658,7 @@
         
             },
             "final_conclusion":"Trisomy 13 biological male",
-            "image":"images/pl_3.jpg"
+            "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_3.jpg"
         
         }
     },
@@ -4480,7 +4480,7 @@
         
             },
             "final_conclusion":"Turner",
-            "image":"images/pl_1.jpg"
+            "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_1.jpg"
         
         }
     }
