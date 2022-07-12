@@ -23,7 +23,7 @@ export default [
                 QF-PCR can also be used to assess for specific chromosomal abnormalities involving chromosomes 13, 15, 16, 18, 21, 22, X and Y in spontaneous pregnancy loss samples.
             </p>
             <p>
-                The basis of this diagnostic tool is the molecular genetic technique known as the polymerase chain reaction (PCR), a method for selective amplification of a portion of the genome. The exponential phase of PCR is key to the success of QF-PCR as a method for aneuploidy detection. During the exponential stage of PCR, the number of copies of a target are equal to 2n, where n is the number of PCR cycles. QF-PCR allows for the amount of fluorescent signal produced in PCR to be proportional to the amount of starting material by performing polymerase chain reaction (PCR) with limited cycle numbers and fluorescent label on PCR primers. 
+                The basis of this diagnostic tool is the molecular genetic technique known as the polymerase chain reaction (PCR), a method for selective amplification of a portion of the genome. The exponential phase of PCR is key to the success of QF-PCR as a method for aneuploidy detection. During the exponential stage of PCR, the number of copies of a target are equal to 2&#8319;, where n is the number of PCR cycles. QF-PCR allows for the amount of fluorescent signal produced in PCR to be proportional to the amount of starting material by performing polymerase chain reaction (PCR) with limited cycle numbers and fluorescent label on PCR primers. 
             </p>
             <br></br>
             <p>
@@ -31,7 +31,7 @@ export default [
                 <br></br>
                 <br></br>
 
-                eg: GTCAGATCATCATCATCATCATCTTA
+                eg: GTCAG<u>ATCATCATCATCATCATC</u>TTA
 
             </p>
             <p>
@@ -65,7 +65,7 @@ export default [
             </p>
             <h5>Challenging Cases</h5>
             <p>
-                Two issues that can complicate the diagnosis of QF-PCR data are mosaicism (patient has cells that do not all have the same genetic composition, therefore more than one karyotype is present) or maternal cell contamination (MCC) (during specimen collection some cells from the mother were also collected). Both of these conditions can result in peaks with unusually small peak areas or unusual peak heights</p>
+            Two issues that can complicate the diagnosis of QF-PCR data are mosaicism (patient has cells that do not all have the same genetic composition, therefore more than one karyotype is present) or non-fetal cell contamination (often referred to as maternal cell contamination (MCC)). Non-fetal cell contamination can occur if some non-fetal cells were also collected during specimen collection). Both of these conditions can result in peaks with unusually small peak areas or unusual peak heights.</p>
                 <br></br>
             <h5>Example of QF-PCR results with mosaicism:</h5>
             <p>
@@ -75,9 +75,9 @@ export default [
             <br></br>
             <br></br>
 
-            <h5>Example of QF-PCR results with MCC</h5>
+            <h5>Example of QF-PCR results with Non-fetal cell contamination:</h5>
             <p>
-            Again, the amount of MCC can vary, but notice in the example below that all informative markers have either a short extra peak, or the peak ratios are unusual (compare to the mosaic case, where only one chromosome had unusual results)
+            Non-fetal cell contamination is always a possibility when collecting fetal cells. These contaminant cells can potentially cause difficulties in results interpretation as it can be difficult to determine which results were generated from the fetal cells. The amount of contamination can vary, but notice in the example below that all informative markers have either a short extra peak, or the peak ratios are unusual (compare to the mosaic case, where only one chromosome had unusual results).
             </p>
             <img src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/bg_6.png"}></img>
         </div>
@@ -235,7 +235,7 @@ export default [
            Some of these conditions are present as {<PopOver text={'mosaics'}/>}, which can make diagnosis more challenging (see example in Background QF-PCR section).
            <br></br>
            <br></br>
-           Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as: {<PopOver text={'integrated prenatal screen'}/>} (IPS), {<PopOver text={'serum integrated prenatal screen'}/>} (SIPS), {<PopOver text={'QUAD screen'}/>}, {<PopOver text={'first-trimester screening'}/>} (FTS) and {<PopOver text={'non-invasive prenatal screening'}/>}non-invasive prenatal screening (NIPS).  Other factors such as advanced maternal age (&gt;40yrs at time of delivery) or family history may prompt QF-PCR to assess for trisomies. 
+           Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as: {<PopOver text={'integrated prenatal screen'}/>} (IPS), {<PopOver text={'serum integrated prenatal screen'}/>} (SIPS), {<PopOver text={'QUAD screen'}/>}, {<PopOver text={'first-trimester screening'}/>} (FTS) and {<PopOver text={'non-invasive prenatal screening'}/>}non-invasive prenatal screening (NIPS). Other factors such as the person giving birth being &gt;40yrs at time of delivery, or family history may prompt QF-PCR to assess for trisomies. 
            <br></br>
            <br></br>
         <h5>Limitations of test:</h5>
@@ -243,7 +243,7 @@ export default [
 Note that for followup diagnostic testing, such as QF-PCR, a positive result does not confirm that the fetus is affected, just as a negative result does not eliminate the possibility the fetus is affected. However, a negative result can exclude the tested aneuploidies as a diagnosis.
             <br></br>
             <br></br>
-QF-PCR will detect whole chromosomal aneuploidy, but not balanced structural rearrangements, such as translocations or inversions. The underlying cause of the aneuploidy (i.e. nondisjunction or unbalanced structural rearrangement) is also not determined. Complications such as maternal cell contamination (MCC) and confined placental mosaicism (CPM) may result in discrepancies between QF-PCR and karyotype results.
+QF-PCR will detect whole chromosomal aneuploidy, but not balanced structural rearrangements, such as translocations or inversions. The underlying cause of the aneuploidy (i.e. nondisjunction or unbalanced structural rearrangement) is also not determined. Complications such as non-fetal cell contamination and confined placental mosaicism (CPM) may result in discrepancies between QF-PCR and karyotype results.
             <br></br>
             <br></br>
 QF-PCR can be performed on DNA extracted from amniotic fluid cells, chorionic villus sampling (CVS) or fetal blood. 
@@ -336,7 +336,7 @@ QF-PCR can be performed on DNA extracted from amniotic fluid cells, chorionic vi
             <p>
                 <ul>
                     <li>as seen for prenatal RAD, only informative markers (must have at least 2 peaks) can be analyzed</li>
-                    <li>Maternal cell contamination or mosaicism can complicate diagnosis as these situations can result in extra (often very short) peaks or unexpected peak area ratios</li>
+                    <li>Non-fetal cell contamination or mosaicism can complicate diagnosis as these situations can result in extra (often very short) peaks or unexpected peak area ratios</li>
                     <li>not all chromosomal numerical abnormalities can be detected by this method. The typical testing algorithm involves assessment for aneuploidy using the PL QF-PCR chromosome panel. For those with a normal QF-PCR results, the samples are then submitted for microarray testing to assess for imbalances not detectable by QF-PCR.  This approach is cost effective and provides a high detection rate.</li>
                 </ul>
             </p>

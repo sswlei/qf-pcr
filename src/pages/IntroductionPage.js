@@ -25,7 +25,7 @@ class IntroductionPage extends Component {
                         src={NormalMale} 
                         alt = 'Normal Male Results'
                     />
-                    <h5>An Example of normal male results</h5>
+                    <h5>An Example of (46, XY) results</h5>
                 </span>
 
             </div>

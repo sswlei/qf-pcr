@@ -24,7 +24,7 @@ class PopOver extends Component {
             { title:"first-trimester screening", define: "at 11-14 wks of pregnancy measures markers in one maternal serum test and on ultrasound"},
             { title:"non-invasive prenatal screening", define: "analyzes fetal DNA circulating in maternal blood for presence of aneuploidy of select chromosomes"},
             { title:"polymorphism", define: "two or more variations in the same region of DNA sequence"},
-            { title:"sex chromosomes", define: "chromosome that participates in sex determination. Humans have two sex chromosomes: X and Y. Biological females have two X chromosomes, while biological males have an X and a Y."}
+            { title:"sex chromosomes", define: "chromosome that participates in sex determination. Humans have two sex chromosomes: X and Y."}
 
 
 
