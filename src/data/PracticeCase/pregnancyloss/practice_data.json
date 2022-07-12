@@ -828,7 +828,7 @@
                 }
         
             },
-            "final_conclusion":"Normal biological male",
+            "final_conclusion":"Normal male",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_5.jpg"
         }
     },
@@ -1950,7 +1950,7 @@
                 }
         
             },
-            "final_conclusion":"Trisomy 16 biological male",
+            "final_conclusion":"Trisomy 16 male",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_9.jpg"
         }
     },
@@ -2784,7 +2784,7 @@
                 }
         
             },
-            "final_conclusion":"Trisomy 22 biological male",
+            "final_conclusion":"Trisomy 22 male",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_7.jpg"
         }
         
@@ -3657,7 +3657,7 @@
                 }
         
             },
-            "final_conclusion":"Trisomy 13 biological male",
+            "final_conclusion":"Trisomy 13 male",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_3.jpg"
         
         }

@@ -417,7 +417,7 @@
                         {"name":"Diallelic","value":"diallelic"},
                         {"name":"Triallelic","value":"triallelic"}
                     ],
-                    "answer":"diallelic"
+                    "answer":"uninformative"
                 }
             ]
         },
@@ -471,6 +471,6 @@
         }
 
     },
-    "final_conclusion":"Normal biological male",
+    "final_conclusion":"Normal male",
     "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/normalMale.jpg"
 }
