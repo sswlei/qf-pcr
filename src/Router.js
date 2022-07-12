@@ -13,7 +13,7 @@ import AchievementPage from './pages/AchievementPage';
 import Main from './components/GuidedPractice/Base/Main';
 
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
-import PracticeCasePage from './pages/PracticeCase/PracticeCasePage';
+import CasePage from './pages/CasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 import FinalAssessmentIntro from './pages/FinalAssessment/IntroPage';
@@ -68,9 +68,9 @@ class Navigate extends Component {
                             <CompletedPractice title={"Pregnancy Loss"}/>
                         </Route>
                         <Route exact path="/guidedpractice/:caseType" render={(routeProps) => 
-                            <GuidedPracticePage>
+                            <CasePage title={`Guided Practice`}>
                                 <Main {...routeProps}></Main>
-                            </GuidedPracticePage>}>
+                            </CasePage>}>
                         </Route>
 
 
@@ -78,13 +78,19 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice" component={PracticeCaseListPage}>
                         </Route>
-                        <Route exact path="/practice/:caseType/:caseId" component={PracticeCasePage}>
+                        <Route exact path="/practice/:caseType/:caseId" render={(routeProps) => 
+                            <CasePage title={`Practice Case #${routeProps.match.params.caseId}`}>
+                                <Main {...routeProps}></Main>
+                            </CasePage>}>
                         </Route>
                         <Route exact path="/:category/:caseType/:caseId/evaluation" component={EvaluationPage}>
                         </Route>
                         <Route exact path="/final_assessment" component={FinalAssessmentIntro}>
                         </Route>
-                        <Route exact path="/final_assessment/:caseType/:caseId" component={FinalAssessmentExam}>
+                        <Route exact path="/final_assessment/:caseType/:caseId" render={(routeProps) => 
+                            <CasePage title={`Final Assessment`}>
+                                <Main isFinalAssessment={true} {...routeProps}></Main>
+                            </CasePage>}>
                         </Route>
                         <Route exact path="/final_assessment/complete" component={FinalAssessmentComplete}>
                         </Route>
