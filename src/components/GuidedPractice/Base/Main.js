@@ -148,7 +148,7 @@ class Main extends Component{
                                 <Card className="px-5 py-5 mb-5">
                                     <IdentifyMarkers 
                                         saveAnswers={this.props.category!="guided_practice"} 
-                                        canSkip={this.props.category!="final_assessment"} 
+                                        canSkip={true} 
                                         showEvaluation={this.props.category == "guidedpractice"} 
                                         data={this.data} 
                                         onClickNext={this.onClickNext} 
@@ -160,7 +160,7 @@ class Main extends Component{
                             <Tab.Pane eventKey={2}>
                                 <Card className="px-5 py-5 mb-5">
                                     <GenotypeTable 
-                                        canSkip={this.props.category!="final_assessment"} 
+                                        canSkip={true} 
                                         data={this.data} onClickNext={this.onClickNext} 
                                         caseType={this.props.match.params.caseType} 
                                         caseId={this.props.match.params.caseId}>
