@@ -69,7 +69,7 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/guidedpractice/:caseType" render={(routeProps) => 
                             <CasePage title={`Guided Practice`}>
-                                <Main {...routeProps}></Main>
+                                <Main category={"guidedpractice"}  {...routeProps}></Main>
                             </CasePage>}>
                         </Route>
 
@@ -80,7 +80,7 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/practice/:caseType/:caseId" render={(routeProps) => 
                             <CasePage title={`Practice Case #${routeProps.match.params.caseId}`}>
-                                <Main {...routeProps}></Main>
+                                <Main category={"practice"}  {...routeProps}></Main>
                             </CasePage>}>
                         </Route>
                         <Route exact path="/:category/:caseType/:caseId/evaluation" component={EvaluationPage}>
@@ -89,7 +89,7 @@ class Navigate extends Component {
                         </Route>
                         <Route exact path="/final_assessment/:caseType/:caseId" render={(routeProps) => 
                             <CasePage title={`Final Assessment`}>
-                                <Main isFinalAssessment={true} {...routeProps}></Main>
+                                <Main category={"final_assessment"} {...routeProps}></Main>
                             </CasePage>}>
                         </Route>
                         <Route exact path="/final_assessment/complete" component={FinalAssessmentComplete}>
