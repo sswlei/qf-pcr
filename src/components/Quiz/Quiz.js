@@ -148,6 +148,7 @@ class Quiz extends Component {
                                     <Button 
                                     onClick={() => {
                                             this.setState({showFeedback: true,submitted:true});
+                                            window.scrollTo(0, 0);
                                             if (this.checkAllCorrect()){
                                                 setModuleComplete("Quiz #1",true)
                                             }
@@ -161,7 +162,7 @@ class Quiz extends Component {
                             {
                                 (this.state.submitted && !this.checkAllCorrect())?
                                     <Button 
-                                    onClick={()=>window.location.reload()} 
+                                    onClick={()=>{window.scrollTo(0, 0);window.location.reload();}} 
                                     size="sm" 
                                     variant="primary">Reset
                                     </Button>:null

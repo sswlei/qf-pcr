@@ -15,10 +15,12 @@ class MaxAttemptsPage extends Component{
             localStorage.setItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_case`, randomCase);
 
         }else{
-            let newCase = currentCase;
-            while (newCase == currentCase){
-                newCase = Math.round(Math.random());
-            }
+            let newCase = currentCase == 0 ? 1 : 0; //toggle between case 0 and case 1
+            
+            // var intVal = currentCase==0 ? 1 : 0;
+            // while (newCase == currentCase){
+            //     newCase = Math.round(Math.random());
+            // }
             localStorage.setItem(`${this.props.match.params.caseType}${this.props.match.params.caseId}_case`, newCase);
 
         }

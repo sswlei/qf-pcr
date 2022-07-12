@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from 'react-bootstrap';
 
-class GuidedPracticePage extends Component{
+class CasePage extends Component{
     constructor(props){
         super(props);
     }
@@ -14,4 +14,4 @@ class GuidedPracticePage extends Component{
         )
     }
 }
-export default GuidedPracticePage;
+export default CasePage;

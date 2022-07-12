@@ -31,7 +31,7 @@ class FinalConclusion extends Component{
         this.updateAttempts = this.updateAttempts.bind(this);
     }
     onFinish(){
-        if (this.props.isGuided){
+        if (this.props.category==="guidedpractice"){
             if (this.props.data.final_conclusion === this.state.finalAnswer){
                 setModuleComplete(this.props.title,true);
                 this.props.history.push(`/guidedpractice/complete/${this.props.caseType}`);
@@ -41,6 +41,7 @@ class FinalConclusion extends Component{
             }
         }
         else{
+
             var conclusion = JSON.stringify({"answer":this.state.finalAnswer,"correct":this.props.data.final_conclusion===this.state.finalAnswer});
             if (this.props.category==="practice"){
                 if (this.props.data.final_conclusion!=this.state.finalAnswer){

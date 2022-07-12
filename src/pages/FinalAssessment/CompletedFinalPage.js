@@ -13,10 +13,8 @@ class CompletedFinalAssessmentPage extends Component{
         }
         else{
             let completion_data = AES.decrypt(storage_data,"9g92m498dh4sx").toString(enc.Utf8);
-            console.log(completion_data);
             try{
                 let decryptedData = JSON.parse(completion_data);
-                console.log(decryptedData);
                 this.state = {completionData:decryptedData};
             }
             catch (e){

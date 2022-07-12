@@ -115,7 +115,7 @@ class FinalAssessmentPage extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey={3}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <FinalConclusion isGuided={false} category="final_assessment" caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
+                                    <FinalConclusion category="final_assessment" caseType={this.state.caseType} caseId = {this.state.caseId} data={this.data} history={this.props.history}></FinalConclusion>
                                 </Card>
                             </Tab.Pane>
                         </Tab.Content>
