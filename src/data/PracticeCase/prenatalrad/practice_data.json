@@ -612,7 +612,7 @@
                 }
         
             },
-            "final_conclusion":"Trisomy 21 biological male",
+            "final_conclusion":"Trisomy 21 male",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/rad_4.jpg"
         }
     },
@@ -1768,7 +1768,7 @@
                     ]
                 }
             },
-            "final_conclusion":"Trisomy 13 biological female",
+            "final_conclusion":"Trisomy 13 female",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/rad_10.jpg"
         }
     },
@@ -2341,7 +2341,7 @@
                 }
         
             },
-            "final_conclusion":"Trisomy 18 biological female",
+            "final_conclusion":"Trisomy 18 female",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/rad_3.jpg"
         }
         
@@ -2929,7 +2929,7 @@
                 }
         
             },
-            "final_conclusion":"Trisomy 21 biological female",
+            "final_conclusion":"Trisomy 21 female",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/rad_2.jpg"
         
         }
@@ -3531,7 +3531,7 @@
                 }
         
             },
-            "final_conclusion":"Normal biological female",
+            "final_conclusion":"Normal female",
             "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/rad_8.jpg"
         
         }
