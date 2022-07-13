@@ -17,16 +17,9 @@
                     ],
                     "answer":"ch16"
                 },
+
                 {
                     "id":"D16S2624_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D16S2624_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -52,16 +45,9 @@
                     ],
                     "answer":"ch22"
                 },
+
                 {
                     "id":"D22S683_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D22S683_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -87,16 +73,9 @@
                     ],
                     "answer":"ch21"
                 },
+
                 {
                     "id":"D21S11_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"abnormal"
-                },
-                {
-                    "id":"D21S11_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -122,16 +101,9 @@
                     ],
                     "answer":"ch21"
                 },
+
                 {
                     "id":"D21S1437_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"abnormal"
-                },
-                {
-                    "id":"D21S1437_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -184,16 +156,9 @@
                     ],
                     "answer":"ch13"
                 },
+
                 {
                     "id":"D13S634_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D13S634_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -219,16 +184,9 @@
                     ],
                     "answer":"ch18"
                 },
+
                 {
                     "id":"D18S535_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D18S535_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -254,16 +212,9 @@
                     ],
                     "answer":"ch16"
                 },
+
                 {
                     "id":"D16S539_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D16S539_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -289,16 +240,9 @@
                     ],
                     "answer":"ch15"
                 },
+
                 {
                     "id":"D15S1515_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D15S1515_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -324,16 +268,9 @@
                     ],
                     "answer":"ch22"
                 },
+
                 {
                     "id":"D22S685_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D22S685_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -386,16 +323,9 @@
                     ],
                     "answer":"ch18"
                 },
+
                 {
                     "id":"D18S386_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D18S386_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -421,16 +351,9 @@
                     ],
                     "answer":"ch13"
                 },
+
                 {
                     "id":"D13S305_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D13S305_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -480,16 +403,9 @@
                     ],
                     "answer":"ch22"
                 },
+
                 {
                     "id":"D22S686_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D22S686_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -515,16 +431,9 @@
                     ],
                     "answer":"ch22"
                 },
+
                 {
                     "id":"D22S689_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D22S689_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -550,16 +459,9 @@
                     ],
                     "answer":"ch16"
                 },
+
                 {
                     "id":"D16S2621_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D16S2621_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -612,16 +514,9 @@
                     ],
                     "answer":"ch15"
                 },
+
                 {
                     "id":"D15S659_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D15S659_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -647,16 +542,9 @@
                     ],
                     "answer":"ch13"
                 },
+
                 {
                     "id":"D13S628_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D13S628_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -709,16 +597,9 @@
                     ],
                     "answer":"ch15"
                 },
+
                 {
                     "id":"D15S822_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D15S822_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -798,16 +679,9 @@
                     ],
                     "answer":"ch16"
                 },
+
                 {
                     "id":"D16S753_q2",
-                    "options":[
-                        {"name":"Normal","value":"normal"},
-                        {"name":"Abnormal","value":"abnormal"}
-                    ],
-                    "answer":"normal"
-                },
-                {
-                    "id":"D16S753_q3",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},

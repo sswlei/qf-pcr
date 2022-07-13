@@ -11,7 +11,7 @@ import practice_prenatalRAD_data from '../../../data/PracticeCase/prenatalrad/pr
 import practice_pl_data from '../../../data/PracticeCase/pregnancyloss/practice_data.json';
 import PracticeIntro from "../../PracticeCase/PracticeIntro";
 import final_data from '../../../data/FinalAssessment/finalAssessment.json';
-
+import FinalIntro from '../../FinalAssessment/FinalIntro';
 class Main extends Component{
     constructor(props){
         super(props);
@@ -20,6 +20,7 @@ class Main extends Component{
         this.onClickNext = this.onClickNext.bind(this);
         this.getStepColor = this.getStepColor.bind(this);
         this.isStepCompleted = this.isStepCompleted.bind(this);
+        this.getIntro = this.getIntro.bind(this);
 
         this.checkAttempts = this.checkAttempts.bind(this);
 
@@ -114,6 +115,19 @@ class Main extends Component{
         return false;
     }
 
+    getIntro(){
+        if (this.props.category === "practice"){
+            return <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>;
+        }
+        else if (this.props.category === "final_assessment"){
+            return <FinalIntro onClickNext={this.onClickNext}></FinalIntro>
+        }
+        else{
+            return  <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>;
+        }
+                                        
+    }
+
     render(){
         return (                
                 <Tab.Container onSelect={this.handleSelect} activeKey={this.state.currentTab}>
@@ -141,9 +155,7 @@ class Main extends Component{
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
                                     {
-                                        this.props.category != "practice"?
-                                        <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>:
-                                        <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>
+                                        this.getIntro()
 
                                     }
                                 </Card>

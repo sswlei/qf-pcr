@@ -8,7 +8,7 @@ class PracticeIntro extends Component{
         return (
                 <>
 
-                    <h2>Introduction</h2>
+                    <h2>Practice Case Introduction</h2>
                     <p>
                     Now that you have completed the demo cases, it is time to try analyzing the data on your own. You can reset and retry the cases as many times as you like, but will have 3 chances to get the correct conclusion for each attempt. For each case, it is important to have a systematic method for analyzing the data:
                     <br></br>
