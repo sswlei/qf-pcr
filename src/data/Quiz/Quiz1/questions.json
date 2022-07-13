@@ -17,12 +17,12 @@
             "type": "mcq",
             "choices": [
                 "2 x 26",
-                "126",
-                "226",
+                "1²⁶",
+                "2²⁶",
                 "impossible to determine, as the reaction has moved out of the exponential phase"
             ],
             "answer": 2,
-            "feedback": "Correct: 26 cycles is within the exponential phase, so the number of copies double for each cycle (number of cycles = n). Therefore 2n = the number of copies"
+            "feedback": "Correct: 26 cycles is within the exponential phase, so the number of copies double for each cycle (number of cycles = n). Therefore 2ⁿ = the number of copies"
         },
         {
             "title": "The problem with the original polymerase used for PCR was:",

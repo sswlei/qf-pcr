@@ -19,10 +19,9 @@ class PracticeIntro extends Component{
                         <li>Use the appropriate Excel document (remember there is a different document for RAD and PL cases) to record the peak area values</li>
                         <li>Focus on informative markers with 2 or 3 peaks</li>
                         <li>If all informative markers have 2 peaks and normal peak area ratios, conclude that there is no evidence for chromosomal abnormalities</li>
-                        <li>If all informative markers have 2 peaks and normal peak area ratios, conclude that there is no evidence for chromosomal abnormalities</li>
                         <li>If abnormal markers (3 peaks or abnormal peak area ratios) are present, are they only found for one chromosome (=trisomy) or all chromosomes (=triploid)?</li>
                         <li>Are informative markers for a chromosome in agreement? If not, no conclusion can be reached</li>
-                        <li>Are there any abnormally small peaks? are the present for only 1 chromosome (consider mosaicism) or all chromosomes (consider maternal cell contamination)</li>
+                        <li>Are there any abnormally small peaks? Are they present for only 1 chromosome (consider mosaicism) or all chromosomes (consider maternal cell contamination)</li>
                         <li>Is there anything else unusual in this data that is making it difficult to come to a conclusion?</li>
                     </ol>
                     Good luck!
