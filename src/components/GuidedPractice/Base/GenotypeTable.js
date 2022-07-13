@@ -61,16 +61,16 @@ class GenotypeTable extends Component{
         var ratioCheck1 = abnormalRatioRange1Min <= ratio && ratio <= abnormalRatioRange1Max;
         var ratioCheck2 = abnormalRatioRange2Min <= ratio && ratio <= abnormalRatioRange2Max;
         if (key === "TAF9L"){
-            if (normalRatioRangeTAF9LMin <= ratio && ratio <= normalRatioRangeTAF9LMax){
-                warningStr = "";
-            }
-            else{
-                if (!isNaN(ratio)){
-                    warningStr = "Abnormal ratio detected"
-                }
-            }
-            return warningStr;
-
+            return "";
+            // if (normalRatioRangeTAF9LMin <= ratio && ratio <= normalRatioRangeTAF9LMax){
+            //     warningStr = "";
+            // }
+            // else{
+            //     if (!isNaN(ratio)){
+            //         warningStr = "Abnormal ratio detected"
+            //     }
+            // }
+            // return warningStr;
         }
         if (ratioCheck1 || ratioCheck2){
             warningStr = "Abnormal ratio detected"

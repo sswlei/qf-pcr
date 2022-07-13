@@ -95,12 +95,10 @@ export default [
 
                 <Figure.Image
                     fluid
-                    alt="© 2019 Delta Diagnostics (UK) ltd. "
+                    alt="What is QF PCR"
                     src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/what_is_pcr_img.png"}
                 />
-                <Figure.Caption>
-                    © 2019 Delta Diagnostics (UK) ltd.
-                </Figure.Caption>
+
             </Figure>
         <br></br>
         <br></br>
@@ -235,7 +233,7 @@ export default [
            Some of these conditions are present as {<PopOver text={'mosaics'}/>}, which can make diagnosis more challenging (see example in Background QF-PCR section).
            <br></br>
            <br></br>
-           Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as: {<PopOver text={'integrated prenatal screen'}/>} (IPS), {<PopOver text={'serum integrated prenatal screen'}/>} (SIPS), {<PopOver text={'QUAD screen'}/>}, {<PopOver text={'first-trimester screening'}/>} (FTS) and {<PopOver text={'non-invasive prenatal screening'}/>}non-invasive prenatal screening (NIPS). Other factors such as the person giving birth being &gt;40yrs at time of delivery, or family history may prompt QF-PCR to assess for trisomies. 
+           Prenatal QF-PCR is ordered as a reflex test in response to prenatal {<PopOver text={'screens'}/>} such as: {<PopOver text={'integrated prenatal screen'}/>} (IPS), {<PopOver text={'serum integrated prenatal screen'}/>} (SIPS), {<PopOver text={'QUAD screen'}/>}, {<PopOver text={'first-trimester screening'}/>} (FTS) and {<PopOver text={'non-invasive prenatal screening'}/>} (NIPS). Other factors such as the person giving birth being &gt;40yrs at time of delivery, or family history may prompt QF-PCR to assess for trisomies. 
            <br></br>
            <br></br>
         <h5>Limitations of test:</h5>

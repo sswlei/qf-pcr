@@ -9,7 +9,7 @@ import guided_prenatalRAD_data  from "../../../data/GuidedPractice/prenatalRAD.j
 import guided_pl_data  from "../../../data/GuidedPractice/pregnancyLoss.json"
 import practice_prenatalRAD_data from '../../../data/PracticeCase/prenatalrad/practice_data.json';
 import practice_pl_data from '../../../data/PracticeCase/pregnancyloss/practice_data.json';
-
+import PracticeIntro from "../../PracticeCase/PracticeIntro";
 import final_data from '../../../data/FinalAssessment/finalAssessment.json';
 
 class Main extends Component{
@@ -24,7 +24,6 @@ class Main extends Component{
         this.checkAttempts = this.checkAttempts.bind(this);
 
         this.data = null;
-
         if (this.props.category==="final_assessment"){
             this.checkAttempts();
             this.data = final_data[0]; //default set to 0
@@ -141,18 +140,24 @@ class Main extends Component{
                         <Tab.Content>
                             <Tab.Pane eventKey={0}>
                                 <Card className="px-5 py-5 mb-5">
-                                    <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>
+                                    {
+                                        this.props.category != "practice"?
+                                        <ReviewPeaks onClickNext={this.onClickNext}></ReviewPeaks>:
+                                        <PracticeIntro onClickNext={this.onClickNext}></PracticeIntro>
+
+                                    }
                                 </Card>
                             </Tab.Pane>
                             <Tab.Pane eventKey={1}>
                                 <Card className="px-5 py-5 mb-5">
                                     <IdentifyMarkers 
-                                        saveAnswers={this.props.category!="guided_practice"} 
+                                        saveAnswers={this.props.category!="guidedpractice"} 
                                         canSkip={true} 
                                         showEvaluation={this.props.category == "guidedpractice"} 
                                         data={this.data} 
                                         onClickNext={this.onClickNext} 
                                         caseType={this.props.match.params.caseType} 
+                                        category={this.props.category} 
                                         caseId={this.props.match.params.caseId}>
                                     </IdentifyMarkers>
                                 </Card>
