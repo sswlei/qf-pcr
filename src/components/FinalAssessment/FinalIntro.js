@@ -8,7 +8,7 @@ class FinalIntro extends Component{
         return (
                 <>
 
-                    <h2>Introduction</h2>
+                    <h2>Final Assessment Introduction</h2>
                     <p>
                     You can reset and retry the cases as many times as you like, but will have 3 chances to get the correct conclusion for each attempt. For each case, it is important to have a systematic method for analyzing the data:
                     <br></br>
@@ -18,7 +18,6 @@ class FinalIntro extends Component{
                         <li>Identify how many alleles are present for each marker</li>
                         <li>Use the appropriate Excel document (remember there is a different document for RAD and PL cases) to record the peak area values</li>
                         <li>Focus on informative markers with 2 or 3 peaks</li>
-                        <li>If all informative markers have 2 peaks and normal peak area ratios, conclude that there is no evidence for chromosomal abnormalities</li>
                         <li>If all informative markers have 2 peaks and normal peak area ratios, conclude that there is no evidence for chromosomal abnormalities</li>
                         <li>If abnormal markers (3 peaks or abnormal peak area ratios) are present, are they only found for one chromosome (=trisomy) or all chromosomes (=triploid)?</li>
                         <li>Are informative markers for a chromosome in agreement? If not, no conclusion can be reached</li>
