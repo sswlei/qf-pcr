@@ -6,7 +6,6 @@ import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import QuizListPage from './pages/Quiz/QuizListPage';
 import QuizPage from './pages/Quiz/QuizPage';
-import GuidedPracticePage from './pages/GuidedPractice/GuidedPracticePage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
 import AchievementPage from './pages/AchievementPage';
@@ -17,7 +16,6 @@ import CasePage from './pages/CasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 import FinalAssessmentIntro from './pages/FinalAssessment/IntroPage';
-import FinalAssessmentExam from './pages/FinalAssessment/FinalAssessmentPage';
 import FinalAssessmentComplete from './pages/FinalAssessment/CompletedFinalPage';
 import MaxAttemptsPage from './pages/MaxAttemptsPage';
 
