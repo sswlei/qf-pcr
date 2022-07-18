@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
-import NormalMale from '../assets/normalMale.jpg'
 
 class IntroductionPage extends Component {
 
@@ -22,7 +21,7 @@ class IntroductionPage extends Component {
                 <span className="d-flex flex-column col-sm-11 mt-3 align-items-center">
                     <Image
                         style={{maxWidth:1000,width:"100%"}}
-                        src={NormalMale} 
+                        src='https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/normalMale.jpg' 
                         alt = 'Normal Male Results'
                     />
                     <h5>An Example of (46, XY) results</h5>
