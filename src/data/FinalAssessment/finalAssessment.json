@@ -332,6 +332,18 @@
                     }
                 ]
             },
+            "SRY":{
+                "questions":[
+                    {
+                        "id":"SRY_q1",
+                        "options":[
+                            {"name":"Present","value":"present"},
+                            {"name":"Absent","value":"absent"}
+                        ],
+                        "answer":"absent"
+                    }
+                ]
+            },
             "D13S800":{
                 "questions":[
                     {
@@ -502,7 +514,7 @@
             }
 
         },
-        "final_conclusion":"Other",
+        "final_conclusion":"Triploidy",
         "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/final_rad.jpg"
     },
     {
@@ -889,6 +901,18 @@
                             {"name":"2 X chromosomes","value":"twoxchrom"}
                         ],
                         "answer":"twoxchrom"
+                    }
+                ]
+            },
+            "SRY":{
+                "questions":[
+                    {
+                        "id":"SRY_q1",
+                        "options":[
+                            {"name":"Present","value":"present"},
+                            {"name":"Absent","value":"absent"}
+                        ],
+                        "answer":"absent"
                     }
                 ]
             },

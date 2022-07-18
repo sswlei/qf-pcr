@@ -320,6 +320,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"present"
+                        }
+                    ]
+                },
                 "D13S800":{
                     "questions":[
                         {
@@ -1129,6 +1141,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"absent"
+                        }
+                    ]
+                },
                 "D13S800":{
                     "questions":[
                         {
@@ -1798,6 +1822,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"absent"
+                        }
+                    ]
+                },
                 "D13S800":{
                     "questions":[
                         {
@@ -2303,6 +2339,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"absent"
+                        }
+                    ]
+                },
                 "D13S800":{
                     "questions":[
                         {
@@ -2805,6 +2853,18 @@
                                 {"name":"Triallelic","value":"triallelic"}
                             ],
                             "answer":"uninformative"
+                        }
+                    ]
+                },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"absent"
                         }
                     ]
                 },

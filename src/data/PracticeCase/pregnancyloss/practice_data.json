@@ -387,6 +387,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"present"
+                        }
+                    ]
+                },
                 "D22S686":{
                     "questions":[
                         {
@@ -1200,6 +1212,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"present"
+                        }
+                    ]
+                },
                 "D22S686":{
                     "questions":[
                         {
@@ -1971,6 +1995,18 @@
                         }
                     ]
                 },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"present"
+                        }
+                    ]
+                },
                 "D22S686":{
                     "questions":[
                         {
@@ -2677,6 +2713,18 @@
                                 {"name":"2 X chromosomes","value":"twoxchrom"}
                             ],
                             "answer":"onexchrom"
+                        }
+                    ]
+                },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"present"
                         }
                     ]
                 },
@@ -3388,6 +3436,18 @@
                                 {"name":"2 X chromosomes","value":"twoxchrom"}
                             ],
                             "answer":"onexchrom"
+                        }
+                    ]
+                },
+                "SRY":{
+                    "questions":[
+                        {
+                            "id":"SRY_q1",
+                            "options":[
+                                {"name":"Present","value":"present"},
+                                {"name":"Absent","value":"absent"}
+                            ],
+                            "answer":"absent"
                         }
                     ]
                 },
