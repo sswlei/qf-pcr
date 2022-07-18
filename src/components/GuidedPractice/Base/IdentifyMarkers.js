@@ -107,10 +107,10 @@ class IdentifyMarkers extends Component {
             for (let question of question_data[x]){
                 dropdown.push(
                     <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[key][question.id].correct)}}>
+                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:`1px solid ${this.state.answers[key][question.id]===""?'grey':'#0275d8'}`,lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[key][question.id].correct)}}>
                             {this.state.answers[key][question.id]===""?"Select":this.state.answers[key][question.id].name} 
                         </label>
-                        <Dropdown.Toggle variant="secondary" style={{height:40}}/>
+                        <Dropdown.Toggle variant={this.state.answers[key][question.id]===""?"secondary":"primary"} style={{height:40}}/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
                                 return <Dropdown.Item onClick={()=>{this.onAnswerSelect(key, option, question)}}>{option.name}</Dropdown.Item>
