@@ -164,7 +164,7 @@ class Main extends Component{
                                 <Card className="px-5 py-5 mb-5">
                                     <IdentifyMarkers 
                                         saveAnswers={this.props.category!="guidedpractice"} 
-                                        canSkip={true} 
+                                        canSkip={this.props.category=="guidedpractice"} 
                                         showEvaluation={this.props.category == "guidedpractice"} 
                                         data={this.data} 
                                         onClickNext={this.onClickNext} 
