@@ -22,7 +22,9 @@ class IdentifyMarkers extends Component {
             this.props.onClickNext();
         }
         else{
-            alert("Some questions have not been answered!")
+            if (window.confirm("Some questions have not been answered! Would you like to proceed?")){
+                this.props.onClickNext();
+            }
         }
         
     }
