@@ -387,6 +387,18 @@
                 }
             ]
         },
+        "SRY":{
+            "questions":[
+                {
+                    "id":"SRY_q1",
+                    "options":[
+                        {"name":"Present","value":"present"},
+                        {"name":"Absent","value":"absent"}
+                    ],
+                    "answer":"absent"
+                }
+            ]
+        },
         "D22S686":{
             "questions":[
                 {
