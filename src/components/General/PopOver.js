@@ -17,7 +17,7 @@ class PopOver extends Component {
             { title: 'trisomy', define: 'Trisomy: 3 copies of a chromosome. Most autosomal trisomies are not compatible with life' },
             { title: 'mosaics', define: '2 or more genetically distinct populations arising from 1 zygote' },
             { title:"screens", define: "identifies possible future problem i.e. identifies individuals at risk for future issues"},
-            { title:"polyploidy", define: "polyploidy is more than two complete sets of chromosomes such ad triploidy (3n) or tetraploidy (4n)"},
+            { title:"polyploidy", define: "polyploidy is more than two complete sets of chromosomes such as triploidy (3n) or tetraploidy (4n)"},
             { title:"integrated prenatal screen", define: "measures markers in both maternal serum and on ultrasound"},
             { title:"serum integrated prenatal screen", define: "measures markers in two separate maternal serum tests"},
             { title:"QUAD screen", define: "measures four markers in a single second-trimester maternal serum test"},

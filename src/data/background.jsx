@@ -146,7 +146,7 @@ export default [
                         <td>Down syndrome: <br></br>trisomy 21<br></br><img src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/aneuploidy_trisomy_21.png"}></img></td><td>1/700 live births</td><td>flat facial profile, mental retardation, cardiac issues, abnormal immune system, eventual neuropathological disorder; increased risk of acute leukemia</td>
                     </tr>
                     <tr>
-                        <td>Edwards syndrome: <br></br>trisomy 18<br></br><img src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/aneuploidy_trisomy_18.png"}></img></td><td>1/3000 live births</td><td>intrauterine growth restriction, micrognathia, horseshoe kidney, clenched fist, survival &lt;1 yr</td>
+                        <td>Edwards syndrome: <br></br>trisomy 18<br></br><img src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/aneuploidy_trisomy_18.png"}></img></td><td>1/3000 live births</td><td>intrauterine growth restriction, micrognathia (small lower jaw), horseshoe kidney, clenched fist, survival &lt;1 yr</td>
                     </tr>
                     <tr>
                         <td>Patau syndrome: <br></br>trisomy 13<br></br><img src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/aneuploidy_trisomy_13.png"}></img></td><td>1/21700 live births</td><td>cleft palate, heart damage, mental retardation, survival &lt;6 mon</td>

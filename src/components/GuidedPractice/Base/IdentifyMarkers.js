@@ -134,7 +134,7 @@ class IdentifyMarkers extends Component {
 <br></br>
 <br></br>
 
-AMEL: are there 2 peaks (XY) or 1 peak? (XX)
+AMEL: are there 2 peaks (XY) or 1 peak? (only X, but check TAF9L data to confirm number of X chromosomes)
 <br></br>
 <br></br>
 TAF9L: compare peak heights: if the first peak is 2x than the second one, this is evidence for 1 X chromosome; if the first peak has same height, this is evidence for 2 X chromosomes.</p>
