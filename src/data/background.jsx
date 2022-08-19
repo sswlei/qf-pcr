@@ -211,7 +211,7 @@ export default [
                         <th>Down syndrome: extra Chr 21</th><td>1/700 live births</td><td>flat facial profile, mental retardation, cardiac issues, abnormal immune system, eventual neuropathological disorder; increased risk of acute leukemia</td>
                     </tr>
                     <tr>
-                        <th>Edwards syndrome: extra Chr 18</th><td>1/3000 live births</td><td>Intrauterine growth restriction, horse shoe kidney, clenched fist, survival &lt;1 yr</td>
+                        <th>Edwards syndrome: extra Chr 18</th><td>1/3000 live births</td><td>Intrauterine growth restriction, micrognathia (small lower jaw), horse shoe kidney, clenched fist, survival &lt;1 yr</td>
                     </tr>
                     <tr>
                         <th>Patau syndrome: extra chr 13</th><td>1/21700 live births</td><td>cleft palate, heart damage, mental retardation, survival &lt;6 mon</td>

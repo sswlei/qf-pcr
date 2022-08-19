@@ -48,7 +48,6 @@ class IdentifyMarkers extends Component {
     }
 
     initState(){
-        console.log(this.props.data)
         let answerState = {};
         for (let key of Object.keys(this.props.data.markers)){
             answerState[key] = {};

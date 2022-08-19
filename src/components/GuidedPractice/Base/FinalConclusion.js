@@ -100,7 +100,7 @@ class FinalConclusion extends Component{
                 If both normal and abnormal allele patterns seen, call for further testing
                 <br></br>
                 <br></br>
-                <strong>Triploidy (3N):</strong> suspected if all chromosomes show trisomy (for this demo, select Other as conclusion)
+                <strong>Triploidy (3N):</strong> suspected if all chromosomes show trisomy
                 <br></br>
                 <br></br>
 
