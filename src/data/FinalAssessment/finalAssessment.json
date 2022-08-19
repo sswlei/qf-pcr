@@ -22,7 +22,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -166,7 +166,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -238,7 +238,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -262,7 +262,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -275,7 +275,7 @@
                             {"name":"XX","value":"xx"},
                             {"name":"XY","value":"xy"}
                         ],
-                        "answer":"xy"
+                        "answer":"x"
                     },
                     {
                         "id":"AMEL_q2",
@@ -329,7 +329,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -365,7 +365,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -389,7 +389,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -413,7 +413,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -437,7 +437,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
@@ -485,7 +485,7 @@
                             {"name":"Diallelic","value":"diallelic"},
                             {"name":"Triallelic","value":"triallelic"}
                         ],
-                        "answer":"triallelic"
+                        "answer":"diallelic"
                     }
                 ]
             },
