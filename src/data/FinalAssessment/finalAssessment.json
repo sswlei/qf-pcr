@@ -273,18 +273,10 @@
                         "options":[
                             {"name":"X","value":"x"},
                             {"name":"XX","value":"xx"},
-                            {"name":"XY","value":"xy"}
+                            {"name":"XY","value":"xy"},
+                            {"name":"XXX","value":"xxx"}
                         ],
-                        "answer":"x"
-                    },
-                    {
-                        "id":"AMEL_q2",
-                        "options":[
-                            {"name":"Uninformative","value":"uninformative"},
-                            {"name":"Diallelic","value":"diallelic"},
-                            {"name":"Triallelic","value":"triallelic"}
-                        ],
-                        "answer":"triallelic"
+                        "answer":"xxx"
                     }
                 ]
             },
@@ -294,18 +286,11 @@
                         "id":"taf9l_q1",
                         "options":[
                             {"name":"1 X chromosome","value":"onexchrom"},
-                            {"name":"2 X chromosomes","value":"twoxchrom"}
+                            {"name":"2 X chromosomes","value":"twoxchrom"},
+                            {"name":"3 X chromosomes","value":"threexchrom"}
+
                         ],
-                        "answer":"onexchrom"
-                    },
-                    {
-                        "id":"taf9l_q2",
-                        "options":[
-                            {"name":"Uninformative","value":"uninformative"},
-                            {"name":"Diallelic","value":"diallelic"},
-                            {"name":"Triallelic","value":"triallelic"}
-                        ],
-                        "answer":"triallelic"
+                        "answer":"threexchrom"
                     }
                 ]
             },

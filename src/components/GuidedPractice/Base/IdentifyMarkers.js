@@ -15,9 +15,12 @@ class IdentifyMarkers extends Component {
         this.onAnswerSelect = this.onAnswerSelect.bind(this);
         this.checkQuestionCorrect = this.checkQuestionCorrect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
+        this.saveAnswers = this.saveAnswers.bind(this);
+
     }
 
     onClickNext(){
+        this.saveAnswers();
         if (this.checkAllAnswered()){
             this.props.onClickNext();
         }
@@ -26,10 +29,18 @@ class IdentifyMarkers extends Component {
                 this.props.onClickNext();
             }
         }
-        
+    }
+    
+    saveAnswers(){
+        if (this.props.saveAnswers){
+            if (this.props.caseType!=null && this.props.caseType != "" && this.props.caseId!=null){
+                localStorage.setItem(this.props.caseType+this.props.caseId+"_markers",JSON.stringify(this.state.answers));
+            }
+        }
     }
 
     checkAllAnswered(){
+
         if (!this.props.canSkip){
             for (let question of Object.keys(this.state.answers)){
                 for (const [key, value] of Object.entries(this.state.answers[question])){
@@ -37,11 +48,6 @@ class IdentifyMarkers extends Component {
                         return false;
                     }
                 }
-            }
-        }
-        if (this.props.saveAnswers){
-            if (this.props.caseType!=null && this.props.caseType != "" && this.props.caseId!=null){
-                localStorage.setItem(this.props.caseType+this.props.caseId+"_markers",JSON.stringify(this.state.answers));
             }
         }
         return true;
