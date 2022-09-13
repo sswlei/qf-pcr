@@ -6,41 +6,83 @@ class FinalConclusion extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            finalAnswer:""
+            finalAnswer:"",
+            attempts:0
         }
         this.finalOptions = [
-            "Normal biological female",
-            "Normal biological male",
-            "Trisomy 13 biological male",
-            "Trisomy 13 biological female",
-            "Trisomy 18 biological male",
-            "Trisomy 18 biological female",
-            "Trisomy 21 biological male",
-            "Trisomy 21 biological female",
+            "Normal female",
+            "Normal male",
+            "Trisomy 13 male",
+            "Trisomy 13 female",
+            "Trisomy 16 male",
+            "Trisomy 16 female",
+            "Trisomy 18 male",
+            "Trisomy 18 female",
+            "Trisomy 21 male",
+            "Trisomy 21 female",
+            "Trisomy 22 male",
+            "Trisomy 22 female",
+            "Triploidy",
             "Klinefelter",
             "Turner",
             "Other",
             "Further testing required"
         ];
         this.onFinish = this.onFinish.bind(this);
+        this.updateAttempts = this.updateAttempts.bind(this);
     }
     onFinish(){
-        if (this.props.isGuided){
+        if (this.props.category==="guidedpractice"){
             if (this.props.data.final_conclusion === this.state.finalAnswer){
-                setModuleComplete("Prenatal RAD Guided Practice",true);
-                this.props.history.push('/guidedpractice/prenatalrad_complete');
+                setModuleComplete(this.props.title,true);
+                this.props.history.push(`/guidedpractice/complete/${this.props.caseType}`);
             }
             else{
                 alert("Answer incorrect!");
             }
         }
         else{
+
             var conclusion = JSON.stringify({"answer":this.state.finalAnswer,"correct":this.props.data.final_conclusion===this.state.finalAnswer});
-            localStorage.setItem(this.props.caseType+this.props.caseId+"_conclusion",conclusion);
-            this.props.history.push(`/practice/${this.props.caseType}/${this.props.caseId}/evaluation`);
+            if (this.props.category==="practice"){
+                if (this.props.data.final_conclusion!=this.state.finalAnswer){
+                    if (this.state.attempts < 3){
+                        alert("Answer incorrect! (Attempts remaining: " + (3 - (this.state.attempts + 1)) + ")");
+                        if (this.state.attempts+1 >= 3){
+                            localStorage.setItem(this.props.caseType+this.props.caseId+"_conclusion",conclusion);
+                            this.props.history.push(`/${this.props.category}/${this.props.caseType}/${this.props.caseId}/evaluation`);
+                        }
+                        this.setState({attempts:this.state.attempts+1});
+                    }
+                    else{
+                        localStorage.setItem(this.props.caseType+this.props.caseId+"_conclusion",conclusion);
+                        this.props.history.push(`/${this.props.category}/${this.props.caseType}/${this.props.caseId}/evaluation`);
+                    }
+                }
+                else{
+                    localStorage.setItem(this.props.caseType+this.props.caseId+"_conclusion",conclusion);
+                    this.props.history.push(`/${this.props.category}/${this.props.caseType}/${this.props.caseId}/evaluation`);
+                }
+            }
+            if (this.props.category ==="final_assessment"){
+                localStorage.setItem(this.props.caseType+this.props.caseId+"_conclusion",conclusion);
+                this.updateAttempts();
+                this.props.history.push(`/${this.props.category}/${this.props.caseType}/${this.props.caseId}/evaluation`);
+            }
+
         }
         
 
+    }
+    updateAttempts(){
+        let currentAttempts = localStorage.getItem(`${this.props.caseType}${this.props.caseId}_attempts`);
+        if (currentAttempts == null){
+            localStorage.setItem(`${this.props.caseType}${this.props.caseId}_attempts`, 0);
+        }
+        else{
+            currentAttempts++;
+            localStorage.setItem(`${this.props.caseType}${this.props.caseId}_attempts`, currentAttempts);
+        }
     }
     render(){
         return <div>
@@ -58,7 +100,7 @@ class FinalConclusion extends Component{
                 If both normal and abnormal allele patterns seen, call for further testing
                 <br></br>
                 <br></br>
-                <strong>Triploidy (3N):</strong> suspected if all chromosomes show trisomy (for this demo, select Other as conclusion)
+                <strong>Triploidy (3N):</strong> suspected if all chromosomes show trisomy
                 <br></br>
                 <br></br>
 
@@ -90,7 +132,7 @@ class FinalConclusion extends Component{
                 </Dropdown.Menu>
             </Dropdown> 
                 <br></br>
-            <Button onClick={this.onFinish} className={"mt-3"} style={{width: 100,float:"right"}}>Finish</Button>
+            <Button disabled={this.state.finalAnswer===""} onClick={this.onFinish} className={"mt-3"} style={{width: 100,float:"right"}}>Finish</Button>
 
         </div>
     }

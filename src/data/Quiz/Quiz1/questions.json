@@ -17,12 +17,12 @@
             "type": "mcq",
             "choices": [
                 "2 x 26",
-                "126",
-                "226",
+                "1²⁶",
+                "2²⁶",
                 "impossible to determine, as the reaction has moved out of the exponential phase"
             ],
             "answer": 2,
-            "feedback": "Correct: 26 cycles is within the exponential phase, so the number of copies double for each cycle (number of cycles = n). Therefore 2n = the number of copies"
+            "feedback": "Correct: 26 cycles is within the exponential phase, so the number of copies double for each cycle (number of cycles = n). Therefore 2ⁿ = the number of copies"
         },
         {
             "title": "The problem with the original polymerase used for PCR was:",
@@ -64,7 +64,7 @@
             "title": "The term aneuploidy has the same meaning as:",
             "type": "mcq",
             "choices": [
-                "chromosomal numerical abnormality",
+                "46 chromosomes",
                 "chromosomal trisomy",
                 "chromosomal monosomy",
                 "chromosomal trisomy or monosomy"
@@ -112,7 +112,7 @@
             "title": "Which of the following is not a reason for performing QF-PCR?",
             "type": "mcq",
             "choices": [
-                "mother is over 40 years old",
+                "the pregnant person is over 40 years old",
                 "PAPP-A result is abnormal",
                 "couple wants to know biological sex of fetus",
                 "fetal ultrasound is abnormal"

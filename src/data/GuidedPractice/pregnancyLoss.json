@@ -1,36 +1,53 @@
 
 {
     "markers":{
-        "DXS6803":{
+        "D16S2624":{
             "questions":[
                 {
-                    "id":"DXS6803_q1",
+                    "id":"D16S2624_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"chx"
+                    "answer":"ch16"
+                },
+
+                {
+                    "id":"D16S2624_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"diallelic"
                 }
             ]
         },
-        "D21S1435":{
+        "D22S683":{
             "questions":[
                 {
-                    "id":"D21S1435_q1",
+                    "id":"D22S683_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"ch21"
+                    "answer":"ch22"
                 },
+
                 {
-                    "id":"D21S1435_q2",
+                    "id":"D22S683_q2",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -46,13 +63,17 @@
                     "id":"D21S11_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch21"
                 },
+
                 {
                     "id":"D21S11_q2",
                     "options":[
@@ -60,7 +81,7 @@
                         {"name":"Diallelic","value":"diallelic"},
                         {"name":"Triallelic","value":"triallelic"}
                     ],
-                    "answer":"uninformative"
+                    "answer":"diallelic"
                 }
             ]
         },
@@ -70,13 +91,17 @@
                     "id":"D21S1437_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch21"
                 },
+
                 {
                     "id":"D21S1437_q2",
                     "options":[
@@ -88,19 +113,50 @@
                 }
             ]
         },
+        "D18S1002":{
+            "questions":[
+                {
+                    "id":"D18S1002_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch18"
+                },
+                {
+                    "id":"D18S1002_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"uninformative"
+                }
+            ]
+        },
         "D13S634":{
             "questions":[
                 {
                     "id":"D13S634_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch13"
                 },
+
                 {
                     "id":"D13S634_q2",
                     "options":[
@@ -118,13 +174,17 @@
                     "id":"D18S535_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch18"
                 },
+
                 {
                     "id":"D18S535_q2",
                     "options":[
@@ -136,36 +196,25 @@
                 }
             ]
         },
-        "DXS1187":{
+        "D16S539":{
             "questions":[
                 {
-                    "id":"DXS1187_q1",
+                    "id":"D16S539_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"chx"
-                }
-            ]
-        },
-        "D21S1446":{
-            "questions":[
-                {
-                    "id":"D21S1446_q1",
-                    "options":[
-                        {"name":"Ch13","value":"ch13"},
-                        {"name":"Ch18","value":"ch18"},
-                        {"name":"Ch21","value":"ch21"},
-                        {"name":"Ch X","value":"chx"},
-                        {"name":"Ch Y","value":"chy"}
-                    ],
-                    "answer":"ch21"
+                    "answer":"ch16"
                 },
+
                 {
-                    "id":"D21S1446_q2",
+                    "id":"D16S539_q2",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -175,34 +224,106 @@
                 }
             ]
         },
-        "HPRT":{
+        "D15S1515":{
             "questions":[
                 {
-                    "id":"HPRT_q1",
+                    "id":"D15S1515_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"chx"
+                    "answer":"ch15"
+                },
+
+                {
+                    "id":"D15S1515_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"diallelic"
                 }
             ]
         },
+        "D22S685":{
+            "questions":[
+                {
+                    "id":"D22S685_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch22"
+                },
+
+                {
+                    "id":"D22S685_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"diallelic"
+                }
+            ]
+        },
+        "D13S325":{
+            "questions":[
+                {
+                    "id":"D13S325_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch13"
+                },
+                {
+                    "id":"D13S325_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"uninformative"
+                }
+            ]
+        }, 
         "D18S386":{
             "questions":[
                 {
                     "id":"D18S386_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch18"
                 },
+
                 {
                     "id":"D18S386_q2",
                     "options":[
@@ -220,13 +341,17 @@
                     "id":"D13S305_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch13"
                 },
+
                 {
                     "id":"D13S305_q2",
                     "options":[
@@ -243,10 +368,11 @@
                 {
                     "id":"AMEL_q1",
                     "options":[
+                        {"name":"X","value":"x"},
                         {"name":"XX","value":"xx"},
                         {"name":"XY","value":"xy"}
                     ],
-                    "answer":"xy"
+                    "answer":"xx"
                 }
             ]
         },
@@ -258,31 +384,7 @@
                         {"name":"1 X chromosome","value":"onexchrom"},
                         {"name":"2 X chromosomes","value":"twoxchrom"}
                     ],
-                    "answer":"onexchrom"
-                }
-            ]
-        },
-        "D18S978":{
-            "questions":[
-                {
-                    "id":"D18S978_q1",
-                    "options":[
-                        {"name":"Ch13","value":"ch13"},
-                        {"name":"Ch18","value":"ch18"},
-                        {"name":"Ch21","value":"ch21"},
-                        {"name":"Ch X","value":"chx"},
-                        {"name":"Ch Y","value":"chy"}
-                    ],
-                    "answer":"ch18"
-                },
-                {
-                    "id":"D18S978_q2",
-                    "options":[
-                        {"name":"Uninformative","value":"uninformative"},
-                        {"name":"Diallelic","value":"diallelic"},
-                        {"name":"Triallelic","value":"triallelic"}
-                    ],
-                    "answer":"diallelic"
+                    "answer":"twoxchrom"
                 }
             ]
         },
@@ -291,31 +393,32 @@
                 {
                     "id":"SRY_q1",
                     "options":[
-                        {"name":"Ch13","value":"ch13"},
-                        {"name":"Ch18","value":"ch18"},
-                        {"name":"Ch21","value":"ch21"},
-                        {"name":"Ch X","value":"chx"},
-                        {"name":"Ch Y","value":"chy"}
+                        {"name":"Present","value":"present"},
+                        {"name":"Absent","value":"absent"}
                     ],
-                    "answer":"chy"
+                    "answer":"absent"
                 }
             ]
         },
-        "D13S800":{
+        "D22S686":{
             "questions":[
                 {
-                    "id":"D13S800_q1",
+                    "id":"D22S686_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"ch13"
+                    "answer":"ch22"
                 },
+
                 {
-                    "id":"D13S800_q2",
+                    "id":"D22S686_q2",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -325,21 +428,108 @@
                 }
             ]
         },
-        "D18S390":{
+        "D22S689":{
             "questions":[
                 {
-                    "id":"D18S390_q1",
+                    "id":"D22S689_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"ch18"
+                    "answer":"ch22"
+                },
+
+                {
+                    "id":"D22S689_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"diallelic"
+                }
+            ]
+        },
+        "D16S2621":{
+            "questions":[
+                {
+                    "id":"D16S2621_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch16"
+                },
+
+                {
+                    "id":"D16S2621_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"diallelic"
+                }
+            ]
+        },
+        "D21S1411":{
+            "questions":[
+                {
+                    "id":"D21S1411_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch21"
                 },
                 {
-                    "id":"D18S390_q2",
+                    "id":"D21S1411_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"triallelic"
+                }
+            ]
+        },
+        "D15S659":{
+            "questions":[
+                {
+                    "id":"D15S659_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch15"
+                },
+
+                {
+                    "id":"D15S659_q2",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -355,39 +545,19 @@
                     "id":"D13S628_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
                     "answer":"ch13"
                 },
+
                 {
                     "id":"D13S628_q2",
-                    "options":[
-                        {"name":"Uninformative","value":"uninformative"},
-                        {"name":"Diallelic","value":"diallelic"},
-                        {"name":"Triallelic","value":"triallelic"}
-                    ],
-                    "answer":"uninformative"
-                }
-            ]
-        },
-        "D21S1409":{
-            "questions":[
-                {
-                    "id":"D21S1409_q1",
-                    "options":[
-                        {"name":"Ch13","value":"ch13"},
-                        {"name":"Ch18","value":"ch18"},
-                        {"name":"Ch21","value":"ch21"},
-                        {"name":"Ch X","value":"chx"},
-                        {"name":"Ch Y","value":"chy"}
-                    ],
-                    "answer":"ch21"
-                },
-                {
-                    "id":"D21S1409_q2",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -397,21 +567,52 @@
                 }
             ]
         },
-        "D13S252":{
+        "FES FPS (Chr 15)":{
             "questions":[
                 {
-                    "id":"D13S252_q1",
+                    "id":"FES_FPS_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
-                    "answer":"ch13"
+                    "answer":"ch15"
                 },
                 {
-                    "id":"D13S252_q2",
+                    "id":"FES_FPS_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
+                    "answer":"uninformative"
+                }
+            ]
+        },
+        "D15S822":{
+            "questions":[
+                {
+                    "id":"D15S822_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch15"
+                },
+
+                {
+                    "id":"D15S822_q2",
                     "options":[
                         {"name":"Uninformative","value":"uninformative"},
                         {"name":"Diallelic","value":"diallelic"},
@@ -427,8 +628,11 @@
                     "id":"D21S1442_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
@@ -441,7 +645,7 @@
                         {"name":"Diallelic","value":"diallelic"},
                         {"name":"Triallelic","value":"triallelic"}
                     ],
-                    "answer":"diallelic"
+                    "answer":"triallelic"
                 }
             ]
         },
@@ -451,8 +655,11 @@
                     "id":"D18S819_q1",
                     "options":[
                         {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
                         {"name":"Ch18","value":"ch18"},
                         {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
                         {"name":"Ch X","value":"chx"},
                         {"name":"Ch Y","value":"chy"}
                     ],
@@ -465,11 +672,40 @@
                         {"name":"Diallelic","value":"diallelic"},
                         {"name":"Triallelic","value":"triallelic"}
                     ],
+                    "answer":"uninformative"
+                }
+            ]
+        },
+        "D16S753":{
+            "questions":[
+                {
+                    "id":"D16S753_q1",
+                    "options":[
+                        {"name":"Ch13","value":"ch13"},
+                        {"name":"Ch15","value":"ch15"},
+                        {"name":"Ch16","value":"ch16"},                               
+                        {"name":"Ch18","value":"ch18"},
+                        {"name":"Ch21","value":"ch21"},
+                        {"name":"Ch22","value":"ch22"},       
+                        {"name":"Ch X","value":"chx"},
+                        {"name":"Ch Y","value":"chy"}
+                    ],
+                    "answer":"ch16"
+                },
+
+                {
+                    "id":"D16S753_q2",
+                    "options":[
+                        {"name":"Uninformative","value":"uninformative"},
+                        {"name":"Diallelic","value":"diallelic"},
+                        {"name":"Triallelic","value":"triallelic"}
+                    ],
                     "answer":"diallelic"
                 }
             ]
         }
 
     },
-    "final_conclusion":"Normal biological male"
+    "final_conclusion":"Trisomy 21 female",
+    "image":"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/pl_guide_practice.jpg"
 }

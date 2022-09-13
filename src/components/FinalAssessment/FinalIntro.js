@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Container, Row, Image, Card, Button } from "react-bootstrap";
-class PracticeIntro extends Component{
+class FinalIntro extends Component{
     constructor(props){
         super(props);
     }
@@ -8,9 +8,9 @@ class PracticeIntro extends Component{
         return (
                 <>
 
-                    <h2>Practice Case Introduction</h2>
+                    <h2>Final Assessment Introduction</h2>
                     <p>
-                    Now that you have completed the demo cases, it is time to try analyzing the data on your own. You can reset and retry the cases as many times as you like, but will have 3 chances to get the correct conclusion for each attempt. For each case, it is important to have a systematic method for analyzing the data:
+                    You can reset and retry the cases as many times as you like, but will have 3 chances to get the correct conclusion for each attempt. For each case, it is important to have a systematic method for analyzing the data:
                     <br></br>
                     <br></br>
                     <ol>
@@ -21,7 +21,7 @@ class PracticeIntro extends Component{
                         <li>If all informative markers have 2 peaks and normal peak area ratios, conclude that there is no evidence for chromosomal abnormalities</li>
                         <li>If abnormal markers (3 peaks or abnormal peak area ratios) are present, are they only found for one chromosome (=trisomy) or all chromosomes (=triploid)?</li>
                         <li>Are informative markers for a chromosome in agreement? If not, no conclusion can be reached</li>
-                        <li>Are there any abnormally small peaks? Are they present for only 1 chromosome (consider mosaicism) or all chromosomes (consider maternal cell contamination)</li>
+                        <li>Are there any abnormally small peaks? are the present for only 1 chromosome (consider mosaicism) or all chromosomes (consider maternal cell contamination)</li>
                         <li>Is there anything else unusual in this data that is making it difficult to come to a conclusion?</li>
                     </ol>
                     Good luck!
@@ -31,4 +31,4 @@ class PracticeIntro extends Component{
         )
     }
 }
-export default PracticeIntro;
+export default FinalIntro;

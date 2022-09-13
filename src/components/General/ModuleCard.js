@@ -13,7 +13,7 @@ class ModuleCard extends Component {
 
 
         return (
-            <Card className="col-md-3 col-sm-9 m-2" >
+            <Card className="col-md-6 col-sm-9 m-2" >
             <Card.Body>
                 <Card.Title>{this.props.title}</Card.Title>
                 <hr />

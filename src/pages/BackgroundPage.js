@@ -16,6 +16,7 @@ class BackgroundPage extends Component {
         var nextTab = this.state.currentTab+1;
         if (nextTab < this.background_data.length){
             this.setState({currentTab:nextTab});
+            window.scrollTo(0, 0);
         }
     }
 

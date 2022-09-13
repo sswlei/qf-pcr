@@ -15,19 +15,32 @@ class IdentifyMarkers extends Component {
         this.onAnswerSelect = this.onAnswerSelect.bind(this);
         this.checkQuestionCorrect = this.checkQuestionCorrect.bind(this);
         this.onClickNext = this.onClickNext.bind(this);
+        this.saveAnswers = this.saveAnswers.bind(this);
+
     }
 
     onClickNext(){
+        this.saveAnswers();
         if (this.checkAllAnswered()){
             this.props.onClickNext();
         }
         else{
-            alert("Some questions have not been answered!")
+            if (window.confirm("Some questions have not been answered! Would you like to proceed?")){
+                this.props.onClickNext();
+            }
         }
-        
+    }
+    
+    saveAnswers(){
+        if (this.props.saveAnswers){
+            if (this.props.caseType!=null && this.props.caseType != "" && this.props.caseId!=null){
+                localStorage.setItem(this.props.caseType+this.props.caseId+"_markers",JSON.stringify(this.state.answers));
+            }
+        }
     }
 
     checkAllAnswered(){
+
         if (!this.props.canSkip){
             for (let question of Object.keys(this.state.answers)){
                 for (const [key, value] of Object.entries(this.state.answers[question])){
@@ -37,17 +50,11 @@ class IdentifyMarkers extends Component {
                 }
             }
         }
-        if (this.props.saveAnswers){
-            if (this.props.caseType!=null && this.props.caseType != "" && this.props.caseId!=null){
-                localStorage.setItem(this.props.caseType+this.props.caseId+"_markers",JSON.stringify(this.state.answers));
-            }
-        }
         return true;
     }
 
     initState(){
         let answerState = {};
-
         for (let key of Object.keys(this.props.data.markers)){
             answerState[key] = {};
             for (let question of this.props.data.markers[key].questions){
@@ -107,10 +114,10 @@ class IdentifyMarkers extends Component {
             for (let question of question_data[x]){
                 dropdown.push(
                     <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:"1px solid gray",lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[key][question.id].correct)}}>
+                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:`1px solid ${this.state.answers[key][question.id]===""?'grey':'#0275d8'}`,lineHeight:"38px",background:this.getAnswerBackground(this.state.answers[key][question.id].correct)}}>
                             {this.state.answers[key][question.id]===""?"Select":this.state.answers[key][question.id].name} 
                         </label>
-                        <Dropdown.Toggle variant="secondary" style={{height:40}}/>
+                        <Dropdown.Toggle variant={this.state.answers[key][question.id]===""?"secondary":"primary"} style={{height:40}}/>
                         <Dropdown.Menu alignRight>
                             {question.options.map(function(option){
                                 return <Dropdown.Item onClick={()=>{this.onAnswerSelect(key, option, question)}}>{option.name}</Dropdown.Item>
@@ -128,11 +135,11 @@ class IdentifyMarkers extends Component {
         return (
             <>
                 <h2>Identify markers</h2>
-                <p>In the following interactive example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). Zoom in on the image if necessary. Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if you selection was not correct. Note that AMEL and TAF9L have unique selections:
+                <p>In the following interactive chromatogram example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). Zoom in on the image if necessary. Notice that the peak area is labelled underneath each peak (you will use this data in Step 3). {this.props.category == "guidedpractice"? "Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if your selection was not correct. ":""}Note that AMEL and TAF9L have unique selections:
 <br></br>
 <br></br>
 
-AMEL: are there 2 peaks (XY) or 1 peak? (XX)
+AMEL: are there 2 peaks (XY) or 1 peak? (only X, but check TAF9L data to confirm number of X chromosomes)
 <br></br>
 <br></br>
 TAF9L: compare peak heights: if the first peak is 2x than the second one, this is evidence for 1 X chromosome; if the first peak has same height, this is evidence for 2 X chromosomes.</p>

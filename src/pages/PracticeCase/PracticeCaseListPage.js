@@ -16,9 +16,49 @@ class PracticeCaseListPage extends Component {
                     title:"Practice Case #2",
                     description:"",
                     route:"practice/prenatalrad/2"
+                },
+                {
+                    title:"Practice Case #3",
+                    description:"",
+                    route:"practice/prenatalrad/3"
+                },
+                {
+                    title:"Practice Case #4",
+                    description:"",
+                    route:"practice/prenatalrad/4"
+                }
+                ,                {
+                    title:"Practice Case #5",
+                    description:"",
+                    route:"practice/prenatalrad/5"
                 }
             ],
             "Pregnancy Loss":[
+                {
+                    title:"Practice Case #1",
+                    description:"",
+                    route:"practice/pregnancyloss/1",
+                },
+                {
+                    title:"Practice Case #2",
+                    description:"",
+                    route:"practice/pregnancyloss/2"
+                },
+                {
+                    title:"Practice Case #3",
+                    description:"",
+                    route:"practice/pregnancyloss/3"
+                },
+                {
+                    title:"Practice Case #4",
+                    description:"",
+                    route:"practice/pregnancyloss/4"
+                }
+                ,                {
+                    title:"Practice Case #5",
+                    description:"",
+                    route:"practice/pregnancyloss/5"
+                }
             ]
         }
         this.createListGroupItems = this.createListGroupItems.bind(this);
