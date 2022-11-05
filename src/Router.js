@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, HashRouter, Redirect } from "react-router-dom";
+import React, { useRef } from 'react';
+import {BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import NavBar from './components/General/NavBar';
 import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
@@ -18,38 +18,28 @@ import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 import FinalAssessmentIntro from './pages/FinalAssessment/IntroPage';
 import FinalAssessmentComplete from './pages/FinalAssessment/CompletedFinalPage';
 import MaxAttemptsPage from './pages/MaxAttemptsPage';
+import BackgroundTab from './components/Background/BackgroundTab';
 
-class Navigate extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
-
-    componentDidMount() {
-    }
+const AppRouter = () => {
     
-    render() {
-        return (
+    return (
 
-            <HashRouter basename="/">
-                <Switch>
-                    <Route exact path="/">
-                        <LandingPage />
-                    </Route>
-
-                    <Route>
-                        <NavBar />
-
-                        <Route exact path="/introduction">
-                            <IntroductionPage />
-                        </Route>
-                        <Route path="/background">
-                            <BackgroundPage />
-                        </Route>          
-                        <Route exact path="/quiz" component={QuizListPage}>
+    <BrowserRouter>
+        <NavBar />
+        <Routes>
+            <Route index path="/" element={ <LandingPage/> }></Route>
+            <Route index exact path="introduction" element={<IntroductionPage />}></Route>
+            <Route path="background" element={<Navigate to="what-is-pcr" replace />}/>    
+            <Route path="background/:category" element={<BackgroundPage />}>
+                {/* <Route path="what-is-pcr" element={<BackgroundTab></BackgroundTab>}></Route>
+                <Route path="pcr-overview" element={<BackgroundTab></BackgroundTab>}></Route>
+                <Route path="what-is-aneuploidy" element={<BackgroundTab></BackgroundTab>}></Route>
+                <Route path="why-test-aneuploidy" element={<BackgroundTab></BackgroundTab>}></Route>
+                <Route path="prenatal-pcr" element={<BackgroundTab></BackgroundTab>}></Route>
+                <Route path="pcr-pregnancy-loss" element={<BackgroundTab></BackgroundTab>}></Route>
+ */}
+            </Route>          
+                        {/* <Route exact path="/quiz" component={QuizListPage}>
                         </Route>              
                         <Route exact path={`/quiz/${1}`}>
                             <QuizPage quizData={Quiz1Data}/>
@@ -93,16 +83,21 @@ class Navigate extends Component {
                         <Route exact path="/final_assessment/complete" component={FinalAssessmentComplete}>
                         </Route>
                         <Route exact path="/:category/:caseType/:caseId/max_attempts" component={MaxAttemptsPage}>
-                        </Route>
-                    </Route>
-                    
+                        </Route> */}
 
-
-                </Switch>
-                {/* <Footer /> */}
-            </HashRouter>
-
-        );
-    }
+            {/* <Route path="/" element={<App />}>
+                <Route index element={<Home />} />
+                <Route path="teams" element={<Teams />}>
+                <Route path=":teamId" element={<Team />} />
+                <Route path="new" element={<NewTeamForm />} />
+                <Route index element={<LeagueStandings />} />
+                </Route>
+            </Route> */}
+        </Routes>
+    </BrowserRouter>
+    );
 }
-export default Navigate;
+
+
+
+export default AppRouter;

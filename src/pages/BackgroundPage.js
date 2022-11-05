@@ -1,79 +1,86 @@
-import React, { Component } from 'react';
-import { Button, Row, Tab, Col, Nav, Image, Container, Card, ListGroup } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Button, Row, Col, Container, Card, ListGroup } from 'react-bootstrap';
+import { useNavigate, useParams,useLocation } from 'react-router-dom';
 
 import backgroundData from '../data/background';
-class BackgroundPage extends Component {
+function BackgroundPage() {
 
-    constructor() {
-        super();
-        this.state = {
-            currentTab:0
+    const [currentTab, setCurrentTab] = useState(0);
+    const [currentLocation,setCurrentLocation] = useState('');
+
+    const { category } = useParams();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const categories = Object.keys(backgroundData);
+
+    useEffect(()=>{
+        setCurrentTab(categories.indexOf(category));
+    },[]);
+
+    useEffect(()=>{
+        setCurrentLocation(location.pathname);
+    },[location]);
+
+    const onClickNext = (nextCategory) => {
+        window.scrollTo(0, 0);
+        navigate("/background/"+getNextCategory());
+    }
+
+    const getNextCategory = () => {
+        let nextTab = currentTab;
+        console.log("nextTab",nextTab);
+        if (currentTab < categories.length){
+            nextTab++;
+            setCurrentTab(nextTab);
+            console.log("nextTab updated",nextTab);
+
         }
-        this.background_data = backgroundData;
-        this.onClickNext = this.onClickNext.bind(this);
-    }
-    onClickNext() {
-        var nextTab = this.state.currentTab+1;
-        if (nextTab < this.background_data.length){
-            this.setState({currentTab:nextTab});
-            window.scrollTo(0, 0);
-        }
-    }
+        console.log("nextTab cate",categories[nextTab]);
 
-    componentDidMount() {
+        return categories[nextTab];
     }
 
 
-    render() {
-        return (
-            <div style={{ height: '100%', minHeight: '100vh' }} className="text-dark py-4">
-                <Container>
-                    <Row>
-                        <Tab.Container id="background-tabs"  activeKey={this.background_data[this.state.currentTab].id}>
-                            <Row>
-                                <Col sm={4}>
-                                    <Card className="mb-3">
-                                        <ListGroup variant="flush" >
-                                            {this.background_data.map(function(x,index) {
-                                                return (
-                                                    <ListGroup.Item onClick={()=>this.setState({currentTab:index})} key={x.id} className={this.state.currentTab==index?'bg-info text-white':''} style={{cursor:"pointer"}}> 
-                                                        {x.title}
-                                                    </ListGroup.Item>
-                                                )
-                                            }, this)}
-                                        </ListGroup>
-                                    </Card>
-                                </Col>
-                                <Col sm={8}>
-                                    <Tab.Content>
-                                        {
-                                            this.background_data.map(function(x) {
-                                                return (
-                                                    <Tab.Pane key={x.id} eventKey={x.id}>
-                                                        <Card className="px-3 py-3">
-                                                            <Card.Header className="bg-info text-white" as="h5">{x.title}</Card.Header>
-                                                            <Card.Body as="div">                                        
-                                                                {x.content}
-                                                            </Card.Body>
-                                                            <Card.Footer style={{textAlign:'right'}} className="bg-transparent border-white">
-                                                                <Button size="sm" onClick={this.onClickNext} variant="primary" hidden={this.state.currentTab+1>=this.background_data.length}>NEXT</Button>
-                                                            </Card.Footer>
-                                                        </Card>
-                                                    </Tab.Pane>
-                                                );
-                                            },this)
-                                        }
-                                    
-                                    </Tab.Content>
-                                </Col>
-                            </Row>
-                        </Tab.Container>
-                    </Row>
-                </Container>
-            </div>
-            
-        )
-    }
+    return (
+        <Container className="text-dark py-4">
+            <Row>
+                <Col className='col-sm-3'>
+                    <Card className="mb-3">
+                        <ListGroup variant="flush" >
+                            {categories.map(function(key,index) {
+                                return (
+                                    <ListGroup.Item 
+                                        onClick={()=>{setCurrentTab(categories.indexOf(key)); navigate("/background/"+key);}} 
+                                        key={index} 
+                                        className={currentLocation==="/background/"+key ?'bg-info text-white':''} 
+                                        style={{cursor:"pointer"}}> 
+
+                                        {backgroundData[key].title}
+                                        
+                                    </ListGroup.Item>
+                                )
+                            }, this)}
+                        </ListGroup>
+                    </Card>
+                </Col>
+
+                <Col className='col-sm-8'>
+                    <Card className="px-3 py-3">
+                        <Card.Header className="bg-info text-white" as="h5">{backgroundData[category].title}</Card.Header>
+                        <Card.Body as="div">                                        
+                            {backgroundData[category].content}
+                        </Card.Body>
+                        
+                        <Card.Footer style={{textAlign:'right'}} className="bg-transparent border-white">
+                            <Button size="sm" onClick={onClickNext} variant="primary" hidden={currentTab+1>=categories.length}>NEXT</Button>
+                        </Card.Footer>
+                    </Card>
+                </Col>
+            </Row>
+
+        </Container>
+        
+    )
 }
 
 export default BackgroundPage;

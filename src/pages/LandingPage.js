@@ -30,7 +30,7 @@ class LandingPage extends Component {
 
                             </p>
                             <p style={{ fontSize: '1.2rem' }} className="mt-2">To begin press Start</p>
-                            <Button href="#/introduction" variant="success">START</Button>
+                            <Button href="introduction" variant="success">START</Button>
 
                         </Row>
 

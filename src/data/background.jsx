@@ -10,8 +10,8 @@ import turner from '../assets/Turner_circled.png';
 
 import { Figure, Image, Table } from 'react-bootstrap';
 
-export default [
-    {
+export default {
+    "what-is-pcr":{
         id:"what-is-pcr",
         title:"What is QF-PCR?",
         content:
@@ -82,7 +82,7 @@ export default [
             <img src={"https://qf-pcr-bucket.s3.ca-central-1.amazonaws.com/images/bg_6.png"}></img>
         </div>
     },
-    {
+    "pcr-overview":{
         id:"pcr-overview",
         title:"PCR overview",content:<div>In 1983 Dr. Kary Mullis was inspired to develop a method for in vitro (“in glass” i.e. outside of the living cell) DNA amplification, when he realized that short oligonucleotide “primers” could be designed to target specific sequences. PCR is an amplification method where the amount of target DNA is doubled at each step during the early, exponential phase of the reaction (replication slows during later stages as reagents run out and become rate-limiting). Two years later the first paper describing the practical application of PCR, as a method to amplify the gene for betaglobin as a diagnosis method for sickle cell anemia, was published. Mullis called this technique a polymerase-catalyzed chain reaction because the key enzyme is DNA {<PopOver text={'polymerase'}/>}  and the copies of the template that are created act as more targets for the polymerase, causing exponential amplification.
         <br></br>                                                
@@ -119,7 +119,7 @@ export default [
         </p>
         </div>
     },
-    {
+    "what-is-aneuploidy":{
         id:"what-is-aneuploidy",
         title:"What is aneuploidy?",content: 
         <div>
@@ -169,7 +169,7 @@ export default [
             </p>
         </div>
     },
-    {
+    "why-test-aneuploidy":{
         id:"why-test-aneuploidy",
         title:"Why test for aneuploidy?",content: <div>Two main indications for aneuploidy testing in the diagnostic laboratory:
             <br></br>
@@ -196,7 +196,7 @@ export default [
 
         </div>
     },
-    {
+    "prenatal-pcr":{
         id:"prenatal-pcr",
         title:"Prenatal QF-PCR",content: <div>
            These are the conditions that are assessed when performing prenatal QF-PCR:
@@ -297,7 +297,7 @@ QF-PCR can be performed on DNA extracted from amniotic fluid cells, chorionic vi
             </Figure>
         </div>
     },
-    {
+    "pcr-pregnancy-loss":{
         id:"pcr-pregnancy-loss",
         title:"QF-PCR for Pregnancy Loss",content: <div>
             <p>
@@ -340,4 +340,4 @@ QF-PCR can be performed on DNA extracted from amniotic fluid cells, chorionic vi
             </p>
         </div>
     }
-];
+};
