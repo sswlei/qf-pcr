@@ -1,43 +1,41 @@
 import React, { useRef } from 'react';
 import {BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import NavBar from './components/General/NavBar';
 import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
-import QuizListPage from './pages/Quiz/QuizListPage';
-import QuizPage from './pages/Quiz/QuizPage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
-import AchievementPage from './pages/AchievementPage';
 import Main from './components/GuidedPractice/Base/Main';
-
+import guided_prenatalRAD_data  from "./data/GuidedPractice/prenatalRAD.json"
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import CasePage from './pages/CasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
-import FinalAssessmentIntro from './pages/FinalAssessment/IntroPage';
-import FinalAssessmentComplete from './pages/FinalAssessment/CompletedFinalPage';
-import MaxAttemptsPage from './pages/MaxAttemptsPage';
-import BackgroundTab from './components/Background/BackgroundTab';
+import MainLayout from './components/layout/MainLayout';
+import CaseLayout from './components/layout/CaseLayout';
+import ReviewPeaks from './components/Case/ReviewPeaks';
+import IdentifyMarkers from './components/Case/IdentifyMarkers';
 
 const AppRouter = () => {
     
     return (
 
     <BrowserRouter>
-        <NavBar />
         <Routes>
             <Route index path="/" element={ <LandingPage/> }></Route>
-            <Route index exact path="introduction" element={<IntroductionPage />}></Route>
-            <Route path="background" element={<Navigate to="what-is-pcr" replace />}/>    
-            <Route path="background/:category" element={<BackgroundPage />}/>
-            <Route path="guidedpractice" element={<GuidedPracticeList/>}/>
-            <Route path="guidedpractice/:caseType" 
-                element={<CasePage title={`Guided Practice`}>
-                                <Main category={"guidedpractice"}></Main>
-                            </CasePage>
-                        }>
+            <Route element={<MainLayout/>}>
+                <Route index path="introduction" element={<IntroductionPage />}></Route>
+                <Route path="background" element={<Navigate to="what-is-pcr" replace />}/>    
+                <Route path="background/:category" element={<BackgroundPage />}/>
+                <Route path="guidedpractice" element={<GuidedPracticeList/>}/>
+                <Route path="guidedpractice/:caseType" element={<CaseLayout title="test" />}>
+                    <Route path="" element={<Navigate to="intro" replace />}/>    
+                    <Route path='intro' element={<ReviewPeaks/>}/>
+                    <Route path='identify-markers' element={<IdentifyMarkers data={guided_prenatalRAD_data}/>}/>
+
+                </Route>
             </Route>
+
                             
                 {/* <Route path="what-is-pcr" element={<BackgroundTab></BackgroundTab>}></Route>
                 <Route path="pcr-overview" element={<BackgroundTab></BackgroundTab>}></Route>
