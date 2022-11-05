@@ -16,6 +16,7 @@ function NavBar(props) {
 
                     <Nav.Link href="/introduction" className={`${useMatch('/introduction') ? "active border-bottom border-secondary" : null} mr-2`}>Introduction</Nav.Link>
                     <Nav.Link href="/background" className={`${useMatch('/background') ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
+                    <Nav.Link href="/guidedpractice" className={`${useMatch('/guidedpractice') ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>
 
                     {/* <Nav.Link href="#background" className={`${this.props.history.location.pathname === '/background' ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
                     <Nav.Link href="#guidedpractice" className={`${this.props.history.location.pathname === '/guidedpractice' ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>

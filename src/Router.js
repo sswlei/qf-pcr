@@ -30,7 +30,15 @@ const AppRouter = () => {
             <Route index path="/" element={ <LandingPage/> }></Route>
             <Route index exact path="introduction" element={<IntroductionPage />}></Route>
             <Route path="background" element={<Navigate to="what-is-pcr" replace />}/>    
-            <Route path="background/:category" element={<BackgroundPage />}>
+            <Route path="background/:category" element={<BackgroundPage />}/>
+            <Route path="guidedpractice" element={<GuidedPracticeList/>}/>
+            <Route path="guidedpractice/:caseType" 
+                element={<CasePage title={`Guided Practice`}>
+                                <Main category={"guidedpractice"}></Main>
+                            </CasePage>
+                        }>
+            </Route>
+                            
                 {/* <Route path="what-is-pcr" element={<BackgroundTab></BackgroundTab>}></Route>
                 <Route path="pcr-overview" element={<BackgroundTab></BackgroundTab>}></Route>
                 <Route path="what-is-aneuploidy" element={<BackgroundTab></BackgroundTab>}></Route>
@@ -38,7 +46,6 @@ const AppRouter = () => {
                 <Route path="prenatal-pcr" element={<BackgroundTab></BackgroundTab>}></Route>
                 <Route path="pcr-pregnancy-loss" element={<BackgroundTab></BackgroundTab>}></Route>
  */}
-            </Route>          
                         {/* <Route exact path="/quiz" component={QuizListPage}>
                         </Route>              
                         <Route exact path={`/quiz/${1}`}>
