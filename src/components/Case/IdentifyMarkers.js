@@ -3,9 +3,18 @@ import xIcon from '../../assets/x.svg';
 import checkIcon from '../../assets/checkmark.svg';
 import { Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-
+import { useSelector, useDispatch } from 'react-redux'
+import {
+    updateAnswer,
+    userAnswers,
+    initAnswers
+  } from './IdentifyMarkerSlice'
+import MarkerDropdown from './MarkerDropdown';
 const IdentifyMarkers = (props) => {
-    const [answers,setAnswers] = useState({});
+    // const [answers,setAnswers] = useState({});
+    const dispatch = useDispatch();
+    const answers = useSelector(userAnswers);
+    console.log("get answers",answers)
     const onClickNext= () => {
         // saveAnswers();
         // if (checkAllAnswered()){
@@ -41,6 +50,7 @@ const IdentifyMarkers = (props) => {
     }
 
     const initState = () => {
+        console.log('hi')
         let answerState = {};
         for (let key of Object.keys(props.data.markers)){
             answerState[key] = {};
@@ -48,7 +58,7 @@ const IdentifyMarkers = (props) => {
                 answerState[key][question.id]="";
             }
         }
-        setAnswers(answerState);
+        dispatch(initAnswers({answers:answerState}));
     }
 
 
@@ -89,56 +99,34 @@ const IdentifyMarkers = (props) => {
     }
 
     const onAnswerSelect = (key, option_data, question_data) => {
-        alert("her")
-        var updatedAnswers = {...answers};
-        option_data.correct = option_data.value===question_data.answer;
-        updatedAnswers[key][question_data.id]=option_data;
-        console.log(updatedAnswers);
-
-        setAnswers(updatedAnswers);
+        // alert("her")
+        // var updatedAnswers = {...answers};
+        // option_data.correct = option_data.value===question_data.answer;
+        // updatedAnswers[key][question_data.id]=option_data;
+        // console.log(updatedAnswers);
+        // dispatch(updateAnswer(markerId:key,questionId: ))
+        // setAnswers(updatedAnswers);
     }
 
-    const createDropdown = (key,question_data) => {
-        let dropdown = [];
-        for (let x in question_data){
-            console.log('here',question_data)
-            for (let question of question_data[x]){
-                dropdown.push(
-                    <Dropdown className="mb-3 mr-2" as={ButtonGroup}>
-                        <label className="mx-0 my-0 px-4 py-0 rounded-left" style={{border:`1px solid ${answers[key][question.id]===""?'grey':'#0275d8'}`,lineHeight:"38px",background:getAnswerBackground(answers[key][question.id].correct)}}>
-                            {answers[key][question.id]===""?"Select":answers[key][question.id].name} 
-                        </label>
-                        <Dropdown.Toggle variant={answers[key][question.id]===""?"secondary":"primary"} style={{height:40}}/>
-                        <Dropdown.Menu alignRight>
-                            {question.options.map(function(option){
-                                return <Dropdown.Item onClick={()=>{onAnswerSelect(key, option, question)}}>{option.name}</Dropdown.Item>
-                            },this)}
-                        </Dropdown.Menu>
-                    </Dropdown> 
-                )
-            }
-        }
-        return dropdown;
-    }
     useEffect(()=>{
         initState();
-        console.log("load")
+        console.log("load");
     },[]);
     
 
     return (
         <>
             <h2>Identify markers</h2>
-            <p>In the following interactive chromatogram example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). Zoom in on the image if necessary. Notice that the peak area is labelled underneath each peak (you will use this data in Step 3). {props.category == "guidedpractice"? "Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if your selection was not correct. ":""}Note that AMEL and TAF9L have unique selections:
-<br></br>
-<br></br>
+            <p>In the following interactive chromatogram example, examine each marker and select which Chromosome the marker is on (look at label at the bottom), 
+                and whether the marker has One peak (and therefore is uninformative) has 2 peaks (and therefore is diallelic) or has 3 peaks (and therefore is triallelic). 
+                Zoom in on the image if necessary. Notice that the peak area is labelled underneath each peak (you will use this data in Step 3). 
+                {props.category == "guidedpractice"? "Correct answers will be marked in green and with a checkmark; incorrect answers will be marked in red and with an x. You can try again if your selection was not correct. "
+                :" "}Note that AMEL and TAF9L have unique selections:
+            </p>
+            <p> AMEL: are there 2 peaks (XY) or 1 peak? (only X, but check TAF9L data to confirm number of X chromosomes)</p>
+            <p>
+            TAF9L: compare peak heights: if the first peak is 2x than the second one, this is evidence for 1 X chromosome; if the first peak has same height, this is evidence for 2 X chromosomes.</p>
 
-AMEL: are there 2 peaks (XY) or 1 peak? (only X, but check TAF9L data to confirm number of X chromosomes)
-<br></br>
-<br></br>
-TAF9L: compare peak heights: if the first peak is 2x than the second one, this is evidence for 1 X chromosome; if the first peak has same height, this is evidence for 2 X chromosomes.</p>
-<br></br>
-<br></br>
             <Row>
                 
                 <Col md={12} lg={7} style={{maxHeight:600}}>
@@ -161,18 +149,21 @@ TAF9L: compare peak heights: if the first peak is 2x than the second one, this i
                 <Col md={12} lg={5}>
                     <Card style={{maxHeight:650}}>
                         <Card.Body style={{overflowY:"scroll"}}>
-
                             {
                                 Object.keys(props.data.markers).map(function(key, index) {
                                     return (
                                         <div>
-                                                <label style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
-                                                    <span>
-                                                        <img className="ml-2" style={{height:15}} src={checkQuestionCorrect(key)}></img>
-                                                    </span>
-                                                </label> 
+                                            <label onClick={()=>{dispatch(updateAnswer("test"));}} style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
+                                                <span>
+                                                    <img className="ml-2" style={{height:15}} src={checkQuestionCorrect(key)}></img>
+                                                </span>
+                                            </label> 
                                             <div>
-                                                {createDropdown(key,props.data.markers[key])}
+                                            {
+                                                props.data.markers[key].questions.map((questionData)=>{
+                                                    return <MarkerDropdown questionData={questionData} showEvaluation={true}></MarkerDropdown>
+                                                })
+                                            }
                                             </div>
                                         </div>
                                     )

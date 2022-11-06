@@ -1,0 +1,34 @@
+.markerDropdown label{
+    background-color: white;
+    line-height: 38px;
+    border: 1px solid rgb(108, 117, 125);
+}
+.markerDropdown button{
+    background-color: rgb(108, 117, 125);
+    border-color: rgb(108, 117, 125);
+}
+.markerDropdown.correct label{
+    background-color: #BCF4BC;
+    border-color: #28a128;
+}
+.markerDropdown.correct button{
+    background-color: #28a128;
+    border-color: #28a128;
+}
+.markerDropdown.incorrect label{
+    background-color: #E67878;
+    border-color: #c12828;
+}
+.markerDropdown.incorrect button{
+    background-color: #c12828;
+    border-color: #c12828;
+}
+
+.markerDropdown.answered label{
+    background-color: white;
+    border-color:#0275d8;
+}
+.markerDropdown.answered button{
+    background-color: #0275d8;
+    border-color:#0275d8;
+}
