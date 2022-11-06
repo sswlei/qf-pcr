@@ -1,30 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import xIcon from '../../assets/x.svg';
 import checkIcon from '../../assets/checkmark.svg';
-import { Dropdown, Button, ButtonGroup, Card, Row, Col } from 'react-bootstrap';
+import { Button, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useSelector, useDispatch } from 'react-redux'
-import {
-    updateAnswer,
-    userAnswers,
-    initAnswers
-  } from './IdentifyMarkerSlice'
+import { updateAnswer, userAnswers, initAnswers} from './IdentifyMarkerSlice'
 import MarkerDropdown from './MarkerDropdown';
+import './css/StepBar.css'
 const IdentifyMarkers = (props) => {
-    // const [answers,setAnswers] = useState({});
     const dispatch = useDispatch();
     const answers = useSelector(userAnswers);
-    console.log("get answers",answers)
     const onClickNext= () => {
         // saveAnswers();
-        // if (checkAllAnswered()){
-        //     props.onClickNext();
-        // }
-        // else{
-        //     if (window.confirm("Some questions have not been answered! Would you like to proceed?")){
-        //         props.onClickNext();
-        //     }
-        // }
+        if (checkAllAnswered()){
+            window.location.href = 'final-conclusion'
+        }
+        else{
+            if (window.confirm("Some questions have not been answered! Would you like to proceed?")){
+                window.location.href = 'final-conclusion'
+            }
+        }
     }
     
     const saveAnswers = () => {
@@ -36,21 +31,17 @@ const IdentifyMarkers = (props) => {
     }
 
     const checkAllAnswered = () => {
-
-        // if (!props.canSkip){
-        //     for (let question of Object.keys(state.answers)){
-        //         for (const [key, value] of Object.entries(state.answers[question])){
-        //             if (value === '' || value === null ){
-        //                 return false;
-        //             }
-        //         }
-        //     }
-        // }
-        // return true;
+        for (let question of Object.keys(answers)){
+            for (const [key, value] of Object.entries(answers[question])){
+                if (value === '' || value === null ){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     const initState = () => {
-        console.log('hi')
         let answerState = {};
         for (let key of Object.keys(props.data.markers)){
             answerState[key] = {};
@@ -58,26 +49,7 @@ const IdentifyMarkers = (props) => {
                 answerState[key][question.id]="";
             }
         }
-        dispatch(initAnswers({answers:answerState}));
-    }
-
-
-    const getAnswerBackground = (isCorrect) => {
-        // if (props.showEvaluation){
-        //     if (isCorrect===""||isCorrect==null){
-        //         return "white";
-        //     }
-        //     if (isCorrect){
-        //         return "#BCF4BC";
-        //     }
-        //     else{
-        //         return "#E67878";
-        //     }
-        // }
-        // else{
-        //     return "white";
-        // }
-        return "white";
+        dispatch(initAnswers({...answerState}));
     }
 
     const checkQuestionCorrect = (key) => {
@@ -98,19 +70,9 @@ const IdentifyMarkers = (props) => {
         // }
     }
 
-    const onAnswerSelect = (key, option_data, question_data) => {
-        // alert("her")
-        // var updatedAnswers = {...answers};
-        // option_data.correct = option_data.value===question_data.answer;
-        // updatedAnswers[key][question_data.id]=option_data;
-        // console.log(updatedAnswers);
-        // dispatch(updateAnswer(markerId:key,questionId: ))
-        // setAnswers(updatedAnswers);
-    }
 
     useEffect(()=>{
         initState();
-        console.log("load");
     },[]);
     
 
@@ -161,7 +123,7 @@ const IdentifyMarkers = (props) => {
                                             <div>
                                             {
                                                 props.data.markers[key].questions.map((questionData)=>{
-                                                    return <MarkerDropdown questionData={questionData} showEvaluation={true}></MarkerDropdown>
+                                                    return <MarkerDropdown markerId={key} questionData={questionData} showEvaluation={true}></MarkerDropdown>
                                                 })
                                             }
                                             </div>

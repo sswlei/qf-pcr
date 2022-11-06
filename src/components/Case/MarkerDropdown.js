@@ -1,8 +1,11 @@
 import { Dropdown, ButtonGroup } from 'react-bootstrap';
 import React, { useState } from 'react';
 import "./MarkerDropdown.css";
+import { useDispatch } from 'react-redux';
+import { updateAnswer } from './IdentifyMarkerSlice';
 const MarkerDropdown = (props) => {
-    
+    const dispatch = useDispatch();
+
     const [isCorrect,setCorrect] = useState(false);
     const [selectedAnswer,setAnswer] = useState("");
     const showEvaluation = props.showEvaluation?props.showEvaluation:false;
@@ -26,6 +29,7 @@ const MarkerDropdown = (props) => {
     }
     const onAnswerSelect = (option) => {
         setAnswer(option.name);
+        dispatch(updateAnswer({markerId:props.markerId,questionId:props.questionData.id,answer:option.value}));
         if (props.questionData.answer == option.value){
             setCorrect(true);
         }
@@ -39,7 +43,7 @@ const MarkerDropdown = (props) => {
                 {selectedAnswer===""?"Select":selectedAnswer} 
             </label>
             <Dropdown.Toggle style={{height:40}}/>
-            <Dropdown.Menu alignright>
+            <Dropdown.Menu alignright="true">
                 {props.questionData.options.map(function(option,index){
                     return <Dropdown.Item key={index} onClick={()=>{onAnswerSelect(option)}}>{option.name}</Dropdown.Item>
                 },this)}

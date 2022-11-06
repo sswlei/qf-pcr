@@ -14,7 +14,6 @@ const IdentifyMarkersSlice = createSlice({
             // markerId: ID of the marker
             // questionId: ID of the question
             // answer: answer selected by user
-            console.log(action);
             state.answers[action.payload.markerId][action.payload.questionId] = action.payload.answer;
         }
     }

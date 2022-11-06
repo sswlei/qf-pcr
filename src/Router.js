@@ -5,7 +5,6 @@ import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
-import Main from './components/GuidedPractice/Base/Main';
 import guided_prenatalRAD_data  from "./data/GuidedPractice/prenatalRAD.json"
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import CasePage from './pages/CasePage';
@@ -15,6 +14,7 @@ import MainLayout from './components/layout/MainLayout';
 import CaseLayout from './components/layout/CaseLayout';
 import ReviewPeaks from './components/Case/ReviewPeaks';
 import IdentifyMarkers from './components/Case/IdentifyMarkers';
+import FinalConclusion from './components/Case/FinalConclusion';
 
 const AppRouter = () => {
     
@@ -32,6 +32,7 @@ const AppRouter = () => {
                     <Route path="" element={<Navigate to="intro" replace />}/>    
                     <Route path='intro' element={<ReviewPeaks/>}/>
                     <Route path='identify-markers' element={<IdentifyMarkers data={guided_prenatalRAD_data}/>}/>
+                    <Route path='final-conclusion' element={<FinalConclusion/>}/>
 
                 </Route>
             </Route>
