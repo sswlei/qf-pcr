@@ -10,6 +10,8 @@ const Quiz = () => {
     const [quizData,setQuizData] = useState([]);
     const {quizId} = useParams();
     const [userData,setUserData] = useState({"mcq_questions":{},"tf_questions":{}});
+    const [answerResult,setAnswerResult] = useState([]);
+    const [numCorrect, setNumCorrect] = useState(0);
     useEffect(()=>{
         fetch('https://610174ghz0.execute-api.us-west-2.amazonaws.com/default/get_quiz_data?quiz_id='+quizId)
         .then((response) => response.json())
@@ -33,9 +35,31 @@ const Quiz = () => {
             }
         }
         setUserData(newData);
-        console.log("new data",newData);
     }
+    const evaluateQuiz = (data) => {
+        setAnswerResult(data);
+        let score = 0;
+        let newUserData = {...userData}
+        data.map((answerData)=>{
+            if (answerData.title in userData.mcq_questions){
+                newUserData.mcq_questions[answerData.title].correct = answerData.correct;
+                newUserData.mcq_questions[answerData.title].feedback = answerData.feedback;
 
+            }
+            else if (answerData.title in userData.tf_questions){
+                newUserData.tf_questions[answerData.title].correct = answerData.correct;
+                newUserData.tf_questions[answerData.title].feedback = answerData.feedback;
+            }
+            if (answerData.correct){
+                score++;
+            }
+
+        })
+        setNumCorrect(score);
+        setUserData(newUserData);
+        
+
+    }
     const submitQuiz = () => {
         let dataToSend = {"mcq_questions":[],"tf_questions":[]}
         Object.keys(userData.mcq_questions).map((key)=>{
@@ -56,9 +80,30 @@ const Quiz = () => {
 
         fetch("https://610174ghz0.execute-api.us-west-2.amazonaws.com/default/submit_quiz?quiz_id="+quizId, requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => evaluateQuiz(JSON.parse(result)))
         .catch(error => console.log('error', error));
     }
+
+    const checkCorrect = (title) => {
+        if (title in userData.mcq_questions){
+            return userData.mcq_questions[title].correct;
+        }
+        if (title in userData.tf_questions){
+            return userData.tf_questions[title].correct;
+        }
+    }
+
+    
+    const getFeedback = (title) => {
+        if (title in userData.mcq_questions){
+
+            return userData.mcq_questions[title].feedback;
+        }
+        if (title in userData.tf_questions){
+            return userData.tf_questions[title].feedback;
+        }
+    }
+
     const getRandomQuestions = (data) => {
         let list = [];
         let mcq_s = data.mcq_questions;
@@ -138,15 +183,17 @@ const Quiz = () => {
 
                             }
                             {showFeedback ? 
-                            <Alert className="m-1" variant={i.correct ? "success" : "danger"} >
-                            <Alert.Heading>{i.correct ? 'Correct' : 'Incorrect' }</Alert.Heading>
-                            {i.correct ?    
+                            <Alert className="m-1" variant={checkCorrect(i.title) ? "success" : "danger"} >
+                            <Alert.Heading>{checkCorrect(i.title) ? 'Correct' : 'Incorrect' }</Alert.Heading>
+                            <p>{getFeedback(i.title)}</p>
+                            {/* {checkCorrect(i.title) ?    
                             <p>
-                                {i.feedback}
+                                {getFeedback(i.title)}
                             </p>             :
                             <p>
                                 Correct Answer: {i.type === 'tf' ? i.answer : i.choices[i.answer]}
-                            </p>}
+                            </p> */}
+                            
                         </Alert> : null}
                             
                         </div>
@@ -158,7 +205,7 @@ const Quiz = () => {
             </ol>
 
 
-            { showFeedback ? <Card.Footer className=""> Score: { quizData.filter((i) => i.correct).length + ' / ' + quizData.length }</Card.Footer> : null}
+            { showFeedback ? <Card.Footer className=""> Score: { numCorrect + ' / ' + quizData.length }</Card.Footer> : null}
             <ListGroup className="list-group-flush">
                 <ListGroupItem className="d-flex justify-content-end">
                     {
