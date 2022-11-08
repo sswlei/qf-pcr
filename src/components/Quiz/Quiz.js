@@ -9,6 +9,7 @@ const Quiz = () => {
     const [submitted,setSubmitted] = useState(false);
     const [quizData,setQuizData] = useState([]);
     const {quizId} = useParams();
+    const [userData,setUserData] = useState({"mcq_questions":{},"tf_questions":{}});
     useEffect(()=>{
         fetch('https://610174ghz0.execute-api.us-west-2.amazonaws.com/default/get_quiz_data?quiz_id='+quizId)
         .then((response) => response.json())
@@ -17,10 +18,47 @@ const Quiz = () => {
         });
     },[]);
     
-    const answerQuestions = (index, input) => {
-
+    const answerQuestions = (input,data) => {
+        let newData = {...userData};
+        if (data.type === "mcq"){
+            newData.mcq_questions[data.title] = {
+                title:data.title,
+                answer:input
+            }
+        }
+        if (data.type === "tf"){
+            newData.tf_questions[data.title] = {
+                title:data.title,
+                answer:input
+            }
+        }
+        setUserData(newData);
+        console.log("new data",newData);
     }
 
+    const submitQuiz = () => {
+        let dataToSend = {"mcq_questions":[],"tf_questions":[]}
+        Object.keys(userData.mcq_questions).map((key)=>{
+            dataToSend.mcq_questions.push(userData.mcq_questions[key]);
+        })
+        Object.keys(userData.tf_questions).map((key)=>{
+            dataToSend.tf_questions.push(userData.tf_questions[key]);
+        })
+        console.log(dataToSend);
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "text/plain");
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify(dataToSend),
+            redirect: 'follow'
+        };
+
+        fetch("https://610174ghz0.execute-api.us-west-2.amazonaws.com/default/submit_quiz?quiz_id="+quizId, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
     const getRandomQuestions = (data) => {
         let list = [];
         let mcq_s = data.mcq_questions;
@@ -51,6 +89,7 @@ const Quiz = () => {
     return (
 
         <Card >
+            <Form>
             <Card.Header className="m-3" as="h5">Quiz #1</Card.Header>
 
             <ol>
@@ -59,13 +98,14 @@ const Quiz = () => {
                 <Card.Body>
                     <Card.Title>{i.title}</Card.Title>
                 
-                        <div onChange={(i) => answerQuestions(index, i.target.value)} key={`inline-radio`} className="mb-3">
+                    
+                        <div onChange={(event) => answerQuestions(event.target.value,i)} key={`inline-radio`} className="mb-3">
 
                             {i.type == 'mcq' ?
                                 <ol type="a">
-                                    {i.choices.map((q,index) =>
+                                    {i.choices.map((q,x) =>
                                         <li><Form.Check
-                                            key={index}
+                                            key={x}
                                             inline
                                             label={q}
                                             value={q}
@@ -124,7 +164,9 @@ const Quiz = () => {
                     {
                         (!submitted)?
                             <Button 
+                            type="submit"
                             onClick={() => {
+                                    submitQuiz();
                                     setShowFeedback(true);
                                     setSubmitted(true);
                                     window.scrollTo(0, 0);
@@ -133,7 +175,7 @@ const Quiz = () => {
                                     // }
                                 }
                             } 
-                            disabled={!user_input} 
+                            // disabled={!user_input} 
                             size="sm" 
                             variant="primary">Submit
                             </Button>:null
@@ -148,7 +190,7 @@ const Quiz = () => {
                     }
                 </ListGroupItem>
             </ListGroup>
-
+            </Form>
         </Card>
     )
 }
