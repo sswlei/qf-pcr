@@ -7,7 +7,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateAnswer, userAnswers, initAnswers} from './IdentifyMarkerSlice'
 import MarkerDropdown from './MarkerDropdown';
 import './css/StepBar.css'
+import { caseData } from '../layout/CaseSlice';
 const IdentifyMarkers = (props) => {
+    const data = useSelector(caseData);
     const dispatch = useDispatch();
     const answers = useSelector(userAnswers);
     const onClickNext= () => {
@@ -41,17 +43,6 @@ const IdentifyMarkers = (props) => {
         return true;
     }
 
-    const initState = () => {
-        let answerState = {};
-        for (let key of Object.keys(props.data.markers)){
-            answerState[key] = {};
-            for (let question of props.data.markers[key].questions){
-                answerState[key][question.id]="";
-            }
-        }
-        dispatch(initAnswers({...answerState}));
-    }
-
     const checkQuestionCorrect = (key) => {
         // if (props.showEvaluation){
         //     for (var question_id in state.answers[key]){
@@ -70,11 +61,6 @@ const IdentifyMarkers = (props) => {
         // }
     }
 
-
-    useEffect(()=>{
-        initState();
-    },[]);
-    
 
     return (
         <>
@@ -101,7 +87,7 @@ const IdentifyMarkers = (props) => {
                                         <Button variant="outline-primary" className="mr-2 py-1" onClick={() => resetTransform()}>Reset</Button>
                                     </div>
                                     <TransformComponent wrapperStyle={{width:"100%",height:600}}>
-                                        <img src={props.data.image} />
+                                        <img src={data.image} />
                                     </TransformComponent>
                                 </React.Fragment>
                             )}
@@ -112,18 +98,18 @@ const IdentifyMarkers = (props) => {
                     <Card style={{maxHeight:650}}>
                         <Card.Body style={{overflowY:"scroll"}}>
                             {
-                                Object.keys(props.data.markers).map(function(key, index) {
+                                Object.keys(data.markers).map(function(key, index) {
                                     return (
-                                        <div>
-                                            <label onClick={()=>{dispatch(updateAnswer("test"));}} style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
+                                        <div key={index}>
+                                            <label style={{fontWeight:"bold", color:'#6c757d'}}>{key} 
                                                 <span>
                                                     <img className="ml-2" style={{height:15}} src={checkQuestionCorrect(key)}></img>
                                                 </span>
                                             </label> 
                                             <div>
                                             {
-                                                props.data.markers[key].questions.map((questionData)=>{
-                                                    return <MarkerDropdown markerId={key} questionData={questionData} showEvaluation={true}></MarkerDropdown>
+                                                data.markers[key].questions.map((questionData,index)=>{
+                                                    return <MarkerDropdown key={index} markerId={key} questionData={questionData} showEvaluation={true}></MarkerDropdown>
                                                 })
                                             }
                                             </div>

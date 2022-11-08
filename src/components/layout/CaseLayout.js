@@ -1,8 +1,29 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Nav, Row, Card, Tabs, Tab, Container, Button } from 'react-bootstrap';
-import {Outlet, Route, Routes, Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Outlet, useParams } from "react-router-dom";
+import { updateCaseData } from './CaseSlice'
+import { initAnswers } from "../Case/IdentifyMarkerSlice";
+const CaseLayout = (props) => {    
+    const {caseId} = useParams();
+    const dispatch = useDispatch();
 
-const CaseLayout = (props) => {
+    useEffect(()=>{
+        fetch('https://610174ghz0.execute-api.us-west-2.amazonaws.com/default/get_case_data?case_id='+caseId)
+        .then((response) => response.json())
+        .then((data) => { 
+            dispatch(updateCaseData(data.Item));
+            let answerState = {};
+            for (let key of Object.keys(data.Item.markers)){
+                answerState[key] = {};
+                for (let question of data.Item.markers[key].questions){
+                    answerState[key][question.id]="";
+                }
+            }
+            console.log('init2',answerState);
+            dispatch(initAnswers({...answerState}));
+        });
+    },[]);
     return (
         <Container className="mt-4">
             <h2 className="mb-3 text-monospace text-info">{props.title}</h2>

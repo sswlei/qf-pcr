@@ -29,6 +29,7 @@ const MarkerDropdown = (props) => {
     }
     const onAnswerSelect = (option) => {
         setAnswer(option.name);
+        console.log("this",props.questionData.answer)
         dispatch(updateAnswer({markerId:props.markerId,questionId:props.questionData.id,answer:option.value}));
         if (props.questionData.answer == option.value){
             setCorrect(true);

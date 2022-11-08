@@ -5,7 +5,7 @@ import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
-import guided_prenatalRAD_data  from "./data/GuidedPractice/prenatalRAD.json"
+// import guided_prenatalRAD_data  from "./data/GuidedPractice/prenatalRAD.json"
 import Quiz1Data from './data/Quiz/Quiz1/questions.json';
 import CasePage from './pages/CasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
@@ -28,13 +28,21 @@ const AppRouter = () => {
                 <Route path="background" element={<Navigate to="what-is-pcr" replace />}/>    
                 <Route path="background/:category" element={<BackgroundPage />}/>
                 <Route path="guidedpractice" element={<GuidedPracticeList/>}/>
-                <Route path="guidedpractice/:caseType" element={<CaseLayout title="test" />}>
+                <Route path="guidedpractice/:caseId" element={<CaseLayout title="test" />}>
                     <Route path="" element={<Navigate to="intro" replace />}/>    
                     <Route path='intro' element={<ReviewPeaks/>}/>
-                    <Route path='identify-markers' element={<IdentifyMarkers data={guided_prenatalRAD_data}/>}/>
+                    <Route path='identify-markers' element={<IdentifyMarkers/>}/>
                     <Route path='final-conclusion' element={<FinalConclusion/>}/>
 
                 </Route>
+                <Route path="practice" element={<PracticeCaseListPage/>}/>
+                <Route path="practice/:caseId" element={<CaseLayout title="test" />}>
+                    <Route path="" element={<Navigate to="intro" replace />}/>    
+                    <Route path='intro' element={<ReviewPeaks/>}/>
+                    <Route path='identify-markers' element={<IdentifyMarkers/>}/>
+                    <Route path='final-conclusion' element={<FinalConclusion/>}/>
+
+                </Route>               
             </Route>
 
                             
