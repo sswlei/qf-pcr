@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateAnswer, userAnswers, initAnswers} from './IdentifyMarkerSlice'
 import MarkerDropdown from './MarkerDropdown';
 import './css/StepBar.css'
-import { caseData } from '../layout/CaseSlice';
+import { caseData } from './CaseSlice';
 const IdentifyMarkers = (props) => {
     const data = useSelector(caseData);
     const dispatch = useDispatch();

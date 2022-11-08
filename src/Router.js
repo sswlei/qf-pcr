@@ -11,10 +11,11 @@ import CasePage from './pages/CasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 import MainLayout from './components/layout/MainLayout';
-import CaseLayout from './components/layout/CaseLayout';
+import CaseLayout from './components/Case/CaseLayout';
 import ReviewPeaks from './components/Case/ReviewPeaks';
 import IdentifyMarkers from './components/Case/IdentifyMarkers';
 import FinalConclusion from './components/Case/FinalConclusion';
+import QuizPage from './pages/Quiz/QuizPage';
 
 const AppRouter = () => {
     
@@ -44,6 +45,7 @@ const AppRouter = () => {
 
                 </Route>               
             </Route>
+            <Route path={`quiz/:quizId`} element={<QuizPage />}/>
 
                             
                 {/* <Route path="what-is-pcr" element={<BackgroundTab></BackgroundTab>}></Route>

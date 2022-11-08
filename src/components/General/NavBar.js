@@ -14,9 +14,11 @@ function NavBar(props) {
             <Navbar.Collapse >
                 <Nav className="ml-auto text-monospace ">
 
-                    <Nav.Link href="/introduction" className={`${useMatch('/introduction') ? "active border-bottom border-secondary" : null} mr-2`}>Introduction</Nav.Link>
-                    <Nav.Link href="/background" className={`${useMatch('/background') ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
-                    <Nav.Link href="/guidedpractice" className={`${useMatch('/guidedpractice') ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>
+                    <Nav.Link href="/introduction" className={`${useMatch('/introduction/*') ? "active border-bottom border-secondary" : null} mr-2`}>Introduction</Nav.Link>
+                    <Nav.Link href="/background" className={`${useMatch('/background/*') ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
+                    <Nav.Link href="/guidedpractice" className={`${useMatch('/guidedpractice/*') ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>
+                    <Nav.Link href="/practice" className={`${useMatch('/practice/*') ? "active border-bottom border-secondary" : null} mr-2`}>Practice Cases</Nav.Link>
+                    <Nav.Link href="/quiz/quiz_1" className={`${useMatch('/quiz/*') ? "active border-bottom border-secondary" : null} mr-2`}>Quiz</Nav.Link>
 
                     {/* <Nav.Link href="#background" className={`${this.props.history.location.pathname === '/background' ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
                     <Nav.Link href="#guidedpractice" className={`${this.props.history.location.pathname === '/guidedpractice' ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>

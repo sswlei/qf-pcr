@@ -39,7 +39,7 @@ const PracticeCaseListPage = (props) => {
                 {caseList.length>0?
                     caseList.map((item,index)=>{
                     return (
-                        <div>
+                        <div key={index}>
                            
                                 <ListGroup.Item key={index} onClick={()=>navigate(item.case_id)}>{item.case_name}</ListGroup.Item>
                         </div>
