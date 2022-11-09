@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import xIcon from '../../assets/x.svg';
-import checkIcon from '../../assets/checkmark.svg';
+import xIcon from '../../../assets/x.svg';
+import checkIcon from '../../../assets/checkmark.svg';
 import { Button, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useSelector, useDispatch } from 'react-redux'
 import { updateAnswer, userAnswers, initAnswers} from './IdentifyMarkerSlice'
 import MarkerDropdown from './MarkerDropdown';
 import './css/StepBar.css'
-import { caseData } from './CaseSlice';
+import { caseData } from '../layout/CaseSlice';
+
 const IdentifyMarkers = (props) => {
     const data = useSelector(caseData);
     const dispatch = useDispatch();

@@ -11,11 +11,6 @@ const GuidedPractice = () => {
             title:"Prenatal Rapid Aneuploidy Detection",
             description:"A guided example on Prenatal Rapid Aneuploidy Detection",
             route:"prenatalrad"
-        },
-        {
-            title:"Pregnancy Loss",
-            description:"A guided example on Pregnancy Loss cases",
-            route:"pregnancyloss"
         }
     ]);
 

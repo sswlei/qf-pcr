@@ -3,7 +3,7 @@ import { Col, Nav, Row, Card, Tabs, Tab, Container, Button } from 'react-bootstr
 import { useDispatch } from "react-redux";
 import { Outlet, useParams } from "react-router-dom";
 import { updateCaseData } from './CaseSlice'
-import { initAnswers } from "../Case/IdentifyMarkerSlice";
+import { initAnswers } from "../feature/IdentifyMarkerSlice";
 const CaseLayout = (props) => {    
     const {caseId} = useParams();
     const dispatch = useDispatch();
@@ -39,18 +39,7 @@ const CaseLayout = (props) => {
                         <Nav.Item className={`step-arrows`}>
                             <Nav.Link href="final-conclusion"><strong>Step 3</strong> <br></br> Final Conclusion</Nav.Link>
                         </Nav.Item> 
-                        {/* <Nav.Item className={`step-arrows ${this.getStepColor(0)}`}>
-                            <Nav.Link disabled={!this.isStepCompleted(0)}  eventKey={0}><strong>Step 1</strong> <br></br> Review quality of peaks</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item className={`step-arrows ${this.getStepColor(1)}`} >
-                            <Nav.Link disabled={!this.isStepCompleted(1)} eventKey={1}><strong>Step 2</strong> <br></br> Identify Markers</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item className={`step-arrows ${this.getStepColor(2)}`}>
-                            <Nav.Link disabled={!this.isStepCompleted(2)}  eventKey={2}><strong>Step 3</strong> <br></br> Genotype Table</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item className={`step-arrows ${this.getStepColor(3)}`}>
-                            <Nav.Link disabled={!this.isStepCompleted(3)}  eventKey={3}><strong>Step 4</strong> <br></br> Final Conclusion</Nav.Link>
-                        </Nav.Item> */}
+
                     </Nav>
                 </Col>
             </Row>

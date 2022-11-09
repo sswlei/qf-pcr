@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import identifyMarkersReducer from '../components/Case/IdentifyMarkerSlice';
-import caseReducer from '../components/Case/CaseSlice';
+import identifyMarkersReducer from '../components/Case/feature/IdentifyMarkerSlice';
+import caseReducer from '../components/Case/layout/CaseSlice';
 import quizReducer from '../components/Quiz/QuizSlice';
 
 export default configureStore({

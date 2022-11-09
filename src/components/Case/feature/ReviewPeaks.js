@@ -1,6 +1,6 @@
 import React from "react";
 import {Image, Button } from "react-bootstrap";
-import CriteriaImg from "../../assets/peakReview.png";
+import CriteriaImg from "../../../assets/peakReview.png";
 
 const ReviewPeaks = () => {
     return (
