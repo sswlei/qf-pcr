@@ -26,7 +26,6 @@ const PracticeCaseListPage = (props) => {
                   }
                   return 0;
             });
-            console.log(cases);
             setCaseList(cases);
         });
     },[]);

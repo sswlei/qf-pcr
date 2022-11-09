@@ -68,7 +68,6 @@ const Quiz = () => {
         Object.keys(userData.tf_questions).map((key)=>{
             dataToSend.tf_questions.push(userData.tf_questions[key]);
         })
-        console.log(dataToSend);
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "text/plain");
         var requestOptions = {

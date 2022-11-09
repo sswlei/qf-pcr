@@ -12,17 +12,27 @@ const CaseLayout = (props) => {
         fetch('https://610174ghz0.execute-api.us-west-2.amazonaws.com/default/get_case_data?case_id='+caseId)
         .then((response) => response.json())
         .then((data) => { 
-            dispatch(updateCaseData(data.Item));
-            let answerState = {};
+            dispatch(updateCaseData({caseId:caseId, ...data.Item}));
+            populateAnswers(data);
+        });
+    },[]);
+
+    const populateAnswers = (data) => {
+        let answerState = {};
+        if (localStorage.getItem(caseId) == null){
             for (let key of Object.keys(data.Item.markers)){
                 answerState[key] = {};
                 for (let question of data.Item.markers[key].questions){
                     answerState[key][question.id]="";
                 }
             }
-            dispatch(initAnswers({...answerState}));
-        });
-    },[]);
+        }
+        else{
+            answerState = JSON.parse(localStorage.getItem(caseId));
+        }
+        dispatch(initAnswers({...answerState}));
+    }
+
     return (
         <Container className="mt-4">
             <h2 className="mb-4 text-monospace text-info">{props.title}</h2>

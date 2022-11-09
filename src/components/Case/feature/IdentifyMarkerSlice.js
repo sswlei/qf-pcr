@@ -14,7 +14,7 @@ const IdentifyMarkersSlice = createSlice({
             // markerId: ID of the marker
             // questionId: ID of the question
             // answer: answer selected by user
-            state.answers[action.payload.markerId][action.payload.questionId] = action.payload.answer;
+            state.answers[action.payload.markerId][action.payload.questionId] = {value:action.payload.answer,name:action.payload.answerName};
         }
     }
 });

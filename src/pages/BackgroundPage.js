@@ -28,14 +28,11 @@ function BackgroundPage() {
 
     const getNextCategory = () => {
         let nextTab = currentTab;
-        console.log("nextTab",nextTab);
         if (currentTab < categories.length){
             nextTab++;
             setCurrentTab(nextTab);
-            console.log("nextTab updated",nextTab);
 
         }
-        console.log("nextTab cate",categories[nextTab]);
 
         return categories[nextTab];
     }

@@ -3,18 +3,18 @@ import xIcon from '../../../assets/x.svg';
 import checkIcon from '../../../assets/checkmark.svg';
 import { Button, Card, Row, Col } from 'react-bootstrap';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { useSelector, useDispatch } from 'react-redux'
-import { updateAnswer, userAnswers, initAnswers} from './IdentifyMarkerSlice'
+import { useSelector } from 'react-redux'
+import { userAnswers } from './IdentifyMarkerSlice'
 import MarkerDropdown from './MarkerDropdown';
 import './css/StepBar.css'
 import { caseData } from '../layout/CaseSlice';
+import { useParams } from 'react-router-dom';
 
 const IdentifyMarkers = (props) => {
     const data = useSelector(caseData);
-    const dispatch = useDispatch();
     const answers = useSelector(userAnswers);
+    const { category } = useParams();
     const onClickNext= () => {
-        // saveAnswers();
         if (checkAllAnswered()){
             window.location.href = 'final-conclusion'
         }
@@ -25,13 +25,6 @@ const IdentifyMarkers = (props) => {
         }
     }
     
-    const saveAnswers = () => {
-        // if (props.saveAnswers){
-        //     if (props.caseType!=null && props.caseType != "" && props.caseId!=null){
-        //         localStorage.setItem(props.caseType+props.caseId+"_markers",JSON.stringify(state.answers));
-        //     }
-        // }
-    }
 
     const checkAllAnswered = () => {
         for (let question of Object.keys(answers)){
@@ -110,7 +103,7 @@ const IdentifyMarkers = (props) => {
                                             <div>
                                             {
                                                 data.markers[key].questions.map((questionData,index)=>{
-                                                    return <MarkerDropdown key={index} markerId={key} questionData={questionData} showEvaluation={true}></MarkerDropdown>
+                                                    return <MarkerDropdown key={index} markerId={key} questionData={questionData} showEvaluation={category==='guidedpractice'?true:false}></MarkerDropdown>
                                                 })
                                             }
                                             </div>
