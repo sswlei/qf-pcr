@@ -29,8 +29,8 @@ class LandingPage extends Component {
                             Then this self-direct introduction/practice resource is for you. At this end of the resource, you will have the option to complete a final assessment to obtain proof of completion.
 
                             </p>
-                            <p style={{ fontSize: '1.2rem' }} className="mt-2">To begin press Start</p>
-                            <Button href="introduction" variant="success">START</Button>
+                            <p style={{ fontSize: '1.2rem' }} className="mt-2 text-center">To begin press Start</p>
+                            <Button href="introduction" variant="success" style={{width:'200px'}}>START</Button>
 
                         </Row>
 
