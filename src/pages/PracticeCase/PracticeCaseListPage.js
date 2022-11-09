@@ -32,7 +32,7 @@ const PracticeCaseListPage = (props) => {
 
     return (
         <Container>
-            <h2 className='my-3 text-info text-monospace text-center'>Practice Cases</h2>
+            <h3 className='mt-4 text-info text-monospace text-center'>Practice Cases</h3>
             <div className="px-5 py-4">
                 <Row>
                     <Col lg={3}></Col>
