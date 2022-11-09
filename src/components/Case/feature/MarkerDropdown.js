@@ -39,8 +39,8 @@ const MarkerDropdown = (props) => {
         }
     }
     return (
-        <Dropdown className={`mb-3 mr-2 markerDropdown ${getAnswerClass()}`} as={ButtonGroup}>
-            <label className={`mx-0 my-0 px-4 py-0 rounded-left`}>
+        <Dropdown className={`mb-3 me-2 markerDropdown ${getAnswerClass()}`} as={ButtonGroup}>
+            <label className={`mx-0 my-0 px-4 py-0 rounded-start`}>
                 {selectedAnswer===""?"Select":selectedAnswer} 
             </label>
             <Dropdown.Toggle style={{height:40}}/>

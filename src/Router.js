@@ -1,12 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import BackgroundPage from './pages/BackgroundPage';
 import IntroductionPage from './pages/IntroductionPage';
 import LandingPage from './pages/LandingPage';
 import GuidedPracticeList from './pages/GuidedPractice/GuidedPracticeListPage';
 import CompletedPractice from './pages/GuidedPractice/CompletedPracticePage';
-// import guided_prenatalRAD_data  from "./data/GuidedPractice/prenatalRAD.json"
-import CasePage from './pages/CasePage';
 import PracticeCaseListPage from './pages/PracticeCase/PracticeCaseListPage';
 import EvaluationPage from './pages/PracticeCase/EvaluationPage';
 import MainLayout from './components/layout/MainLayout';

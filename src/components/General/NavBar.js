@@ -8,21 +8,21 @@ function NavBar(props) {
 
     return (
 
-        <Navbar style={{backgroundColor: 'rgb(248,249,345,1)',   position: 'sticky'}} fixed="top" expand="lg">
-            <Navbar.Brand style={{color: '#043E6B'}} href="/introduction"><h3>QF - PCR</h3></Navbar.Brand>
+        <Navbar style={{backgroundColor: 'rgb(248,249,345,1)',   position: 'sticky'}} fixed="top">
+            <Navbar.Brand className={'ms-3'} style={{color: '#043E6B'}} href="/introduction"><h3>QF - PCR</h3></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse >
-                <Nav className="ml-auto text-monospace ">
+                <Nav className="ms-auto mr-3 text-monospace ">
 
-                    <Nav.Link href="/introduction" className={`${useMatch('/introduction/*') ? "active border-bottom border-secondary" : null} mr-2`}>Introduction</Nav.Link>
-                    <Nav.Link href="/background" className={`${useMatch('/background/*') ? "active border-bottom border-secondary" : null} mr-2`}>Background</Nav.Link>
-                    <Nav.Link href="/guidedpractice" className={`${useMatch('/guidedpractice/*') ? "active border-bottom border-secondary" : null} mr-2`}>Guided Practice</Nav.Link>
-                    <Nav.Link href="/practice" className={`${useMatch('/practice/*') ? "active border-bottom border-secondary" : null} mr-2`}>Practice Cases</Nav.Link>
-                    <Nav.Link href="/quiz" className={`${useMatch('/quiz/*') ? "active border-bottom border-secondary" : null} mr-2`}>Quiz</Nav.Link>
+                    <Nav.Link href="/introduction" className={`${useMatch('/introduction/*') ? "active border-bottom border-secondary" : null} ms-2`}>Introduction</Nav.Link>
+                    <Nav.Link href="/background" className={`${useMatch('/background/*') ? "active border-bottom border-secondary" : null} ms-2`}>Background</Nav.Link>
+                    <Nav.Link href="/guidedpractice" className={`${useMatch('/guidedpractice/*') ? "active border-bottom border-secondary" : null} ms-2`}>Guided Practice</Nav.Link>
+                    <Nav.Link href="/practice" className={`${useMatch('/practice/*') ? "active border-bottom border-secondary" : null} ms-2`}>Practice Cases</Nav.Link>
+                    <Nav.Link href="/quiz" className={`${useMatch('/quiz/*') ? "active border-bottom border-secondary" : null} mx-2`}>Quiz</Nav.Link>
 
 
                 </Nav>
-                <Button href="/" className="ml-2" variant="outline-info"> <FontAwesomeIcon rotation={180} size={'1x'} icon={faSignOutAlt} /></Button>
+                <Button href="/" className="me-3" variant="outline-info"> <FontAwesomeIcon rotation={180} size={'1x'} icon={faSignOutAlt} /></Button>
             </Navbar.Collapse>
             
         </Navbar>

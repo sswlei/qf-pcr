@@ -42,7 +42,7 @@ function BackgroundPage() {
 
 
     return (
-        <Container className="text-dark py-4">
+        <Container className="text-dark py-4 mt-3">
             <Row>
                 <Col className='col-sm-3'>
                     <Card className="mb-3">
