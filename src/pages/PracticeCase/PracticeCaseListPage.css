@@ -1,0 +1,7 @@
+.practiceList_item{
+    cursor: pointer;
+}
+.practiceList_item:hover{
+    color:white;
+    background-color: rgb(13,202,240);
+}

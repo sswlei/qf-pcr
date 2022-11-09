@@ -5,7 +5,7 @@ import { Outlet, useParams, useMatch } from "react-router-dom";
 import { updateCaseData } from './CaseSlice'
 import { initAnswers } from "../feature/IdentifyMarkerSlice";
 const CaseLayout = (props) => {    
-    const {caseId} = useParams();
+    const {caseId,category} = useParams();
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -35,7 +35,7 @@ const CaseLayout = (props) => {
 
     return (
         <Container className="mt-4">
-            <h2 className="mb-4 text-monospace text-info">{props.title}</h2>
+            <h2 className="mb-4 text-monospace text-info">{category==="guidedpractice"?"Guided Practice":"Practice Case"}</h2>
             <Row>
                 <Col sm={12}>
                     <Nav>

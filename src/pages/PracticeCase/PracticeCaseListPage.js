@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Container,ListGroup } from 'react-bootstrap';
+import { Container,ListGroup,Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import './PracticeCaseListPage.css'
 
 const PracticeCaseListPage = (props) => {
     const [caseList,setCaseList] = useState([]);
@@ -32,21 +32,28 @@ const PracticeCaseListPage = (props) => {
 
     return (
         <Container>
-            <h2 className='my-3 text-info text-monospace'>Practice Cases</h2>
+            <h2 className='my-3 text-info text-monospace text-center'>Practice Cases</h2>
             <div className="px-5 py-4">
-            <ListGroup className="mb-3">
+                <Row>
+                    <Col lg={3}></Col>
+                    <Col lg={6}>
+                    <ListGroup className="mb-3">
                 {caseList.length>0?
                     caseList.map((item,index)=>{
                     return (
-                        <div key={index}>
-                           
-                                <ListGroup.Item key={index} onClick={()=>navigate(item.case_id)}>{item.case_name}</ListGroup.Item>
-                        </div>
+                        <ListGroup.Item className="practiceList_item" key={index} onClick={()=>navigate(item.case_id)}>
+                            {item.case_name}
+                        </ListGroup.Item>
                     )
                     }):
                     <ListGroup.Item className="text-secondary">No practice cases available</ListGroup.Item>
                 }
             </ListGroup>
+                    </Col>
+                    <Col lg={3}></Col>
+
+                </Row>
+           
 
             </div>
         </Container>

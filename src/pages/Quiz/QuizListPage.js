@@ -16,8 +16,8 @@ const QuizListPage = () => {
 
             <h4 className="text-info" style={{ letterSpacing: 1, width:"100%",textAlign:"center" }}>Quizzes</h4>
             <Row style={{ fontSize: '1.2rem', height: '100%' }} className="d-flex col-12 mx-auto flex-row justify-content-around align-items-center bg-white p-3 ">
-                {quizzes.map((quiz)=>{
-                    return <ModuleCard title={quiz.title} description={quiz.description} onClick={()=>navigate(quiz.quiz_id)}></ModuleCard>
+                {quizzes.map((quiz,index)=>{
+                    return <ModuleCard key={index} title={quiz.title} description={quiz.description} onClick={()=>navigate(quiz.quiz_id)}></ModuleCard>
                 })}
             </Row>
         </div>

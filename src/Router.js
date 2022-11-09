@@ -26,17 +26,19 @@ const AppRouter = () => {
                 <Route path="background" element={<Navigate to="what-is-pcr" replace />}/>    
                 <Route path="background/:category" element={<BackgroundPage />}/>
                 <Route path="guidedpractice" element={<GuidedPracticeList/>}/>
+                <Route path="guidedpractice/completed" element={<CompletedPractice></CompletedPractice>}/>
                 <Route path="practice" element={<PracticeCaseListPage/>}/>
-                <Route path=":category/:caseId" element={<CaseLayout title="Guided Practice" />}>
+                <Route path=":category/:caseId" element={<CaseLayout />}>
                     <Route path="" element={<Navigate to="intro" replace />}/>    
                     <Route path='intro' element={<ReviewPeaks/>}/>
                     <Route path='identify-markers' element={<IdentifyMarkers/>}/>
                     <Route path='final-conclusion' element={<FinalConclusion/>}/>
 
                 </Route>
+                <Route path="/quiz" element={<QuizListPage/>}></Route>    
+                <Route path={`quiz/:quizId`} element={<QuizPage />}/>
             </Route>
-            <Route path="/quiz" element={<QuizListPage/>}></Route>    
-            <Route path={`quiz/:quizId`} element={<QuizPage />}/>
+
         </Routes>
     </BrowserRouter>
     );
